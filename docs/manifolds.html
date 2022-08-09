@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Manifolds | Geometry</title>
+  <meta name="description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Manifolds | Geometry" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
+  <meta name="github-repo" content="sheride/geometry" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Manifolds | Geometry" />
+  
+  <meta name="twitter:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
+  
+
+<meta name="author" content="Elijah Sheridan" />
+
+
+<meta name="date" content="2022-08-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="fibre-bundles.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="manifolds.html"><a href="manifolds.html"><i class="fa fa-check"></i><b>2</b> Manifolds</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="manifolds.html"><a href="manifolds.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="manifolds.html"><a href="manifolds.html#smooth-maps"><i class="fa fa-check"></i><b>2.2</b> Smooth Maps</a></li>
+<li class="chapter" data-level="2.3" data-path="manifolds.html"><a href="manifolds.html#tangent-spaces"><i class="fa fa-check"></i><b>2.3</b> Tangent Spaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="fibre-bundles.html"><a href="fibre-bundles.html"><i class="fa fa-check"></i><b>3</b> Fibre Bundles</a></li>
+<li class="chapter" data-level="4" data-path="lie-theory.html"><a href="lie-theory.html"><i class="fa fa-check"></i><b>4</b> Lie Theory</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="complex-manifolds.html"><a href="complex-manifolds.html"><i class="fa fa-check"></i><b>6</b> Complex Manifolds</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Geometry</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="manifolds" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Manifolds<a href="manifolds.html#manifolds" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introduction<a href="manifolds.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(M\)</span> be a <span style="color: fuchsia;">second-countable</span><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, <span style="color: fuchsia;">Hausdorff</span><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, <span style="color: fuchsia;">locally Euclidean topological space</span> of dimension <span class="math inline">\(n\)</span>. We define an <span style="color: fuchsia;">equivalence relation</span> on the set of homeomorphisms between <span style="color: fuchsia;">open</span> subsets of <span class="math inline">\(M\)</span> and <span class="math inline">\(\mathbb{R}^n\)</span> given by <span class="math inline">\(\phi \sim \psi\)</span> when <span class="math inline">\(\psi \circ \phi^{-1}\)</span> is <span style="color: fuchsia;">smooth</span>. We then choose a <span class="math inline">\(\mathcal{U} = \{(U_\alpha, \phi_\alpha)\}\)</span> (i.e., <span class="math inline">\(\phi_\alpha : U_\alpha \to \mathbb{R}^n\)</span>) such that the <span class="math inline">\(\{U_\alpha\}\)</span> cover <span class="math inline">\(M\)</span> and the <span class="math inline">\(\{\phi_\alpha\}\)</span> are an equivalence class: this is denoted a <span style="color: blue;">maximal atlas</span><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. We then say that <span class="math inline">\(M\)</span> is an <span class="math inline">\(n\)</span>-dimensional <span style="color: blue;">smooth manifold</span><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> (or manifold). Let <span class="math inline">\((\phi, U) \in \mathcal{U}\)</span>: <span class="math inline">\(\phi\)</span> is a <span style="color: blue;">coordinate chart</span> (or chart) and the components of <span class="math inline">\(\phi\)</span>, <span class="math inline">\(x^i\)</span> (i.e., <span class="math inline">\(\phi_\alpha(m) = (x^1(m), \dots, x^n(m))\)</span>), are <span style="color: blue;">coordinates</span>. We say real-valued maps are <span style="color: blue;">functions</span> (e.g., the <span class="math inline">\(x^i\)</span> are functions).</p>
+</div>
+<div id="smooth-maps" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Smooth Maps<a href="manifolds.html#smooth-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Given another manifold <span class="math inline">\(N\)</span>, we say <span class="math inline">\(f : V \to N\)</span> is a <span style="color: blue;">smooth map</span> (or smooth) for an open set <span class="math inline">\(V \subseteq M\)</span> when for all <span class="math inline">\(m \in U\)</span>, there exist charts <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\psi\)</span> defined around <span class="math inline">\(m\)</span> and <span class="math inline">\(f(m)\)</span> such that <span class="math inline">\(\psi \circ f \circ \phi^{-1}\)</span> is smooth. For arbitrary <span class="math inline">\(U\)</span>, we say the same when there exists <span class="math inline">\(F : W \to N\)</span> for an open set <span class="math inline">\(V \subset W \subseteq M\)</span> such that <span class="math inline">\(F_{|V} = f\)</span> and <span class="math inline">\(F\)</span> is smooth. We call smooth maps with smooth inverse <span style="color: blue;">diffeomorphisms</span>. We use <span class="math inline">\(C^\infty(M)\)</span>, <span class="math inline">\(\text{Diff}(M,N)\)</span>, and <span class="math inline">\(\text{Diff}(M)\)</span> to denote the spaces of smooth functions on <span class="math inline">\(M\)</span>, diffeomorphisms <span class="math inline">\(M \to N\)</span>, and diffeomorphisms <span class="math inline">\(M \to M\)</span>, respectively. From this point forward, all maps are smooth unless otherwise specified.</p>
+</div>
+<div id="tangent-spaces" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Tangent Spaces<a href="manifolds.html#tangent-spaces" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(T_m M\)</span> denote the <span style="color: fuchsia;">vector space</span> of <span style="color: fuchsia;">linear derivations</span> on the (vector) space of <span style="color: fuchsia;">germs</span> of functions defined around <span class="math inline">\(m\)</span>, <span class="math inline">\(F_m\)</span>. Alternatively, let <span class="math inline">\(T_m M\)</span> be the <span style="color: fuchsia;">quotient ring</span> <span class="math inline">\((F_m/F_m^2)^*\)</span>, where <span class="math inline">\(*\)</span> denotes the <span style="color: fuchsia;">dual space</span>. <span class="math inline">\(T_m M\)</span> has dimension <span class="math inline">\(n\)</span>, and we call it the <span style="color: blue;">tangent space</span> to <span class="math inline">\(M\)</span> at <span class="math inline">\(m\)</span> and elements of <span class="math inline">\(T_m M\)</span> <span style="color: blue;">vectors</span>. There is a natural map <span class="math inline">\(f \mapsto f_*\)</span> from the set of smooth functions <span class="math inline">\(M \to N\)</span>, denoted <span class="math inline">\(C^\infty(M,N)\)</span>, to the set of <span style="color: fuchsia;">endomorphisms</span> <span class="math inline">\(T_m M \to T_{f(m)} N\)</span> given by <span class="math inline">\(f_* X(g) \mapsto X(g \circ f)\)</span> (where <span class="math inline">\(X \in T_m M\)</span> and <span class="math inline">\(g \in C^\infty(M)\)</span>, the <span style="color: fuchsia;">ring</span> of smooth functions on <span class="math inline">\(M\)</span>). We call <span class="math inline">\(f_*\)</span> the <span style="color: blue;">pushfoward</span> of <span class="math inline">\(f\)</span>. We define <span class="math inline">\(T_m^* M\)</span> to be the <span style="color: blue;">cotangent space</span> to <span class="math inline">\(M\)</span> at <span class="math inline">\(m\)</span>; there is a natural map <span class="math inline">\(d : C^\infty(M) \to T_m^* M\)</span> given by <span class="math inline">\(f \mapsto df(m) = v \mapsto v(f)\)</span>, which we call the <span style="color: blue;">differential</span>. We also have the dual map <span class="math inline">\(f \mapsto f^*\)</span>, the <span style="color: blue;">pullback</span>, acting as <span class="math inline">\(T_{f(m)}^* N \to T_m^* M\)</span> by <span class="math inline">\(f^* A(X) = A(f_* X)\)</span>. Given a chart <span class="math inline">\(\phi\)</span> around <span class="math inline">\(M\)</span>, a basis for <span class="math inline">\(T_m M\)</span> is given by <span class="math inline">\(\frac{\partial}{\partial x^i}\)</span> or <span class="math inline">\(\partial_{i}\)</span>, given by
+<span class="math display">\[\begin{equation}     
+    \partial_{i}f = \frac{\partial (f \circ \phi^{-1})}{\partial r^i}\Big|_m
+\end{equation}\]</span>
+where <span class="math inline">\(r^i\)</span> is the <span class="math inline">\(i\)</span>th Euclidean coordinate. A basis is also given for <span class="math inline">\(T^*_m M\)</span> by the <span class="math inline">\(dx^i\)</span>. Finally, we define the <span style="color: blue;">tangent bundle</span> <span class="math inline">\(TM = \cup_{m\in M} T_m M\)</span> and the <span style="color: blue;">cotangent bundle</span> <span class="math inline">\(T^*M = \cup_{m\in M} T_m^* M\)</span>; both are <span class="math inline">\(2n\)</span>-dimensional smooth manifolds equipped with natural projection maps onto <span class="math inline">\(M\)</span>.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Arguably, the truly important property here is <span style="color: fuchsia;">paracompactness</span>, which is slightly stronger and enables partitions of unity (enabling local-to-global promotions). However, it is a result that Hausdorff, second countable, <span style="color: fuchsia;">locally compact</span> space is paracompact (and we get local compactness follows from locally Euclidean). Second countability also contributes to the feasibility of Euclidean embeddings and other nice, preferable behavior.</p>
+<p>References: <a href="https://math.stackexchange.com/questions/2131530/why-is-important-for-a-manifold-to-have-countable-basis">Second countability and manifolds</a><a href="manifolds.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Hausdorff topological spaces feature points which are sufficiently disjoint: in particular, calculus depends upon limits, and Hausdorff <span class="math inline">\(\implies\)</span> unique limits as desired (note, though, that the converse isn’t true).<a href="manifolds.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Definitions vary here (indeed, it is more conventional to merely require “maximal” atlases) but the general motivation is as follows: given a chart <span class="math inline">\(\phi\)</span> on a manifold <span class="math inline">\(M\)</span>, there are likely uncountably many collections of charts covering <span class="math inline">\(M\)</span> containing <span class="math inline">\(\phi\)</span>, but there is a <em>unique</em> (i.e., canonical) choice of equivalence class of charts containing <span class="math inline">\(\phi\)</span>.</p>
+<p>References: <a href="https://math.stackexchange.com/questions/66554/is-zorns-lemma-required-to-prove-the-existence-of-a-maximal-atlas-on-a-manifold">Axiom of choice and maximal atlases</a><a href="manifolds.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Our consideration of differential topology/geometry is motivated by physics, which interests itself in the dynamics (or change) of our universe. <span style="color: fuchsia;">Calculus</span>, in a word, is the mathematics of change: hence, we are interested in studying the <em>least structured</em> space that permits the calculus. This is not Euclidean space itself but rather a smooth manifold, a space that need only resemble Euclidean space <em>locally</em>.<a href="manifolds.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fibre-bundles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-manifolds.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
