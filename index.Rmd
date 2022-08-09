@@ -1,0 +1,17 @@
+--- 
+title: "Geometry"
+author: "Elijah Sheridan"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: "Notes on geometry and related notions motivated by studies in particle physics and string theory"
+link-citations: yes
+github-repo: sheride/geometry
+---
+
+# Introduction {#intro}
+
+What follows endeavors to encapsulate the author's knowledge of geometry (and the notions upon which it depends, which decidedly extend well beyond the boundaries of geometry itself) as he studies theoretical particle physics and string theory.

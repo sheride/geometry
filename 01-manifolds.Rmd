@@ -1,0 +1,56 @@
+---
+header-includes: 
+  \newcommand{\diff}{\text{Diff}}
+---
+
+# Manifolds {#manifolds}
+
+```{r, echo=FALSE}
+term <- function(x) {
+  if (knitr::is_latex_output()) {
+    sprintf("\textcolor{%s}{%s}", "blue", x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", "blue",
+      x)
+  } else x
+}
+```
+
+```{r, echo=FALSE}
+preq <- function(x) {
+  if (knitr::is_latex_output()) {
+    sprintf("\textcolor{%s}{%s}", "magenta", x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", "fuchsia",
+      x)
+  } else x
+}
+```
+
+## Introduction
+
+Let $M$ be a `r preq("second-countable")`[^com:second_countable], `r preq("Hausdorff")`[^com:hausdorff], `r preq("locally Euclidean topological space")` of dimension $n$. We define an `r preq("equivalence relation")` on the set of homeomorphisms between `r preq("open")` subsets of $M$ and $\mathbb{R}^n$ given by $\phi \sim \psi$ when $\psi \circ \phi^{-1}$ is `r preq("smooth")`. We then choose a $\mathcal{U} = \{(U_\alpha, \phi_\alpha)\}$ (i.e., $\phi_\alpha : U_\alpha \to \mathbb{R}^n$) such that the $\{U_\alpha\}$ cover $M$ and the $\{\phi_\alpha\}$ are an equivalence class: this is denoted a `r term("maximal atlas")`[^com:maximal_atlas]. We then say that $M$ is an $n$-dimensional `r term("smooth manifold")`[^com:smooth_manifold] (or manifold). Let $(\phi, U) \in \mathcal{U}$: $\phi$ is a `r term("coordinate chart")` (or chart) and the components of $\phi$, $x^i$ (i.e., $\phi_\alpha(m) = (x^1(m), \dots, x^n(m))$), are `r term("coordinates")`. We say real-valued maps are `r term("functions")` (e.g., the $x^i$ are functions).
+
+## Smooth Maps
+
+Given another manifold $N$, we say $f : V \to N$ is a `r term("smooth map")` (or smooth) for an open set $V \subseteq M$ when for all $m \in U$, there exist charts $\phi$ and $\psi$ defined around $m$ and $f(m)$ such that $\psi \circ f \circ \phi^{-1}$ is smooth. For arbitrary $U$, we say the same when there exists $F : W \to N$ for an open set $V \subset W \subseteq M$ such that $F_{|V} = f$ and $F$ is smooth. We call smooth maps with smooth inverse `r term("diffeomorphisms")`. We use $C^\infty(M)$, $\diff(M,N)$, and $\diff(M)$ to denote the spaces of smooth functions on $M$, diffeomorphisms $M \to N$, and diffeomorphisms $M \to M$, respectively. From this point forward, all maps are smooth unless otherwise specified.
+
+## Tangent Spaces
+
+Let $T_m M$ denote the `r preq("vector space")` of `r preq("linear derivations")` on the (vector) space of `r preq("germs")` of functions defined around $m$, $F_m$. Alternatively, let $T_m M$ be the `r preq("quotient ring")` $(F_m/F_m^2)^*$, where $*$ denotes the `r preq("dual space")`. $T_m M$ has dimension $n$, and we call it the `r term("tangent space")` to $M$ at $m$ and elements of $T_m M$ `r term("vectors")`. There is a natural map $f \mapsto f_*$ from the set of smooth functions $M \to N$, denoted $C^\infty(M,N)$, to the set of `r preq("endomorphisms")` $T_m M \to T_{f(m)} N$ given by $f_* X(g) \mapsto X(g \circ f)$ (where $X \in T_m M$ and $g \in C^\infty(M)$, the `r preq("ring")` of smooth functions on $M$). We call $f_*$ the `r term("pushfoward")` of $f$. We define $T_m^* M$ to be the `r term("cotangent space")` to $M$ at $m$; there is a natural map $d : C^\infty(M) \to T_m^* M$ given by $f \mapsto df(m) = v \mapsto v(f)$, which we call the `r term("differential")`. We also have the dual map $f \mapsto f^*$, the `r term("pullback")`, acting as $T_{f(m)}^* N \to T_m^* M$ by $f^* A(X) = A(f_* X)$. Given a chart $\phi$ around $M$, a basis for $T_m M$ is given by $\frac{\partial}{\partial x^i}$ or $\partial_{i}$, given by 
+\begin{equation}     
+    \partial_{i}f = \frac{\partial (f \circ \phi^{-1})}{\partial r^i}\Big|_m 
+\end{equation} 
+where $r^i$ is the $i$th Euclidean coordinate. A basis is also given for $T^*_m M$ by the $dx^i$. Finally, we define the `r term("tangent bundle")` $TM = \cup_{m\in M} T_m M$ and the `r term("cotangent bundle")` $T^*M = \cup_{m\in M} T_m^* M$; both are $2n$-dimensional smooth manifolds equipped with natural projection maps onto $M$.
+
+[^com:second_countable]: Arguably, the truly important property here is `r preq("paracompactness")`, which is slightly stronger and enables partitions of unity (enabling local-to-global promotions). However, it is a result that Hausdorff, second countable, `r preq("locally compact")` space is paracompact (and we get local compactness follows from locally Euclidean). Second countability also contributes to the feasibility of Euclidean embeddings and other nice, preferable behavior.
+
+    References: [Second countability and manifolds](https://math.stackexchange.com/questions/2131530/why-is-important-for-a-manifold-to-have-countable-basis)
+    
+[^com:smooth_manifold]: Our consideration of differential topology/geometry is motivated by physics, which interests itself in the dynamics (or change) of our universe. `r preq("Calculus")`, in a word, is the mathematics of change: hence, we are interested in studying the *least structured* space that permits the calculus. This is not Euclidean space itself but rather a smooth manifold, a space that need only resemble Euclidean space *locally*.
+
+[^com:hausdorff]: Hausdorff topological spaces feature points which are sufficiently disjoint: in particular, calculus depends upon limits, and Hausdorff $\implies$ unique limits as desired (note, though, that the converse isn't true).
+
+[^com:maximal_atlas]: Definitions vary here (indeed, it is more conventional to merely require "maximal" atlases) but the general motivation is as follows: given a chart $\phi$ on a manifold $M$, there are likely uncountably many collections of charts covering $M$ containing $\phi$, but there is a *unique* (i.e., canonical) choice of equivalence class of charts containing $\phi$.
+    
+    References: [Axiom of choice and maximal atlases](https://math.stackexchange.com/questions/66554/is-zorns-lemma-required-to-prove-the-existence-of-a-maximal-atlas-on-a-manifold)
