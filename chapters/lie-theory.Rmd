@@ -1,9 +1,3 @@
----
-header-includes: 
-  \newcommand{\diff}{\text{Diff}}
-  \renewcommand{\proj}[1]{\text{proj}_{#1}}
----
-
 ```{r, echo=FALSE}
 term <- function(x) {
   if (knitr::is_latex_output()) {
@@ -28,13 +22,9 @@ preq <- function(x) {
 
 # Lie Theory
 
-## Lie Groups
-
-A `r term("Lie group")` $G$ is a smooth manifold with group structure such that the binary operation is smooth.[^com:smooth_inverse] 
-Elements $g \in G$ induce $R_g, L_g, A_g \in \diff(G)$ by $R_g : h \mapsto hg$, $L_g : h \mapsto gh$, and $A_g = L_g \circ R_{g^{-1}} : h \mapsto ghg^{-1}$. 
-
 ## Lie Algebras
 
+Let $G$ be a Lie group. 
 A vector field $X$ on $G$ satisfying $(L_g)_* X = X \circ L_g$ is called `r term("left invariant")`. 
 The `r term("Lie algebra")` to $G$, $\mathfrak{g}$, is the set of all left-invariant vector fields on $G$; the name is natural as the Lie bracket induces a Lie algebraic structure on this set. 
 Note that $\mathfrak{g}$ is naturally isomorphic to $T_e G$, where $e$ is the identity element, as $Y \in T_e G$ induces a vector field $X$ given by $X_g = (L_g)_* Y$; in particular, this means $\dim \mathfrak{g} = \dim G$. 
@@ -47,6 +37,6 @@ A `r term("one-parameter subgroup")` on $G$ is a continuous group homomorphism $
 Moreover, we have the `r term("exponential map")` $\exp : \mathfrak{g} \to G$ given by $X \mapsto g_X(1)$. 
 From this it follows that $g_X(t) = \exp(tX)$; indeed, this is the most general form for a one parameter group.
 
-[^com:smooth_inverse]: Some authors require the inverse map $g \mapsto g^{-1}$ to be smooth as well, but this follows from the smoothness of the binary operation.
+TODO: adjoint representation and Maurer-Cartan structure formula
 
 [^com:maurer_cartan_matrix_lie_group]: If we let $G$ be embedded in a matrix Lie group by a map $\phi$, then the Maurer-Carten form on $\phi(G)$ is $\theta = \phi(g^{-1})\phi_*$.

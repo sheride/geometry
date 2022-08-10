@@ -1,6 +1,8 @@
 ---
 header-includes: 
+  \usepackage{tikz-cd}
   \newcommand{\diff}{\text{Diff}}
+  \renewcommand{\proj}[1]{\text{proj}_{#1}}
 ---
 
 ```{r, echo=FALSE}

@@ -1,9 +1,3 @@
----
-header-includes: 
-  \newcommand{\diff}{\text{Diff}}
-  \renewcommand{\proj}[1]{\text{proj}_{#1}}
----
-
 ```{r, echo=FALSE}
 term <- function(x) {
   if (knitr::is_latex_output()) {
@@ -32,6 +26,11 @@ preq <- function(x) {
 
 Let $M, F$ be manifolds and $E$ be a `r term("fibre bundle")` with `r term("base")` $M$ and `r term("fibre")` $F$, or a manifold endowed with a surjective projection $\pi : E \to M$ such that $M$ admits an open covering $\{U_\alpha\}$ for which each $U_\alpha$ has a diffeomorphism $\phi_\alpha : \pi^{-1}(U_\alpha) \to U_\alpha \times F$ acting by $p \to (\pi(p), \xi_\alpha(p))$ for $p \in P$ and some $\xi_\alpha : U_\alpha \to \diff(F)$. This implies $\pi^{-1}(m)$ is diffeomorphic to $F$; we say $E$ is locally a product of $M$ and $F$ and that the $(U_\alpha, \phi_\alpha)$ is a `r term("local trivialization")`. On $U_\alpha \cap U_\beta$ we have functions $\phi_{\alpha\beta} = \phi_\alpha \circ \phi_\beta^{-1} : (U_\alpha \cap U_\beta) \times F \to (U_\alpha \cap U_\beta) \times F$ given by $(m, x) \mapsto (m, \xi_{\alpha\beta}(m)(x))$ for some $\xi_{\alpha\beta}(m) \in \diff(F)$ called `r term("transition functions")`. Sometimes we require $\xi_{\alpha\beta}(m) \in G$, a `r term("topological group")` acting on $F$ on the left by diffeomorphisms (i.e., a subgroup of $\diff(F)$). If a fibre bundle's local trivializations satisfy this maximally, we say $E$ is a `r term("$G$-bundle")`, and that $G$ is the `r term("structure group")`. We note that $\xi_{\alpha\alpha} = 1$, $\xi_{\alpha\beta} = \xi_{\beta\alpha}^{-1}$, and the `r term("cocycle condition")` $\xi_{\alpha\beta} \circ \xi_{\beta\delta} \circ \xi_{\delta\alpha} = 1$ holds on triple overlaps. Fibre bundles are uniquely determined by the base manifold and the transition functions. Given a manifold $N$ and a map $g : N \to M$, the pullback bundle $g^*E$ is the subset of $N \times E$ such that $g \circ \proj{1} = \pi \circ \proj{2}$ with projection $\proj{1} : g^*E \to N$. A `r term("vector bundle")` is a fibre bundle whose fibres are vector spaces and whose local trivializations are fibre-wise linear isomorphisms.
 
+## Lie Groups
+
+A `r term("Lie group")` $G$ is a smooth manifold with group structure such that the binary operation is smooth.[^com:smooth_inverse] 
+Elements $g \in G$ induce $R_g, L_g, A_g \in \diff(G)$ by $R_g : h \mapsto hg$, $L_g : h \mapsto gh$, and $A_g = L_g \circ R_{g^{-1}} : h \mapsto ghg^{-1}$. 
+
 ## Principal Bundles
 
 Let $G$ be a Lie group and $P$ be a `r term("principle $G$-bundle")` with base $M$, or a $G$-bundle over $M$ with fibre $G$ and transition functions given by left multiplication. Because left and right multiplication commute, we have an invariant right action of $G$ on $P$[^com:pb_invariant_right_action]. Equivalently, a principle $G$-bundle $P$ is a fibre bundle with a `r preq("regular")` smooth right action by a Lie group $G$ that preserves fibres and the $\xi_\alpha$ are $G$-equivariant. It follows that $P/G = M$[^com:pb_def] and $E$ admits a local trivialization with $M \times G$.
@@ -45,6 +44,8 @@ Let $G$ be a Lie group and $P$ be a `r term("principle $G$-bundle")` with base $
 ### Tensor Fields
 
 ### Differential Forms
+
+[^com:smooth_inverse]: Some authors require the inverse map $g \mapsto g^{-1}$ to be smooth as well, but this follows from the smoothness of the binary operation.
 
 [^com:pb_invariant_right_action]: If $p \in \pi^{-1}(U_\alpha)$ and $\phi_\alpha(p) = (m,h)$, then $pg = \phi_\alpha^{-1}(m,hg)$.
 

@@ -77,7 +77,7 @@
 
 \title{Geometry}
 \author{Elijah Sheridan}
-\date{2022-08-09}
+\date{2022-08-10}
 
 \begin{document}
 \maketitle
@@ -138,30 +138,6 @@ where \(r^i\) is the \(i\)th Euclidean coordinate.
 A basis is also given for \(T^*_m M\) by the \(dx^i\).
 Finally, we define the extcolor\{blue\}\{tangent bundle\} \(TM = \cup_{m\in M} T_m M\) and the extcolor\{blue\}\{cotangent bundle\} \(T^*M = \cup_{m\in M} T_m^* M\); both are \(2n\)-dimensional smooth manifolds equipped with natural projection maps onto \(M\).
 
-\hypertarget{lie-theory}{%
-\chapter{Lie Theory}\label{lie-theory}}
-
-\hypertarget{lie-groups}{%
-\section{Lie Groups}\label{lie-groups}}
-
-A extcolor\{blue\}\{Lie group\} \(G\) is a smooth manifold with group structure such that the binary operation is smooth.\footnote{Some authors require the inverse map \(g \mapsto g^{-1}\) to be smooth as well, but this follows from the smoothness of the binary operation.}
-Elements \(g \in G\) induce \(R_g, L_g, A_g \in \text{Diff}(G)\) by \(R_g : h \mapsto hg\), \(L_g : h \mapsto gh\), and \(A_g = L_g \circ R_{g^{-1}} : h \mapsto ghg^{-1}\).
-
-\hypertarget{lie-algebras}{%
-\section{Lie Algebras}\label{lie-algebras}}
-
-A vector field \(X\) on \(G\) satisfying \((L_g)_* X = X \circ L_g\) is called extcolor\{blue\}\{left invariant\}.
-The extcolor\{blue\}\{Lie algebra\} to \(G\), \(\mathfrak{g}\), is the set of all left-invariant vector fields on \(G\); the name is natural as the Lie bracket induces a Lie algebraic structure on this set.
-Note that \(\mathfrak{g}\) is naturally isomorphic to \(T_e G\), where \(e\) is the identity element, as \(Y \in T_e G\) induces a vector field \(X\) given by \(X_g = (L_g)_* Y\); in particular, this means \(\dim \mathfrak{g} = \dim G\).
-Given a basis \(X_1, \dots, X_n\) of \(\mathfrak{g}\), we have that \([X_i, X_j] = c_{ij}^h X_h\) and we say the \(c_{ij}^h\) are the extcolor\{blue\}\{structure constants\} associated with the basis.
-Identifying \(\mathfrak{g} \cong T_e G\) there is a natural \(\mathfrak{g}\)-valued one-form \(\theta\) on \(G\) defined by \(v \mapsto (L_{g^{-1}})_*(v)\) for \(v \in T_g G\).
-We call this the extcolor\{blue\}\{Maurer-Cartan one-form\}.
-Noting that, if \(G\) is a matrix Lie group, \((L_g)_*\) coincides with the natural matrix multiplication action of the matrix \(g\) on \(TG\), we have that \(\theta(v) = g^{-1}v\) where the right hand side is matrix multiplication\footnote{If we let \(G\) be embedded in a matrix Lie group by a map \(\phi\), then the Maurer-Carten form on \(\phi(G)\) is \(\theta = \phi(g^{-1})\phi_*\).}.
-
-A extcolor\{blue\}\{one-parameter subgroup\} on \(G\) is a continuous group homomorphism \(\mathbb{R} \to G\). For \(X \in \mathfrak{g}\), let \(\phi_{X,t} : G \to G\) be the associated flow, and let \(g_X(t) = \phi_{X,t}(e) \in G\); then \(g_X\) is a one parameter subgroup on \(G\) (i.e., \(g_X(t)g_X(s) = g_S(t+s)\)).
-Moreover, we have the extcolor\{blue\}\{exponential map\} \(\exp : \mathfrak{g} \to G\) given by \(X \mapsto g_X(1)\).
-From this it follows that \(g_X(t) = \exp(tX)\); indeed, this is the most general form for a one parameter group.
-
 \hypertarget{fibre-bundles}{%
 \chapter{Fibre Bundles}\label{fibre-bundles}}
 
@@ -169,6 +145,12 @@ From this it follows that \(g_X(t) = \exp(tX)\); indeed, this is the most genera
 \section{Construction}\label{construction-1}}
 
 Let \(M, F\) be manifolds and \(E\) be a extcolor\{blue\}\{fibre bundle\} with extcolor\{blue\}\{base\} \(M\) and extcolor\{blue\}\{fibre\} \(F\), or a manifold endowed with a surjective projection \(\pi : E \to M\) such that \(M\) admits an open covering \(\{U_\alpha\}\) for which each \(U_\alpha\) has a diffeomorphism \(\phi_\alpha : \pi^{-1}(U_\alpha) \to U_\alpha \times F\) acting by \(p \to (\pi(p), \xi_\alpha(p))\) for \(p \in P\) and some \(\xi_\alpha : U_\alpha \to \text{Diff}(F)\). This implies \(\pi^{-1}(m)\) is diffeomorphic to \(F\); we say \(E\) is locally a product of \(M\) and \(F\) and that the \((U_\alpha, \phi_\alpha)\) is a extcolor\{blue\}\{local trivialization\}. On \(U_\alpha \cap U_\beta\) we have functions \(\phi_{\alpha\beta} = \phi_\alpha \circ \phi_\beta^{-1} : (U_\alpha \cap U_\beta) \times F \to (U_\alpha \cap U_\beta) \times F\) given by \((m, x) \mapsto (m, \xi_{\alpha\beta}(m)(x))\) for some \(\xi_{\alpha\beta}(m) \in \text{Diff}(F)\) called extcolor\{blue\}\{transition functions\}. Sometimes we require \(\xi_{\alpha\beta}(m) \in G\), a extcolor\{blue\}\{topological group\} acting on \(F\) on the left by diffeomorphisms (i.e., a subgroup of \(\text{Diff}(F)\)). If a fibre bundle's local trivializations satisfy this maximally, we say \(E\) is a extcolor\{blue\}\{\(G\)-bundle\}, and that \(G\) is the extcolor\{blue\}\{structure group\}. We note that \(\xi_{\alpha\alpha} = 1\), \(\xi_{\alpha\beta} = \xi_{\beta\alpha}^{-1}\), and the extcolor\{blue\}\{cocycle condition\} \(\xi_{\alpha\beta} \circ \xi_{\beta\delta} \circ \xi_{\delta\alpha} = 1\) holds on triple overlaps. Fibre bundles are uniquely determined by the base manifold and the transition functions. Given a manifold \(N\) and a map \(g : N \to M\), the pullback bundle \(g^*E\) is the subset of \(N \times E\) such that \(g \circ \text{proj}_{1} = \pi \circ \text{proj}_{2}\) with projection \(\text{proj}_{1} : g^*E \to N\). A extcolor\{blue\}\{vector bundle\} is a fibre bundle whose fibres are vector spaces and whose local trivializations are fibre-wise linear isomorphisms.
+
+\hypertarget{lie-groups}{%
+\section{Lie Groups}\label{lie-groups}}
+
+A extcolor\{blue\}\{Lie group\} \(G\) is a smooth manifold with group structure such that the binary operation is smooth.\footnote{Some authors require the inverse map \(g \mapsto g^{-1}\) to be smooth as well, but this follows from the smoothness of the binary operation.}
+Elements \(g \in G\) induce \(R_g, L_g, A_g \in \text{Diff}(G)\) by \(R_g : h \mapsto hg\), \(L_g : h \mapsto gh\), and \(A_g = L_g \circ R_{g^{-1}} : h \mapsto ghg^{-1}\).
 
 \hypertarget{principal-bundles}{%
 \section{Principal Bundles}\label{principal-bundles}}
@@ -190,21 +172,59 @@ Let \(G\) be a Lie group and \(P\) be a extcolor\{blue\}\{principle \(G\)-bundle
 \hypertarget{differential-forms}{%
 \subsection{Differential Forms}\label{differential-forms}}
 
-\hypertarget{applications}{%
-\chapter{Applications}\label{applications}}
+\hypertarget{lie-theory}{%
+\chapter{Lie Theory}\label{lie-theory}}
 
-Some \emph{significant} applications are demonstrated in this chapter.
+\hypertarget{lie-algebras}{%
+\section{Lie Algebras}\label{lie-algebras}}
 
-\hypertarget{example-one}{%
-\section{Example one}\label{example-one}}
+Let \(G\) be a Lie group.
+A vector field \(X\) on \(G\) satisfying \((L_g)_* X = X \circ L_g\) is called extcolor\{blue\}\{left invariant\}.
+The extcolor\{blue\}\{Lie algebra\} to \(G\), \(\mathfrak{g}\), is the set of all left-invariant vector fields on \(G\); the name is natural as the Lie bracket induces a Lie algebraic structure on this set.
+Note that \(\mathfrak{g}\) is naturally isomorphic to \(T_e G\), where \(e\) is the identity element, as \(Y \in T_e G\) induces a vector field \(X\) given by \(X_g = (L_g)_* Y\); in particular, this means \(\dim \mathfrak{g} = \dim G\).
+Given a basis \(X_1, \dots, X_n\) of \(\mathfrak{g}\), we have that \([X_i, X_j] = c_{ij}^h X_h\) and we say the \(c_{ij}^h\) are the extcolor\{blue\}\{structure constants\} associated with the basis.
+Identifying \(\mathfrak{g} \cong T_e G\) there is a natural \(\mathfrak{g}\)-valued one-form \(\theta\) on \(G\) defined by \(v \mapsto (L_{g^{-1}})_*(v)\) for \(v \in T_g G\).
+We call this the extcolor\{blue\}\{Maurer-Cartan one-form\}.
+Noting that, if \(G\) is a matrix Lie group, \((L_g)_*\) coincides with the natural matrix multiplication action of the matrix \(g\) on \(TG\), we have that \(\theta(v) = g^{-1}v\) where the right hand side is matrix multiplication\footnote{If we let \(G\) be embedded in a matrix Lie group by a map \(\phi\), then the Maurer-Carten form on \(\phi(G)\) is \(\theta = \phi(g^{-1})\phi_*\).}.
 
-\hypertarget{example-two}{%
-\section{Example two}\label{example-two}}
+A extcolor\{blue\}\{one-parameter subgroup\} on \(G\) is a continuous group homomorphism \(\mathbb{R} \to G\). For \(X \in \mathfrak{g}\), let \(\phi_{X,t} : G \to G\) be the associated flow, and let \(g_X(t) = \phi_{X,t}(e) \in G\); then \(g_X\) is a one parameter subgroup on \(G\) (i.e., \(g_X(t)g_X(s) = g_S(t+s)\)).
+Moreover, we have the extcolor\{blue\}\{exponential map\} \(\exp : \mathfrak{g} \to G\) given by \(X \mapsto g_X(1)\).
+From this it follows that \(g_X(t) = \exp(tX)\); indeed, this is the most general form for a one parameter group.
+
+TODO: adjoint representation and Maurer-Cartan structure formula
+
+\hypertarget{connections}{%
+\chapter{Connections}\label{connections}}
+
+To each \(A \in \mathfrak{g}\) we can naturally associate a extcolor\{blue\}\{fundamental vector field\} \(A^*\) on \(P\) given by \((A^\#)(p) = (\sigma_p)_*(A)\), where \(\sigma_p : G \to P\) is the map \(g \mapsto pg\). Equivalently, \((A^\#)(p)\) is the tangent vector to the curve \((\sigma_p \circ \exp)(At)\) at \(t = 0\). Define \(V_p = T_p \, \pi^{-1}(p) = \ker(\pi_*) \cap T_p P\), the extcolor\{blue\}\{vertical subspace\} of \(T_p P\); \(A \mapsto (A^*)_p\) is an isomorphism \(\mathfrak{g} \mapsto V_p\). Moreover, \(A \mapsto A^\#\) is equivariant with respect to the adjoint and principal actions of \(G\) and preserves the respective Lie brackets. The extcolor\{blue\}\{vertical bundle\} \(VP = TP\) is the vector subbundle of these vertical subspaces.
+
+To a principal bundle we can associate an extcolor\{blue\}\{Atiyah sequence\}
+
+where \(\iota\) is the natural inclusion and \(\overline{\pi}\) is the map \(X \mapsto (\pi_{TP}(X), (\pi_P)_*(X))\). A extcolor\{blue\}\{connection\} on \(P\) is a choice of equivariant split for this sequence (direct sum, left, and right splits are equivalent). Explicitly, the \(G\) actions are the diagonal action (identifying \(VP \cong P \times \mathfrak{g}\)), the canonical action, and the induced action from \(P \times TM\) leaving \(TM\) invariant, respectively.
+
+In particular, a direct sum split \(\varphi\) is frequently identified with the vector subbundle \(HP = \varphi^{-1}(0 \oplus \pi^* TM)\), which is complementary to \(VP\) and invariant under \((R_g)_*\) for \(g \in G\) and referred to as an extcolor\{blue\}\{Ehresmann connection\}. Left splits can be understood as \(G\)-equivariant \(\mathfrak{g}\)-valued one-forms on \(P\), commonly referred to as extcolor\{blue\}\{connection one-forms\}. Right splits are interpreted as maps sending a vector in \(T_m M\) to one in any \(T_p P\) for \(p \in \pi^{-1}(m)\) and are known as extcolor\{blue\}\{horizontal lifts\}.
 
 \hypertarget{complex-manifolds}{%
 \chapter{Complex Manifolds}\label{complex-manifolds}}
 
 We have finished a nice book.
+
+\hypertarget{spin-geometry}{%
+\chapter{Spin Geometry}\label{spin-geometry}}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{appendix-appendix}{%
+\appendix}
+
+
+\hypertarget{tensors}{%
+\chapter{Tensors}\label{tensors}}
+
+\hypertarget{algebraic-topology}{%
+\chapter{Algebraic Topology}\label{algebraic-topology}}
 
   \bibliography{book.bib,packages.bib}
 

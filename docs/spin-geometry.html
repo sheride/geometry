@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Lie Theory | Geometry</title>
+  <title>Chapter 7 Spin Geometry | Geometry</title>
   <meta name="description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Lie Theory | Geometry" />
+  <meta property="og:title" content="Chapter 7 Spin Geometry | Geometry" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="github-repo" content="sheride/geometry" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Lie Theory | Geometry" />
+  <meta name="twitter:title" content="Chapter 7 Spin Geometry | Geometry" />
   
   <meta name="twitter:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="fibre-bundles.html"/>
-<link rel="next" href="connections.html"/>
+<link rel="prev" href="complex-manifolds.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -123,38 +123,17 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lie-theory" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Lie Theory<a href="lie-theory.html#lie-theory" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="lie-algebras" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Lie Algebras<a href="lie-theory.html#lie-algebras" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Let <span class="math inline">\(G\)</span> be a Lie group.
-A vector field <span class="math inline">\(X\)</span> on <span class="math inline">\(G\)</span> satisfying <span class="math inline">\((L_g)_* X = X \circ L_g\)</span> is called <span style="color: blue;">left invariant</span>.
-The <span style="color: blue;">Lie algebra</span> to <span class="math inline">\(G\)</span>, <span class="math inline">\(\mathfrak{g}\)</span>, is the set of all left-invariant vector fields on <span class="math inline">\(G\)</span>; the name is natural as the Lie bracket induces a Lie algebraic structure on this set.
-Note that <span class="math inline">\(\mathfrak{g}\)</span> is naturally isomorphic to <span class="math inline">\(T_e G\)</span>, where <span class="math inline">\(e\)</span> is the identity element, as <span class="math inline">\(Y \in T_e G\)</span> induces a vector field <span class="math inline">\(X\)</span> given by <span class="math inline">\(X_g = (L_g)_* Y\)</span>; in particular, this means <span class="math inline">\(\dim \mathfrak{g} = \dim G\)</span>.
-Given a basis <span class="math inline">\(X_1, \dots, X_n\)</span> of <span class="math inline">\(\mathfrak{g}\)</span>, we have that <span class="math inline">\([X_i, X_j] = c_{ij}^h X_h\)</span> and we say the <span class="math inline">\(c_{ij}^h\)</span> are the <span style="color: blue;">structure constants</span> associated with the basis.
-Identifying <span class="math inline">\(\mathfrak{g} \cong T_e G\)</span> there is a natural <span class="math inline">\(\mathfrak{g}\)</span>-valued one-form <span class="math inline">\(\theta\)</span> on <span class="math inline">\(G\)</span> defined by <span class="math inline">\(v \mapsto (L_{g^{-1}})_*(v)\)</span> for <span class="math inline">\(v \in T_g G\)</span>.
-We call this the <span style="color: blue;">Maurer-Cartan one-form</span>.
-Noting that, if <span class="math inline">\(G\)</span> is a matrix Lie group, <span class="math inline">\((L_g)_*\)</span> coincides with the natural matrix multiplication action of the matrix <span class="math inline">\(g\)</span> on <span class="math inline">\(TG\)</span>, we have that <span class="math inline">\(\theta(v) = g^{-1}v\)</span> where the right hand side is matrix multiplication<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
-<p>A <span style="color: blue;">one-parameter subgroup</span> on <span class="math inline">\(G\)</span> is a continuous group homomorphism <span class="math inline">\(\mathbb{R} \to G\)</span>. For <span class="math inline">\(X \in \mathfrak{g}\)</span>, let <span class="math inline">\(\phi_{X,t} : G \to G\)</span> be the associated flow, and let <span class="math inline">\(g_X(t) = \phi_{X,t}(e) \in G\)</span>; then <span class="math inline">\(g_X\)</span> is a one parameter subgroup on <span class="math inline">\(G\)</span> (i.e., <span class="math inline">\(g_X(t)g_X(s) = g_S(t+s)\)</span>).
-Moreover, we have the <span style="color: blue;">exponential map</span> <span class="math inline">\(\exp : \mathfrak{g} \to G\)</span> given by <span class="math inline">\(X \mapsto g_X(1)\)</span>.
-From this it follows that <span class="math inline">\(g_X(t) = \exp(tX)\)</span>; indeed, this is the most general form for a one parameter group.</p>
-<p>TODO: adjoint representation and Maurer-Cartan structure formula</p>
+<div id="spin-geometry" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Spin Geometry<a href="spin-geometry.html#spin-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="9">
-<li id="fn9"><p>If we let <span class="math inline">\(G\)</span> be embedded in a matrix Lie group by a map <span class="math inline">\(\phi\)</span>, then the Maurer-Carten form on <span class="math inline">\(\phi(G)\)</span> is <span class="math inline">\(\theta = \phi(g^{-1})\phi_*\)</span>.<a href="lie-theory.html#fnref9" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="fibre-bundles.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="connections.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="complex-manifolds.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -185,7 +164,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sheride/geometry/edit/main/chapters/lie-theory.Rmd",
+"link": "https://github.com/sheride/geometry/edit/main/chapters/spin-geometry.Rmd",
 "text": "Edit"
 },
 "history": {
