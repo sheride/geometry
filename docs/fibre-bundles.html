@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Fibre Bundles | Geometry</title>
+  <title>Chapter 4 Fibre Bundles | Geometry</title>
   <meta name="description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Fibre Bundles | Geometry" />
+  <meta property="og:title" content="Chapter 4 Fibre Bundles | Geometry" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="github-repo" content="sheride/geometry" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Fibre Bundles | Geometry" />
+  <meta name="twitter:title" content="Chapter 4 Fibre Bundles | Geometry" />
   
   <meta name="twitter:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="manifolds.html"/>
-<link rel="next" href="lie-theory.html"/>
+<link rel="prev" href="lie-theory.html"/>
+<link rel="next" href="applications.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -69,18 +69,33 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Geometry</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="manifolds.html"><a href="manifolds.html"><i class="fa fa-check"></i><b>2</b> Manifolds</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="manifolds.html"><a href="manifolds.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.1" data-path="manifolds.html"><a href="manifolds.html#construction"><i class="fa fa-check"></i><b>2.1</b> Construction</a></li>
 <li class="chapter" data-level="2.2" data-path="manifolds.html"><a href="manifolds.html#smooth-maps"><i class="fa fa-check"></i><b>2.2</b> Smooth Maps</a></li>
 <li class="chapter" data-level="2.3" data-path="manifolds.html"><a href="manifolds.html#tangent-spaces"><i class="fa fa-check"></i><b>2.3</b> Tangent Spaces</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="fibre-bundles.html"><a href="fibre-bundles.html"><i class="fa fa-check"></i><b>3</b> Fibre Bundles</a></li>
-<li class="chapter" data-level="4" data-path="lie-theory.html"><a href="lie-theory.html"><i class="fa fa-check"></i><b>4</b> Lie Theory</a></li>
+<li class="chapter" data-level="3" data-path="lie-theory.html"><a href="lie-theory.html"><i class="fa fa-check"></i><b>3</b> Lie Theory</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lie-theory.html"><a href="lie-theory.html#lie-groups"><i class="fa fa-check"></i><b>3.1</b> Lie Groups</a></li>
+<li class="chapter" data-level="3.2" data-path="lie-theory.html"><a href="lie-theory.html#lie-algebras"><i class="fa fa-check"></i><b>3.2</b> Lie Algebras</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="fibre-bundles.html"><a href="fibre-bundles.html"><i class="fa fa-check"></i><b>4</b> Fibre Bundles</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="fibre-bundles.html"><a href="fibre-bundles.html#construction-1"><i class="fa fa-check"></i><b>4.1</b> Construction</a></li>
+<li class="chapter" data-level="4.2" data-path="fibre-bundles.html"><a href="fibre-bundles.html#principal-bundles"><i class="fa fa-check"></i><b>4.2</b> Principal Bundles</a></li>
+<li class="chapter" data-level="4.3" data-path="fibre-bundles.html"><a href="fibre-bundles.html#associated-bundles"><i class="fa fa-check"></i><b>4.3</b> Associated Bundles</a></li>
+<li class="chapter" data-level="4.4" data-path="fibre-bundles.html"><a href="fibre-bundles.html#sections"><i class="fa fa-check"></i><b>4.4</b> Sections</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="fibre-bundles.html"><a href="fibre-bundles.html#vector-fields"><i class="fa fa-check"></i><b>4.4.1</b> Vector Fields</a></li>
+<li class="chapter" data-level="4.4.2" data-path="fibre-bundles.html"><a href="fibre-bundles.html#tensor-fields"><i class="fa fa-check"></i><b>4.4.2</b> Tensor Fields</a></li>
+<li class="chapter" data-level="4.4.3" data-path="fibre-bundles.html"><a href="fibre-bundles.html#differential-forms"><i class="fa fa-check"></i><b>4.4.3</b> Differential Forms</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
@@ -108,17 +123,47 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="fibre-bundles" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Fibre Bundles<a href="fibre-bundles.html#fibre-bundles" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="fibre-bundles" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Fibre Bundles<a href="fibre-bundles.html#fibre-bundles" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="construction-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Construction<a href="fibre-bundles.html#construction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(M, F\)</span> be manifolds and <span class="math inline">\(E\)</span> be a <span style="color: blue;">fibre bundle</span> with <span style="color: blue;">base</span> <span class="math inline">\(M\)</span> and <span style="color: blue;">fibre</span> <span class="math inline">\(F\)</span>, or a manifold endowed with a surjective projection <span class="math inline">\(\pi : E \to M\)</span> such that <span class="math inline">\(M\)</span> admits an open covering <span class="math inline">\(\{U_\alpha\}\)</span> for which each <span class="math inline">\(U_\alpha\)</span> has a diffeomorphism <span class="math inline">\(\phi_\alpha : \pi^{-1}(U_\alpha) \to U_\alpha \times F\)</span> acting by <span class="math inline">\(p \to (\pi(p), \xi_\alpha(p))\)</span> for <span class="math inline">\(p \in P\)</span> and some <span class="math inline">\(\xi_\alpha : U_\alpha \to \text{Diff}(F)\)</span>. This implies <span class="math inline">\(\pi^{-1}(m)\)</span> is diffeomorphic to <span class="math inline">\(F\)</span>; we say <span class="math inline">\(E\)</span> is locally a product of <span class="math inline">\(M\)</span> and <span class="math inline">\(F\)</span> and that the <span class="math inline">\((U_\alpha, \phi_\alpha)\)</span> is a <span style="color: blue;">local trivialization</span>. On <span class="math inline">\(U_\alpha \cap U_\beta\)</span> we have functions <span class="math inline">\(\phi_{\alpha\beta} = \phi_\alpha \circ \phi_\beta^{-1} : (U_\alpha \cap U_\beta) \times F \to (U_\alpha \cap U_\beta) \times F\)</span> given by <span class="math inline">\((m, x) \mapsto (m, \xi_{\alpha\beta}(m)(x))\)</span> for some <span class="math inline">\(\xi_{\alpha\beta}(m) \in \text{Diff}(F)\)</span> called <span style="color: blue;">transition functions</span>. Sometimes we require <span class="math inline">\(\xi_{\alpha\beta}(m) \in G\)</span>, a <span style="color: blue;">topological group</span> acting on <span class="math inline">\(F\)</span> on the left by diffeomorphisms (i.e., a subgroup of <span class="math inline">\(\text{Diff}(F)\)</span>). If a fibre bundle’s local trivializations satisfy this maximally, we say <span class="math inline">\(E\)</span> is a <span style="color: blue;"><span class="math inline">\(G\)</span>-bundle</span>, and that <span class="math inline">\(G\)</span> is the <span style="color: blue;">structure group</span>. We note that <span class="math inline">\(\xi_{\alpha\alpha} = 1\)</span>, <span class="math inline">\(\xi_{\alpha\beta} = \xi_{\beta\alpha}^{-1}\)</span>, and the <span style="color: blue;">cocycle condition</span> <span class="math inline">\(\xi_{\alpha\beta} \circ \xi_{\beta\delta} \circ \xi_{\delta\alpha} = 1\)</span> holds on triple overlaps. Fibre bundles are uniquely determined by the base manifold and the transition functions. Given a manifold <span class="math inline">\(N\)</span> and a map <span class="math inline">\(g : N \to M\)</span>, the pullback bundle <span class="math inline">\(g^*E\)</span> is the subset of <span class="math inline">\(N \times E\)</span> such that <span class="math inline">\(g \circ \text{proj}_{1} = \pi \circ \text{proj}_{2}\)</span> with projection <span class="math inline">\(\text{proj}_{1} : g^*E \to N\)</span>. A <span style="color: blue;">vector bundle</span> is a fibre bundle whose fibres are vector spaces and whose local trivializations are fibre-wise linear isomorphisms.</p>
+</div>
+<div id="principal-bundles" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Principal Bundles<a href="fibre-bundles.html#principal-bundles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(G\)</span> be a Lie group and <span class="math inline">\(P\)</span> be a <span style="color: blue;">principle <span class="math inline">\(G\)</span>-bundle</span> with base <span class="math inline">\(M\)</span>, or a <span class="math inline">\(G\)</span>-bundle over <span class="math inline">\(M\)</span> with fibre <span class="math inline">\(G\)</span> and transition functions given by left multiplication. Because left and right multiplication commute, we have an invariant right action of <span class="math inline">\(G\)</span> on <span class="math inline">\(P\)</span><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>. Equivalently, a principle <span class="math inline">\(G\)</span>-bundle <span class="math inline">\(P\)</span> is a fibre bundle with a <span style="color: fuchsia;">regular</span> smooth right action by a Lie group <span class="math inline">\(G\)</span> that preserves fibres and the <span class="math inline">\(\xi_\alpha\)</span> are <span class="math inline">\(G\)</span>-equivariant. It follows that <span class="math inline">\(P/G = M\)</span><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> and <span class="math inline">\(E\)</span> admits a local trivialization with <span class="math inline">\(M \times G\)</span>.</p>
+</div>
+<div id="associated-bundles" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Associated Bundles<a href="fibre-bundles.html#associated-bundles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="sections" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Sections<a href="fibre-bundles.html#sections" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="vector-fields" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Vector Fields<a href="fibre-bundles.html#vector-fields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="tensor-fields" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Tensor Fields<a href="fibre-bundles.html#tensor-fields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="differential-forms" class="section level3 hasAnchor" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Differential Forms<a href="fibre-bundles.html#differential-forms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>If <span class="math inline">\(p \in \pi^{-1}(U_\alpha)\)</span> and <span class="math inline">\(\phi_\alpha(p) = (m,h)\)</span>, then <span class="math inline">\(pg = \phi_\alpha^{-1}(m,hg)\)</span>.<a href="fibre-bundles.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>The second definition admits an exchange between fibre-preservation and <span class="math inline">\(P/G = M\)</span><a href="fibre-bundles.html#fnref9" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="manifolds.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lie-theory.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lie-theory.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -149,7 +194,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-fibre-bundles.Rmd",
+"link": "https://github.com/sheride/geometry/edit/main/03-fibre-bundles.Rmd",
 "text": "Edit"
 },
 "history": {

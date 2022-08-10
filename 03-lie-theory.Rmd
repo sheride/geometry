@@ -1,7 +1,0 @@
-# Lie Theory
-
-Example (short) footnote^[blah blah blah].
-
-Example (long) footnote[^longnote]
-
-[^longnote]: blaher blaher blaher

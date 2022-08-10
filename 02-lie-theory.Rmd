@@ -1,0 +1,52 @@
+---
+header-includes: 
+  \newcommand{\diff}{\text{Diff}}
+  \renewcommand{\proj}[1]{\text{proj}_{#1}}
+---
+
+```{r, echo=FALSE}
+term <- function(x) {
+  if (knitr::is_latex_output()) {
+    sprintf("\textcolor{%s}{%s}", "blue", x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", "blue",
+      x)
+  } else x
+}
+```
+
+```{r, echo=FALSE}
+preq <- function(x) {
+  if (knitr::is_latex_output()) {
+    sprintf("\textcolor{%s}{%s}", "magenta", x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", "fuchsia",
+      x)
+  } else x
+}
+```
+
+# Lie Theory
+
+## Lie Groups
+
+A `r term("Lie group")` $G$ is a smooth manifold with group structure such that the binary operation is smooth.[^com:smooth_inverse] 
+Elements $g \in G$ induce $R_g, L_g, A_g \in \diff(G)$ by $R_g : h \mapsto hg$, $L_g : h \mapsto gh$, and $A_g = L_g \circ R_{g^{-1}} : h \mapsto ghg^{-1}$. 
+
+## Lie Algebras
+
+A vector field $X$ on $G$ satisfying $(L_g)_* X = X \circ L_g$ is called `r term("left invariant")`. 
+The `r term("Lie algebra")` to $G$, $\mathfrak{g}$, is the set of all left-invariant vector fields on $G$; the name is natural as the Lie bracket induces a Lie algebraic structure on this set. 
+Note that $\mathfrak{g}$ is naturally isomorphic to $T_e G$, where $e$ is the identity element, as $Y \in T_e G$ induces a vector field $X$ given by $X_g = (L_g)_* Y$; in particular, this means $\dim \mathfrak{g} = \dim G$. 
+Given a basis $X_1, \dots, X_n$ of $\mathfrak{g}$, we have that $[X_i, X_j] = c_{ij}^h X_h$ and we say the $c_{ij}^h$ are the `r term("structure constants")` associated with the basis. 
+Identifying $\mathfrak{g} \cong T_e G$ there is a natural $\mathfrak{g}$-valued one-form $\theta$ on $G$ defined by $v \mapsto (L_{g^{-1}})_*(v)$ for $v \in T_g G$. 
+We call this the `r term("Maurer-Cartan one-form")`. 
+Noting that, if $G$ is a matrix Lie group, $(L_g)_*$ coincides with the natural matrix multiplication action of the matrix $g$ on $TG$, we have that $\theta(v) = g^{-1}v$ where the right hand side is matrix multiplication[^com:maurer_cartan_matrix_lie_group]. 
+
+A `r term("one-parameter subgroup")` on $G$ is a continuous group homomorphism $\mathbb{R} \to G$. For $X \in \mathfrak{g}$, let $\phi_{X,t} : G \to G$ be the associated flow, and let $g_X(t) = \phi_{X,t}(e) \in G$; then $g_X$ is a one parameter subgroup on $G$ (i.e., $g_X(t)g_X(s) = g_S(t+s)$).
+Moreover, we have the `r term("exponential map")` $\exp : \mathfrak{g} \to G$ given by $X \mapsto g_X(1)$. 
+From this it follows that $g_X(t) = \exp(tX)$; indeed, this is the most general form for a one parameter group.
+
+[^com:smooth_inverse]: Some authors require the inverse map $g \mapsto g^{-1}$ to be smooth as well, but this follows from the smoothness of the binary operation.
+
+[^com:maurer_cartan_matrix_lie_group]: If we let $G$ be embedded in a matrix Lie group by a map $\phi$, then the Maurer-Carten form on $\phi(G)$ is $\theta = \phi(g^{-1})\phi_*$.

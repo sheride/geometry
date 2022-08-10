@@ -94,38 +94,101 @@ What follows endeavors to encapsulate the author's knowledge of geometry (and th
 \hypertarget{manifolds}{%
 \chapter{Manifolds}\label{manifolds}}
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\hypertarget{construction}{%
+\section{Construction}\label{construction}}
 
-Let \(M\) be a extcolor\{magenta\}\{second-countable\}\footnote{Arguably, the truly important property here is extcolor\{magenta\}\{paracompactness\}, which is slightly stronger and enables partitions of unity (enabling local-to-global promotions). However, it is a result that Hausdorff, second countable, extcolor\{magenta\}\{locally compact\} space is paracompact (and we get local compactness follows from locally Euclidean). Second countability also contributes to the feasibility of Euclidean embeddings and other nice, preferable behavior.
+Let \(M\) be a extcolor\{magenta\}\{second-countable\}\footnote{Arguably, the truly important property here is extcolor\{magenta\}\{paracompactness\}, which is slightly stronger and enables partitions of unity (enabling local-to-global promotions).
+  However, it is a result that Hausdorff, second countable, extcolor\{magenta\}\{locally compact\} space is paracompact (and we get local compactness follows from locally Euclidean).
+  Second countability also contributes to the feasibility of Euclidean embeddings and other nice, preferable behavior.
 
-  References: \href{https://math.stackexchange.com/questions/2131530/why-is-important-for-a-manifold-to-have-countable-basis}{Second countability and manifolds}}, extcolor\{magenta\}\{Hausdorff\}\footnote{Hausdorff topological spaces feature points which are sufficiently disjoint: in particular, calculus depends upon limits, and Hausdorff \(\implies\) unique limits as desired (note, though, that the converse isn't true).}, extcolor\{magenta\}\{locally Euclidean topological space\} of dimension \(n\). We define an extcolor\{magenta\}\{equivalence relation\} on the set of homeomorphisms between extcolor\{magenta\}\{open\} subsets of \(M\) and \(\mathbb{R}^n\) given by \(\phi \sim \psi\) when \(\psi \circ \phi^{-1}\) is extcolor\{magenta\}\{smooth\}. We then choose a \(\mathcal{U} = \{(U_\alpha, \phi_\alpha)\}\) (i.e., \(\phi_\alpha : U_\alpha \to \mathbb{R}^n\)) such that the \(\{U_\alpha\}\) cover \(M\) and the \(\{\phi_\alpha\}\) are an equivalence class: this is denoted a extcolor\{blue\}\{maximal atlas\}\footnote{Definitions vary here (indeed, it is more conventional to merely require ``maximal'' atlases) but the general motivation is as follows: given a chart \(\phi\) on a manifold \(M\), there are likely uncountably many collections of charts covering \(M\) containing \(\phi\), but there is a \emph{unique} (i.e., canonical) choice of equivalence class of charts containing \(\phi\).
+  References: \href{https://math.stackexchange.com/questions/2131530/why-is-important-for-a-manifold-to-have-countable-basis}{Second countability and manifolds}}, extcolor\{magenta\}\{Hausdorff\}\footnote{Hausdorff topological spaces feature points which are sufficiently disjoint: in particular, calculus depends upon limits, and Hausdorff \(\implies\) unique limits as desired (note, though, that the converse isn't true).}, extcolor\{magenta\}\{locally Euclidean topological space\} of dimension \(n\).
+We define an extcolor\{magenta\}\{equivalence relation\} on the set of homeomorphisms between extcolor\{magenta\}\{open\} subsets of \(M\) and \(\mathbb{R}^n\) given by \(\phi \sim \psi\) when \(\psi \circ \phi^{-1}\) is extcolor\{magenta\}\{smooth\}.
+We then choose a \(\mathcal{U} = \{(U_\alpha, \phi_\alpha)\}\) (i.e., \(\phi_\alpha : U_\alpha \to \mathbb{R}^n\)) such that the \(\{U_\alpha\}\) cover \(M\) and the \(\{\phi_\alpha\}\) are an equivalence class: this is denoted a extcolor\{blue\}\{maximal atlas\}\footnote{Definitions vary here (indeed, it is more conventional to merely require ``maximal'' atlases) but the general motivation is as follows: given a chart \(\phi\) on a manifold \(M\), there are likely uncountably many collections of charts covering \(M\) containing \(\phi\), but there is a \emph{unique} (i.e., canonical) choice of equivalence class of charts containing \(\phi\).
 
-  References: \href{https://math.stackexchange.com/questions/66554/is-zorns-lemma-required-to-prove-the-existence-of-a-maximal-atlas-on-a-manifold}{Axiom of choice and maximal atlases}}. We then say that \(M\) is an \(n\)-dimensional extcolor\{blue\}\{smooth manifold\}\footnote{Our consideration of differential topology/geometry is motivated by physics, which interests itself in the dynamics (or change) of our universe. extcolor\{magenta\}\{Calculus\}, in a word, is the mathematics of change: hence, we are interested in studying the \emph{least structured} space that permits the calculus. This is not Euclidean space itself but rather a smooth manifold, a space that need only resemble Euclidean space \emph{locally}.} (or manifold). Let \((\phi, U) \in \mathcal{U}\): \(\phi\) is a extcolor\{blue\}\{coordinate chart\} (or chart) and the components of \(\phi\), \(x^i\) (i.e., \(\phi_\alpha(m) = (x^1(m), \dots, x^n(m))\)), are extcolor\{blue\}\{coordinates\}. We say real-valued maps are extcolor\{blue\}\{functions\} (e.g., the \(x^i\) are functions).
+  References: \href{https://math.stackexchange.com/questions/66554/is-zorns-lemma-required-to-prove-the-existence-of-a-maximal-atlas-on-a-manifold}{Axiom of choice and maximal atlases}}.
+We then say that \(M\) is an \(n\)-dimensional extcolor\{blue\}\{smooth manifold\}\footnote{Our consideration of differential topology/geometry is motivated by physics, which interests itself in the dynamics (or change) of our universe. extcolor\{magenta\}\{Calculus\}, in a word, is the mathematics of change: hence, we are interested in studying the \emph{least structured} space that permits the calculus.
+  This is not Euclidean space itself but rather a smooth manifold, a space that need only resemble Euclidean space \emph{locally}.} (or manifold).
+Let \((\phi, U) \in \mathcal{U}\): \(\phi\) is a extcolor\{blue\}\{coordinate chart\} (or chart) and the components of \(\phi\), \(x^i\) (i.e., \(\phi_\alpha(m) = (x^1(m), \dots, x^n(m))\)), are extcolor\{blue\}\{coordinates\}.
+We say real-valued maps are extcolor\{blue\}\{functions\} (e.g., the \(x^i\) are functions).
 
 \hypertarget{smooth-maps}{%
 \section{Smooth Maps}\label{smooth-maps}}
 
-Given another manifold \(N\), we say \(f : V \to N\) is a extcolor\{blue\}\{smooth map\} (or smooth) for an open set \(V \subseteq M\) when for all \(m \in U\), there exist charts \(\phi\) and \(\psi\) defined around \(m\) and \(f(m)\) such that \(\psi \circ f \circ \phi^{-1}\) is smooth. For arbitrary \(U\), we say the same when there exists \(F : W \to N\) for an open set \(V \subset W \subseteq M\) such that \(F_{|V} = f\) and \(F\) is smooth. We call smooth maps with smooth inverse extcolor\{blue\}\{diffeomorphisms\}. We use \(C^\infty(M)\), \(\text{Diff}(M,N)\), and \(\text{Diff}(M)\) to denote the spaces of smooth functions on \(M\), diffeomorphisms \(M \to N\), and diffeomorphisms \(M \to M\), respectively. From this point forward, all maps are smooth unless otherwise specified.
+Given another manifold \(N\), we say \(f : V \to N\) is a extcolor\{blue\}\{smooth map\} (or smooth) for an open set \(V \subseteq M\) when for all \(m \in U\), there exist charts \(\phi\) and \(\psi\) defined around \(m\) and \(f(m)\) such that \(\psi \circ f \circ \phi^{-1}\) is smooth.
+Given \(f : U \to N\) for arbitrary \(U \subset M\), we say the same when \(f\) is the restriction of a smooth map on some open \(W \supseteq V\).
+We call smooth maps with smooth inverse extcolor\{blue\}\{diffeomorphisms\}.
+We use \(C^\infty(M)\), \(\text{Diff}(M,N)\), and \(\text{Diff}(M)\) to denote the spaces of smooth functions on \(M\), diffeomorphisms \(M \to N\), and diffeomorphisms \(M \to M\), respectively.
+From this point forward, all maps are smooth unless otherwise specified.
 
 \hypertarget{tangent-spaces}{%
 \section{Tangent Spaces}\label{tangent-spaces}}
 
-Let \(T_m M\) denote the extcolor\{magenta\}\{vector space\} of extcolor\{magenta\}\{linear derivations\} on the (vector) space of extcolor\{magenta\}\{germs\} of functions defined around \(m\), \(F_m\). Alternatively, let \(T_m M\) be the extcolor\{magenta\}\{quotient ring\} \((F_m/F_m^2)^*\), where \(*\) denotes the extcolor\{magenta\}\{dual space\}. \(T_m M\) has dimension \(n\), and we call it the extcolor\{blue\}\{tangent space\} to \(M\) at \(m\) and elements of \(T_m M\) extcolor\{blue\}\{vectors\}. There is a natural map \(f \mapsto f_*\) from the set of smooth functions \(M \to N\), denoted \(C^\infty(M,N)\), to the set of extcolor\{magenta\}\{endomorphisms\} \(T_m M \to T_{f(m)} N\) given by \(f_* X(g) \mapsto X(g \circ f)\) (where \(X \in T_m M\) and \(g \in C^\infty(M)\), the extcolor\{magenta\}\{ring\} of smooth functions on \(M\)). We call \(f_*\) the extcolor\{blue\}\{pushfoward\} of \(f\). We define \(T_m^* M\) to be the extcolor\{blue\}\{cotangent space\} to \(M\) at \(m\); there is a natural map \(d : C^\infty(M) \to T_m^* M\) given by \(f \mapsto df(m) = v \mapsto v(f)\), which we call the extcolor\{blue\}\{differential\}. We also have the dual map \(f \mapsto f^*\), the extcolor\{blue\}\{pullback\}, acting as \(T_{f(m)}^* N \to T_m^* M\) by \(f^* A(X) = A(f_* X)\). Given a chart \(\phi\) around \(M\), a basis for \(T_m M\) is given by \(\frac{\partial}{\partial x^i}\) or \(\partial_{i}\), given by
+Let \(T_m M\) denote the extcolor\{magenta\}\{vector space\} of extcolor\{magenta\}\{linear derivations\} on the (vector) space of extcolor\{magenta\}\{germs\} of functions defined around \(m\), \(F_m\).
+Equivalently, let \(T_m M\) be the extcolor\{magenta\}\{quotient ring\} \((F_m/F_m^2)^*\), where \(*\) denotes the extcolor\{magenta\}\{dual space\}\footnote{TODO: prove equivalence of definitions.}.
+\(T_m M\) has dimension \(n\), and we call it the extcolor\{blue\}\{tangent space\} to \(M\) at \(m\) and elements of \(T_m M\) extcolor\{blue\}\{vectors\}.
+There is a natural map \(f \mapsto f_*\) from the set of smooth functions \(M \to N\), denoted \(C^\infty(M,N)\), to the set of extcolor\{magenta\}\{endomorphisms\} \(T_m M \to T_{f(m)} N\) given by \(f_* X(g) \mapsto X(g \circ f)\) (where \(X \in T_m M\) and \(g \in C^\infty(M)\), the extcolor\{magenta\}\{ring\} of smooth functions on \(M\)). W
+e call \(f_*\) the extcolor\{blue\}\{pushfoward\} of \(f\).
+We define \(T_m^* M\) to be the extcolor\{blue\}\{cotangent space\} to \(M\) at \(m\), and we have the dual map \(f \mapsto f^*\), the extcolor\{blue\}\{pullback\}, acting as \(T_{f(m)}^* N \to T_m^* M\) by \(f^* A(X) = A(f_* X)\).
+There is additionally a natural map \(d : C^\infty(M) \to T_m^* M\) given by \(f \mapsto df(m) = v \mapsto v(f)\), which we call the extcolor\{blue\}\{differential\}.
+Given a chart \(\phi\) around \(M\), a basis for \(T_m M\) is given by \(\frac{\partial}{\partial x^i}\) or \(\partial_{i}\), given by
 \begin{equation}     
     \partial_{i}f = \frac{\partial (f \circ \phi^{-1})}{\partial r^i}\Big|_m 
 \end{equation}
-where \(r^i\) is the \(i\)th Euclidean coordinate. A basis is also given for \(T^*_m M\) by the \(dx^i\). Finally, we define the extcolor\{blue\}\{tangent bundle\} \(TM = \cup_{m\in M} T_m M\) and the extcolor\{blue\}\{cotangent bundle\} \(T^*M = \cup_{m\in M} T_m^* M\); both are \(2n\)-dimensional smooth manifolds equipped with natural projection maps onto \(M\).
-
-\hypertarget{fibre-bundles}{%
-\chapter{Fibre Bundles}\label{fibre-bundles}}
+where \(r^i\) is the \(i\)th Euclidean coordinate.
+A basis is also given for \(T^*_m M\) by the \(dx^i\).
+Finally, we define the extcolor\{blue\}\{tangent bundle\} \(TM = \cup_{m\in M} T_m M\) and the extcolor\{blue\}\{cotangent bundle\} \(T^*M = \cup_{m\in M} T_m^* M\); both are \(2n\)-dimensional smooth manifolds equipped with natural projection maps onto \(M\).
 
 \hypertarget{lie-theory}{%
 \chapter{Lie Theory}\label{lie-theory}}
 
-Example (short) footnote\footnote{blah blah blah}.
+\hypertarget{lie-groups}{%
+\section{Lie Groups}\label{lie-groups}}
 
-Example (long) footnote\footnote{blaher blaher blaher}
+A extcolor\{blue\}\{Lie group\} \(G\) is a smooth manifold with group structure such that the binary operation is smooth.\footnote{Some authors require the inverse map \(g \mapsto g^{-1}\) to be smooth as well, but this follows from the smoothness of the binary operation.}
+Elements \(g \in G\) induce \(R_g, L_g, A_g \in \text{Diff}(G)\) by \(R_g : h \mapsto hg\), \(L_g : h \mapsto gh\), and \(A_g = L_g \circ R_{g^{-1}} : h \mapsto ghg^{-1}\).
+
+\hypertarget{lie-algebras}{%
+\section{Lie Algebras}\label{lie-algebras}}
+
+A vector field \(X\) on \(G\) satisfying \((L_g)_* X = X \circ L_g\) is called extcolor\{blue\}\{left invariant\}.
+The extcolor\{blue\}\{Lie algebra\} to \(G\), \(\mathfrak{g}\), is the set of all left-invariant vector fields on \(G\); the name is natural as the Lie bracket induces a Lie algebraic structure on this set.
+Note that \(\mathfrak{g}\) is naturally isomorphic to \(T_e G\), where \(e\) is the identity element, as \(Y \in T_e G\) induces a vector field \(X\) given by \(X_g = (L_g)_* Y\); in particular, this means \(\dim \mathfrak{g} = \dim G\).
+Given a basis \(X_1, \dots, X_n\) of \(\mathfrak{g}\), we have that \([X_i, X_j] = c_{ij}^h X_h\) and we say the \(c_{ij}^h\) are the extcolor\{blue\}\{structure constants\} associated with the basis.
+Identifying \(\mathfrak{g} \cong T_e G\) there is a natural \(\mathfrak{g}\)-valued one-form \(\theta\) on \(G\) defined by \(v \mapsto (L_{g^{-1}})_*(v)\) for \(v \in T_g G\).
+We call this the extcolor\{blue\}\{Maurer-Cartan one-form\}.
+Noting that, if \(G\) is a matrix Lie group, \((L_g)_*\) coincides with the natural matrix multiplication action of the matrix \(g\) on \(TG\), we have that \(\theta(v) = g^{-1}v\) where the right hand side is matrix multiplication\footnote{If we let \(G\) be embedded in a matrix Lie group by a map \(\phi\), then the Maurer-Carten form on \(\phi(G)\) is \(\theta = \phi(g^{-1})\phi_*\).}.
+
+A extcolor\{blue\}\{one-parameter subgroup\} on \(G\) is a continuous group homomorphism \(\mathbb{R} \to G\). For \(X \in \mathfrak{g}\), let \(\phi_{X,t} : G \to G\) be the associated flow, and let \(g_X(t) = \phi_{X,t}(e) \in G\); then \(g_X\) is a one parameter subgroup on \(G\) (i.e., \(g_X(t)g_X(s) = g_S(t+s)\)).
+Moreover, we have the extcolor\{blue\}\{exponential map\} \(\exp : \mathfrak{g} \to G\) given by \(X \mapsto g_X(1)\).
+From this it follows that \(g_X(t) = \exp(tX)\); indeed, this is the most general form for a one parameter group.
+
+\hypertarget{fibre-bundles}{%
+\chapter{Fibre Bundles}\label{fibre-bundles}}
+
+\hypertarget{construction-1}{%
+\section{Construction}\label{construction-1}}
+
+Let \(M, F\) be manifolds and \(E\) be a extcolor\{blue\}\{fibre bundle\} with extcolor\{blue\}\{base\} \(M\) and extcolor\{blue\}\{fibre\} \(F\), or a manifold endowed with a surjective projection \(\pi : E \to M\) such that \(M\) admits an open covering \(\{U_\alpha\}\) for which each \(U_\alpha\) has a diffeomorphism \(\phi_\alpha : \pi^{-1}(U_\alpha) \to U_\alpha \times F\) acting by \(p \to (\pi(p), \xi_\alpha(p))\) for \(p \in P\) and some \(\xi_\alpha : U_\alpha \to \text{Diff}(F)\). This implies \(\pi^{-1}(m)\) is diffeomorphic to \(F\); we say \(E\) is locally a product of \(M\) and \(F\) and that the \((U_\alpha, \phi_\alpha)\) is a extcolor\{blue\}\{local trivialization\}. On \(U_\alpha \cap U_\beta\) we have functions \(\phi_{\alpha\beta} = \phi_\alpha \circ \phi_\beta^{-1} : (U_\alpha \cap U_\beta) \times F \to (U_\alpha \cap U_\beta) \times F\) given by \((m, x) \mapsto (m, \xi_{\alpha\beta}(m)(x))\) for some \(\xi_{\alpha\beta}(m) \in \text{Diff}(F)\) called extcolor\{blue\}\{transition functions\}. Sometimes we require \(\xi_{\alpha\beta}(m) \in G\), a extcolor\{blue\}\{topological group\} acting on \(F\) on the left by diffeomorphisms (i.e., a subgroup of \(\text{Diff}(F)\)). If a fibre bundle's local trivializations satisfy this maximally, we say \(E\) is a extcolor\{blue\}\{\(G\)-bundle\}, and that \(G\) is the extcolor\{blue\}\{structure group\}. We note that \(\xi_{\alpha\alpha} = 1\), \(\xi_{\alpha\beta} = \xi_{\beta\alpha}^{-1}\), and the extcolor\{blue\}\{cocycle condition\} \(\xi_{\alpha\beta} \circ \xi_{\beta\delta} \circ \xi_{\delta\alpha} = 1\) holds on triple overlaps. Fibre bundles are uniquely determined by the base manifold and the transition functions. Given a manifold \(N\) and a map \(g : N \to M\), the pullback bundle \(g^*E\) is the subset of \(N \times E\) such that \(g \circ \text{proj}_{1} = \pi \circ \text{proj}_{2}\) with projection \(\text{proj}_{1} : g^*E \to N\). A extcolor\{blue\}\{vector bundle\} is a fibre bundle whose fibres are vector spaces and whose local trivializations are fibre-wise linear isomorphisms.
+
+\hypertarget{principal-bundles}{%
+\section{Principal Bundles}\label{principal-bundles}}
+
+Let \(G\) be a Lie group and \(P\) be a extcolor\{blue\}\{principle \(G\)-bundle\} with base \(M\), or a \(G\)-bundle over \(M\) with fibre \(G\) and transition functions given by left multiplication. Because left and right multiplication commute, we have an invariant right action of \(G\) on \(P\)\footnote{If \(p \in \pi^{-1}(U_\alpha)\) and \(\phi_\alpha(p) = (m,h)\), then \(pg = \phi_\alpha^{-1}(m,hg)\).}. Equivalently, a principle \(G\)-bundle \(P\) is a fibre bundle with a extcolor\{magenta\}\{regular\} smooth right action by a Lie group \(G\) that preserves fibres and the \(\xi_\alpha\) are \(G\)-equivariant. It follows that \(P/G = M\)\footnote{The second definition admits an exchange between fibre-preservation and \(P/G = M\)} and \(E\) admits a local trivialization with \(M \times G\).
+
+\hypertarget{associated-bundles}{%
+\section{Associated Bundles}\label{associated-bundles}}
+
+\hypertarget{sections}{%
+\section{Sections}\label{sections}}
+
+\hypertarget{vector-fields}{%
+\subsection{Vector Fields}\label{vector-fields}}
+
+\hypertarget{tensor-fields}{%
+\subsection{Tensor Fields}\label{tensor-fields}}
+
+\hypertarget{differential-forms}{%
+\subsection{Differential Forms}\label{differential-forms}}
 
 \hypertarget{applications}{%
 \chapter{Applications}\label{applications}}
