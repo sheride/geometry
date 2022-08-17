@@ -1,1 +1,3 @@
 # Algebraic Topology
+
+TODO: singular, simplical homology

@@ -12,6 +12,6 @@ link-citations: yes
 github-repo: sheride/geometry
 ---
 
-# Introduction {#intro}
+# Introduction {-}
 
 What follows endeavors to encapsulate the author's knowledge of geometry (and the notions upon which it depends, which decidedly extend well beyond the boundaries of geometry itself) as he studies theoretical particle physics and string theory.

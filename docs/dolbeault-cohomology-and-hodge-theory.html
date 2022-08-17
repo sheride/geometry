@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Geometry</title>
+  <title>Chapter 7 Dolbeault Cohomology and Hodge Theory | Geometry</title>
   <meta name="description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Geometry" />
+  <meta property="og:title" content="Chapter 7 Dolbeault Cohomology and Hodge Theory | Geometry" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="github-repo" content="sheride/geometry" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Geometry" />
+  <meta name="twitter:title" content="Chapter 7 Dolbeault Cohomology and Hodge Theory | Geometry" />
   
   <meta name="twitter:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="hermitian-and-kahler-geometry.html"/>
+<link rel="next" href="spin-geometry.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -100,19 +100,13 @@
 <li class="chapter" data-level="5" data-path="complex-manifolds.html"><a href="complex-manifolds.html"><i class="fa fa-check"></i><b>5</b> Complex Manifolds</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="complex-manifolds.html"><a href="complex-manifolds.html#construction-2"><i class="fa fa-check"></i><b>5.1</b> Construction</a></li>
-<li class="chapter" data-level="5.2" data-path="complex-manifolds.html"><a href="complex-manifolds.html#hermitian-and-kahler-geometry"><i class="fa fa-check"></i><b>5.2</b> Hermitian and Kahler Geometry</a></li>
-<li class="chapter" data-level="5.3" data-path="complex-manifolds.html"><a href="complex-manifolds.html#dolbeault-cohomology-and-hodge-theory"><i class="fa fa-check"></i><b>5.3</b> Dolbeault Cohomology and Hodge Theory</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="spin-geometry.html"><a href="spin-geometry.html"><i class="fa fa-check"></i><b>6</b> Spin Geometry</a></li>
+<li class="chapter" data-level="6" data-path="hermitian-and-kahler-geometry.html"><a href="hermitian-and-kahler-geometry.html"><i class="fa fa-check"></i><b>6</b> Hermitian and Kahler Geometry</a></li>
+<li class="chapter" data-level="7" data-path="dolbeault-cohomology-and-hodge-theory.html"><a href="dolbeault-cohomology-and-hodge-theory.html"><i class="fa fa-check"></i><b>7</b> Dolbeault Cohomology and Hodge Theory</a></li>
+<li class="chapter" data-level="8" data-path="spin-geometry.html"><a href="spin-geometry.html"><i class="fa fa-check"></i><b>8</b> Spin Geometry</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="tensors.html"><a href="tensors.html"><i class="fa fa-check"></i><b>A</b> Tensors</a>
-<ul>
-<li class="chapter" data-level="A.1" data-path="tensors.html"><a href="tensors.html#construction-3"><i class="fa fa-check"></i><b>A.1</b> Construction</a></li>
-<li class="chapter" data-level="A.2" data-path="tensors.html"><a href="tensors.html#notation"><i class="fa fa-check"></i><b>A.2</b> Notation</a></li>
-<li class="chapter" data-level="A.3" data-path="tensors.html"><a href="tensors.html#change-of-basis"><i class="fa fa-check"></i><b>A.3</b> Change of Basis</a></li>
-<li class="chapter" data-level="A.4" data-path="tensors.html"><a href="tensors.html#tensor-algebra"><i class="fa fa-check"></i><b>A.4</b> Tensor Algebra</a></li>
-</ul></li>
+<li class="chapter" data-level="A" data-path="tensors.html"><a href="tensors.html"><i class="fa fa-check"></i><b>A</b> Tensors</a></li>
 <li class="chapter" data-level="B" data-path="algebraic-topology.html"><a href="algebraic-topology.html"><i class="fa fa-check"></i><b>B</b> Algebraic Topology</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -134,19 +128,35 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="dolbeault-cohomology-and-hodge-theory" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Dolbeault Cohomology and Hodge Theory<a href="dolbeault-cohomology-and-hodge-theory.html#dolbeault-cohomology-and-hodge-theory" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Replacing <span class="math inline">\(d\)</span> in de Rham cohomology with <span class="math inline">\(\overline{\partial}\)</span> yields <span style="color: blue;">Dolbeault cohomology</span> with <span style="color: blue;"><span class="math inline">\((r,s)\)</span>-cocycles</span>, <span style="color: blue;"><span class="math inline">\((r,s)\)</span>-coboundaries</span>, and <span style="color: blue;"><span class="math inline">\((r,s)\)</span>th cohomology groups</span> being defined as expected. Recalling the Hodge star <span class="math inline">\(\ast\)</span>, we have an inner product on <span class="math inline">\(\Omega^{r,s}(M)\)</span> by
+<span class="math display">\[\begin{equation}
+    (\alpha, \beta) = \int_M \alpha \wedge \overline{\ast} \beta
+\end{equation}\]</span>
+where <span class="math inline">\(\overline{\ast} \beta\)</span> is defined to be <span class="math inline">\(\overline{\ast \beta} = \ast \overline{\beta}\)</span>. From here we define <span class="math inline">\(\partial^\dagger, \overline{\partial}^\dagger\)</span> to be the adjoints of the Dolbeault operators <span class="math inline">\(\partial, \overline{\partial}\)</span>, respectively. They decrement the degree of the forms they act on, square to <span class="math inline">\(0\)</span>, and obey the following formulas.<br />
+<span class="math display">\[\begin{equation}
+    \partial^\dagger = - \ast \overline{\partial} \ast, \overline{\partial}^\dagger = - \ast \partial \ast
+\end{equation}\]</span>
+We have Laplacians as follows.
+<span class="math display">\[\begin{equation}
+    \Delta = \{d, d^\dagger\}, \Delta_\partial = \{\partial, \partial^\dagger\}, \Delta_{\overline{\partial}} = \{\overline{\partial}, \overline{\partial}^\dagger\},  
+\end{equation}\]</span>
+where <span class="math inline">\(\{ \, \}\)</span> here is the anticommutator. A form is <span style="color: blue;">harmonic</span> with respect to <span class="math inline">\(d, \partial, \overline{\partial}\)</span> if it lies in the kernel of <span class="math inline">\(\Delta, \Delta_\partial, \Delta_{\overline{\partial}}\)</span>, respectively. Hodge’s theorem shows that
+<span class="math display">\[\begin{equation}
+    \Omega^{r,s}(M) = \overline{\partial} \Omega^{r,s-1}(M) + \overline{\partial}^\dagger \Omega^{r,s+1}(M) + \text{Harm}_{\overline{\partial}}^{r,s}(M)
+\end{equation}\]</span>
+with this sum being orthogonal with respect to the aforementioned inner product and with <span class="math inline">\(\text{Harm}_{\overline{\partial}}^{r,s}(M)\)</span> the set of <span class="math inline">\(\overline{\partial}\)</span>-harmonic <span class="math inline">\((r,s)\)</span> forms on <span class="math inline">\(M\)</span>. Note that Dolbeault cohomology classes contain a unique <span class="math inline">\(\overline{\partial}\)</span>-harmonic form.
+In the special case that <span class="math inline">\(M\)</span> is K"ahler, <span class="math inline">\(\Delta = 2\Delta_\partial = 2\Delta_{\overline{\partial}}\)</span>.</p>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="hermitian-and-kahler-geometry.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="spin-geometry.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -177,7 +187,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sheride/geometry/edit/main/%s",
+"link": "https://github.com/sheride/geometry/edit/main/chapters/complex-manifolds.Rmd",
 "text": "Edit"
 },
 "history": {

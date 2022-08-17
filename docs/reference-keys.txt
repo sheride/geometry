@@ -1,4 +1,3 @@
-intro
 manifolds
 construction
 smooth-maps
@@ -16,6 +15,13 @@ lie-theory
 lie-algebras
 connections
 complex-manifolds
+construction-2
+hermitian-and-kahler-geometry
+dolbeault-cohomology-and-hodge-theory
 spin-geometry
 tensors
+construction-3
+notation
+change-of-basis
+tensor-algebra
 algebraic-topology

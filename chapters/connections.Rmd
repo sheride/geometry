@@ -24,7 +24,7 @@ preq <- function(x) {
 
 To each $A \in \mathfrak{g}$ we can naturally associate a `r term("fundamental vector field")` $A^*$ on $P$ given by $(A^\#)(p) = (\sigma_p)_*(A)$, where $\sigma_p : G \to P$ is the map $g \mapsto pg$. Equivalently, $(A^\#)(p)$ is the tangent vector to the curve $(\sigma_p \circ \exp)(At)$ at $t = 0$. Define $V_p = T_p \, \pi^{-1}(p) = \ker(\pi_*) \cap T_p P$, the `r term("vertical subspace")` of $T_p P$; $A \mapsto (A^*)_p$ is an isomorphism $\mathfrak{g} \mapsto V_p$. Moreover, $A \mapsto A^\#$ is equivariant with respect to the adjoint and principal actions of $G$ and preserves the respective Lie brackets. The `r term("vertical bundle")` $VP = TP$ is the vector subbundle of these vertical subspaces. 
 
-To a principal bundle we can associate an `r term("Atiyah sequence")`
+To a principal bundle we can associate its `r term("Atiyah sequence")`.
 
 <p align="center">
 <img src="atiyah.png" alt="Atiyah sequence" width="500"/>

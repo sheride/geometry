@@ -77,7 +77,7 @@
 
 \title{Geometry}
 \author{Elijah Sheridan}
-\date{2022-08-10}
+\date{2022-08-16}
 
 \begin{document}
 \maketitle
@@ -86,8 +86,9 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{intro}{%
-\chapter{Introduction}\label{intro}}
+\hypertarget{introduction}{%
+\chapter*{Introduction}\label{introduction}}
+\addcontentsline{toc}{chapter}{Introduction}
 
 What follows endeavors to encapsulate the author's knowledge of geometry (and the notions upon which it depends, which decidedly extend well beyond the boundaries of geometry itself) as he studies theoretical particle physics and string theory.
 
@@ -160,17 +161,64 @@ Let \(G\) be a Lie group and \(P\) be a extcolor\{blue\}\{principle \(G\)-bundle
 \hypertarget{associated-bundles}{%
 \section{Associated Bundles}\label{associated-bundles}}
 
+Let \(N\) have a left \(G\) action; this induces a action of \(G\) on \(P \times N\) by \((p,n) \mapsto (pg, g^{-1}n)\) for \(g \in G\). The extcolor\{blue\}\{associated bundle\} to \(G\) with fibre \(N\) is the quotient \(E = (P \times N) / G\), which is characterized as a bundle by the base manifold \(M\), fibre \(N\), and transition functions given by the left action of the \(\xi_{\alpha\beta}(m)\) on \(N\). For \(p \in P\) such that \(\pi(p) = m\), the local trivialization is explicitly \([(p, n)] \mapsto (m, \xi_\alpha(m)n)\)\footnote{This is well-defined because under a local trivialization \(\phi_{\alpha}\), letting \(\xi_\alpha(\pi(p)) = g\), we have that \((p,n) \mapsto (\pi(p), gn)\) and \((ph, h^{-1}n) \mapsto (\pi(ph), (gh)h^{-1}n) = (\pi(p), gn)\).
+
+  References: \href{https://math.stackexchange.com/questions/2439177/how-to-prove-local-trivialization-of-fiber-bundle-associated-to-principal-bundle}{Discussion of local trivialization on associated bundles}}. In particular, the associated bundle \(E\) is also a \(G\)-bundle. Let \(m = \dim(M)\); to \(M\) we can associated the extcolor\{blue\}\{frame bundle\} \(F(M)\), the disjoint union of frames of each tangent space \(T_m M\) considered as a bundle over \(M\): this is a principal \(GL(m)\)-bundle. The extcolor\{blue\}\{tangent bundle\} \(TM\) is the bundle associated to \(F(M)\) via the fundamental representation on \(\mathbb{R}^m\), (or equivalently, the disjoint union of the tangent spaces \(T_m M\) as a vector bundle over \(M\)). Continuing, the extcolor\{blue\}\{cotangent bundle\} \(T^*M\) is the bundle associated to \(F(M)\) by the representation dual to the fundamental representation on \(\mathbb{R}^n\) (disjoint union of cotangent spaces), and the extcolor\{blue\}\{\((k, \ell)\) tensor bundle\} is the bundle \(T^k_\ell M\) associated to \(F(M)\) by the tensor product of \(k\) copies of the fundamental representation and \(\ell\) copies of its dual (disjoint union of \(k\) tensor products of tangent space and \(\ell\) tensor products of the cotangent space). In particular, the bundle \(\Lambda^k M\) is a subbundle of \(T^0_k M\) given by only the totally antisymmetric tensors.
+
 \hypertarget{sections}{%
 \section{Sections}\label{sections}}
+
+A extcolor\{blue\}\{section\} of \(E\) is a map \(\sigma : M \to E\) such that \(\pi \circ \sigma = 1\), or a family of maps \(\sigma_\alpha : U_\alpha \to F\) such that \(\sigma_\alpha(m) = \xi_{\alpha\beta}(m)\sigma_\beta(m)\). We denote the space of smooth sections of a fibre bundle \(E\) by \(\Gamma(E)\). In particular, we define the spaces of vector fields \(\Gamma(M) = \Gamma(TM)\), extcolor\{blue\}\{\((r,s)\) tensor fields\} \(\mathcal{T}^k_\ell(M) = \Gamma(T^k_\ell(M))\), and extcolor\{blue\}\{differential \(k\)-forms\} \(\Omega^k(M) = \Gamma(\Lambda^k(M))\).
 
 \hypertarget{vector-fields}{%
 \subsection{Vector Fields}\label{vector-fields}}
 
+The \(\partial_i\) are naturally understood as vector fields on subsets of \(M\) and form a basis for vector fields on that subset. Given \(\psi \in \text{Diff}(M)\), we can define \(\psi_* X\) by \((\psi_* X)_m = \psi_* X_{\psi^{-1}(m)}\){[}\^{}com:vector\_field\_pushforward{]}. Let \(\Phi = I \times M \to M\) (\(I \ni 0\) an interval in \(\mathbb{R}\)) satisfy \(\phi_t \circ \phi_s = \phi_{t+s}\) for \(\phi_t : M \to M\) given by \(m \mapsto \Phi(t,m)\): we say \(\Phi\) is a extcolor\{blue\}\{one-parameter group of transformations\} or extcolor\{blue\}\{flow\} on \(M\)\footnote{``Flow'' is sometimes used to refer specifically to the action of a one-parameter group of transformations on its manifold: we adopt the term more generally for its brevity and convenience.}; \(\Phi\) induces a \(Y \in \mathcal{T}_0^1(M)\) by
+\begin{equation}     
+    Y(f)(m) = \lim_{t \to 0}\frac{(f \circ \phi_t)(m) - f(m)}{t}. 
+\end{equation}
+This correspondence has a partial inverse. A extcolor\{blue\}\{curve\} is a map \(\gamma : (a,b) \subset \mathbb{R} \to M\). We say the tangent vector to \(\gamma\) at \(\gamma(t) \in M\) is \(\gamma_*(1)\) for \(1 \in T_t \mathbb{R}\): this defines a smooth vector field \(\dot{\gamma}\) on \(\gamma((a,b))\). We say \(\gamma\) is an extcolor\{blue\}\{integral curve\} to \(X\) if \(\dot{\gamma} = X_{|\gamma((a,b))}\). From the theory of extcolor\{magenta\}\{ODEs\}, we are assured that \(X\) induces integral curves \(\gamma_m\) at all \(m\) such that \(\phi_t : m \mapsto \gamma_m(t)\) is smooth. Then \(\Phi = \{\phi_t : M \to M\}_{t\in(-\varepsilon,\varepsilon)}\) is a (local) flow (for some \(\varepsilon > 0\)) induced by \(X\). In particular, the vector field \(\psi_* X\) and the flow \(\psi \circ \phi_t \circ \psi^{-1}\) induce each other\footnote{\begin{align*}
+  (\psi_* X)(f)(m) &= X(f \circ \psi)(\psi^{-1}(m)) \\
+  &= \lim_{t \to 0}\frac{(f \circ \psi \circ \phi_t)(\psi^{-1}(m)) - (f \circ \psi)(\psi^{-1}(m))}{t} \\
+  &= \lim_{t \to 0}\frac{(f \circ \psi \circ \phi_t \circ \psi^{-1})(m) - (f \circ \psi \circ \psi^{-1})(m)}{t} \\
+  &= \lim_{t \to 0}\frac{(f \circ [\psi \circ \phi_t \circ \psi^{-1}])(m) - f(m)}{t}
+  \end{align*}}. A extcolor\{magenta\}\{Lie algebra\} is a set endowed with an associative anticommuting binary operator satisfying the extcolor\{magenta\}\{Jacobi identity\}. The extcolor\{blue\}\{Lie bracket\} of vector fields, \([X,Y] \in \mathcal{T}_0^1(M)\), defined by \([X,Y](f) = (X \circ Y)(f) - (Y \circ X)(f)\), endows \(\mathcal{T}_0^1(M)\) with a Lie algebraic structure. The extcolor\{blue\}\{Lie derivative\}'\footnote{We are interested in differentiating tensor fields, but we're confronted by the difficulty of comparing tensors defined on distinct tangent spaces (i.e., in a limit) which certainly cannot be identified (i.e., \(T_m M\) and \(T_{m'} M\) for \(m \neq m'\)). This is a recurring theme in differential topology/geometry, and one with many different solutions. This is the first one we encounter: the specification of a vector field provides sufficient directional and ``connective'\,' information to enable this kind of comparison, and thus, a derivative operator. Note that, in particular, because our definition utilizes a limit, the Lie derivative evaluated at a point \(m\) depends upon the local behavior of \(X,T\), or the behavior in a neighborhood around \(m\) (i.e., not merely at the point \(m\)).} of a tensor field \(T \in \mathcal{T}_\ell^k\) in the direction \(X\), \(\mathcal{L}_X T \in \mathcal{T}_\ell^k\), is given in terms of the one parameter group \(\phi_t\) induced by \(X\) as
+\begin{equation}     
+    \mathcal{L}_X T = \lim_{t \to 0} \frac{T - (\phi_t)_* T}{t} 
+\end{equation}
+Alternatively, the Lie derivative is the unique operator \(\Gamma(M) \times \mathcal{T}_\ell^k \to \mathcal{T}_\ell^k\) which obeys the Leibniz rule on tensor products and contractions, acts on functions (\(k, \ell = 0\)) by merely applying the vector field argument, and commuting with the exterior derivative (to be defined shortly). In the special case that our argument is a vector field \(Y\), we have the simpler form \(\mathcal{L}_X Y = [X,Y]\).
+
 \hypertarget{tensor-fields}{%
 \subsection{Tensor Fields}\label{tensor-fields}}
 
+Note that \(\Gamma(T_k^\ell M)\) is identifiable with the \(C^\infty(M)\)-linear maps \(\Gamma(T_\ell^k M) \to C^\infty(M)\), as the \((k,\ell)\) tensors in a section can act pointwise on the \((\ell,k)\) tensors in another section, thereby smoothly assigning real numbers to points on \(M\), which constitutes an element of \(C^\infty(M)\). This idea suggests an alternative---and preferable---definition. In particular,
+\begin{align*} 
+    \mathcal{T}_\ell^k(M) &= \left(\bigotimes_{i=1}^k \mathcal{T}_1^0(M)\right) \otimes     \left(\bigotimes_{j=1}^\ell \mathcal{T}_1^0(M)\right) \\ 
+    &= \left(\bigotimes_{i=1}^k \Gamma(T_1^0 M)\right) \otimes \left(\bigotimes_{j=1}^\ell \Gamma(T_0^1 M)\right) 
+\end{align*}
+except we construct these tensor products not from via free \(\mathbb{R}\)-vector spaces but from free \(C^\infty(M)\)- extcolor\{magenta\}\{modules\}.
+
 \hypertarget{differential-forms}{%
 \subsection{Differential Forms}\label{differential-forms}}
+
+\begin{verbatim}
+extcolor{blue}{Differential $k$-forms} are sections of $\mathcal{T}_k^0(M)$: these are $k$-forms at each $m \in M$; the space of these is denoted $\Omega^k(M)$. On such forms there is a natural differentiation operation, the    extcolor{blue}{exterior derivative} $d : \Omega^k(M) \to \Omega^{k+1}(M)$. Locally, the exterior derivative acts as 
+\end{verbatim}
+
+\begin{equation} 
+    d(f \, dx^I) = \sum_{i=1}^n \frac{\partial f}{\partial x^i} \, dx^i \wedge dx^I 
+\end{equation}
+for \(dx^I\) some \(k\)-fold wedge product of the canonical basis elements \(dx^i\) and extends linearly. Axiomatically, the exterior derivative is the unique degree \(1\) extcolor\{magenta\}\{antiderivation\} \(d : \Omega^k(M) \to \Omega^{k+1}(M)\) which agrees with the differential on \(\Omega^0(M) = C^\infty(M)\) and squares to \(0\). More generally, we also have the following formula.
+\begin{equation} 
+    \begin{aligned} 
+        d\beta(X_0, \dots, X_k)  
+        &= \sum_{i=0}^k (-1)^i v_i(\beta(X_0, \dots, \hat{X_i}, \dots, X_k)) \\ 
+        &\qquad + \sum_{i=0}^{k-1} \sum_{j = i+1}^k (-1)^{i+j} \beta([X_i, X_j], v_0, \dots, \hat{X_i}, \dots, \hat{X_j}, \dots, X_k) 
+    \end{aligned} 
+\end{equation}
+Because \(d^2 = 0\), we have a situation analogous to that of (co)homology: in particular, elements of the kernel of \(d\) are extcolor\{blue\}\{close d forms\}, elements in the image are extcolor\{blue\}\{exact forms\}, and the extcolor\{blue\}\{\(k\)th de Rham cohomology group\} \(H^k_{\text{dR}}(M)\) is the quotient group of closed forms modulo exact forms. The wedge product endows these groups with ring structure, and the map \(H^k_{\text{dR}}(M) \times H^k(M) \to \mathbb{R}\) given by \([\omega], [c] \mapsto \int_c \omega\) establishes an isomorphism between de Rham and singular cohomology (de Rham's theorem), which depends essentially on the identity \(\int_C d\omega = \int_{\partial C} \omega\) (Stokes' theorem).
+
+TODO: integration on manifolds
 
 \hypertarget{lie-theory}{%
 \chapter{Lie Theory}\label{lie-theory}}
@@ -198,7 +246,7 @@ TODO: adjoint representation and Maurer-Cartan structure formula
 
 To each \(A \in \mathfrak{g}\) we can naturally associate a extcolor\{blue\}\{fundamental vector field\} \(A^*\) on \(P\) given by \((A^\#)(p) = (\sigma_p)_*(A)\), where \(\sigma_p : G \to P\) is the map \(g \mapsto pg\). Equivalently, \((A^\#)(p)\) is the tangent vector to the curve \((\sigma_p \circ \exp)(At)\) at \(t = 0\). Define \(V_p = T_p \, \pi^{-1}(p) = \ker(\pi_*) \cap T_p P\), the extcolor\{blue\}\{vertical subspace\} of \(T_p P\); \(A \mapsto (A^*)_p\) is an isomorphism \(\mathfrak{g} \mapsto V_p\). Moreover, \(A \mapsto A^\#\) is equivariant with respect to the adjoint and principal actions of \(G\) and preserves the respective Lie brackets. The extcolor\{blue\}\{vertical bundle\} \(VP = TP\) is the vector subbundle of these vertical subspaces.
 
-To a principal bundle we can associate an extcolor\{blue\}\{Atiyah sequence\}
+To a principal bundle we can associate its extcolor\{blue\}\{Atiyah sequence\}.
 
 where \(\iota\) is the natural inclusion and \(\overline{\pi}\) is the map \(X \mapsto (\pi_{TP}(X), (\pi_P)_*(X))\). A extcolor\{blue\}\{connection\} on \(P\) is a choice of equivariant split for this sequence (direct sum, left, and right splits are equivalent). Explicitly, the \(G\) actions are the diagonal action (identifying \(VP \cong P \times \mathfrak{g}\)), the canonical action, and the induced action from \(P \times TM\) leaving \(TM\) invariant, respectively.
 
@@ -207,7 +255,62 @@ In particular, a direct sum split \(\varphi\) is frequently identified with the 
 \hypertarget{complex-manifolds}{%
 \chapter{Complex Manifolds}\label{complex-manifolds}}
 
-We have finished a nice book.
+\hypertarget{construction-2}{%
+\section{Construction}\label{construction-2}}
+
+A extcolor\{blue\}\{complex manifold\} is a manifold but with two substitutions in the definition: \(\mathbb{C}^n\) for \(\mathbb{R}^n\) and holomorphic for smooth. extcolor\{blue\}\{Holomorphic maps\} between complex manifolds are defined analogously to smooth maps, and invertible maps which are both ways holomorphic are extcolor\{blue\}\{biholomorphims\}.
+
+Let \(M\) be a complex manifold of dimension \(n\): evidently this is a manifold of dimension \(2n\), so in particular we can define the \(2n\) dimensional vector spaces \(T_p M\). We let \(C^\infty (M)^{\mathbb{C}}\) denote the extcolor\{magenta\}\{complexification\} of \(C^\infty(M)\): the complexification \(T_p M^{\mathbb{C}}\) is a space of complex dimension \(2n\) acts on \(C^\infty(M)^{\mathbb{C}}\) through linear extension. \(T_p^* M\) complexifies in the same way, thereby enabling the complexification of all tensor bundles and their sections (always denoted with superscript \(\mathbb{C}\)).
+
+If \((U,\phi)\) is a chart on \(M\) with \(\phi\) acting by \(m \mapsto (x^1(m) + iy^1(m), \dots, x^n(m) + iy^n(m))\), \(T_m M\) and \(T_m^* M\) are spanned by the dual bases \(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial y^j}\) and \(dx^i, dy^j\); we define new dual bases
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial}{\partial z^i} &= \frac{\partial}{\partial x^i} - i\frac{\partial}{\partial y^i}, \quad 
+        \frac{\partial}{\partial \overline{z}^i} = \frac{\partial}{\partial x^i} + i\frac{\partial}{\partial y^i} \\
+        dz^i &= dx^i + idy^i, \quad d\overline{z}^i = dx^i - idy^i
+    \end{aligned}
+\end{equation}
+Multiplying a vector in \(T_p M^{\mathbb{C}}\) by \(i\) amounts to the substitutions \(\tfrac{\partial}{\partial x^i} \to \tfrac{\partial}{\partial y^i}\) and \(\tfrac{\partial}{\partial y^i} \to -\tfrac{\partial}{\partial x^i}\): this map defines a basis-independent \((1,1)\) tensor \(J_m\) on \(T_m M\) which squares to \(-1\) and globally forms a section \(J \in \mathcal{T}^1_1(M)\) known as the extcolor\{blue\}\{almost complex structure\} on \(M\). This extends linearly to \(J \in \mathcal{T}^1_1(M)^{\mathbb{C}}\): in particular, \(J\) is diagonal in the \(\frac{\partial}{\partial z^i}, \frac{\partial}{\partial \overline{z}^i}\) basis with eigenvalue \(i\) for the former and \(-i\) for the latter.
+I
+n particular, we have projection operators \(\mathcal{P}^\pm\) onto the \(\pm i\) eigenspaces of \(J\) in \(\Gamma(M)^{\mathbb{C}}\): elements of the image of \(\mathcal{P}^+\) and \(\mathcal{P}^-\) are extcolor\{blue\}\{holomorphic vectors\} and extcolor\{blue\}\{antiholomorphic vectors\}, respectively, with analogous terminology for vector fields.
+
+Similarly, elements of \(\Omega^k(M)^{\mathbb{C}}\) which decompose into tensor products of \(r\) terms in \(\{dz^i\}\) and \(s\) terms in \(\{d\overline{z}^i\}\) are said to have extcolor\{blue\}\{bidegree\} \((r,s\), the set of which is denoted \(\Omega^{r,s}(M)\). It follows that \(\Omega^k(M)^{\mathbb{C}} = \oplus_{r+s=k} \Omega^{r,s}(M)\). Moreover, linearly extending the exterior derivative gives a map \(\Omega^{r,s}(M) \to \Omega^{r+1,s}(M) + \Omega^{r,s+1}(M)\), enabling the definition of the extcolor\{blue\}\{Dolbeault operators\} \(\partial, \overline{\partial}\) which are the \(\Omega^{r+1,s}(M)\) and \(\Omega^{r,s+1}(M)\) parts of \(d\), respectively (i.e., \(d = \partial + \overline{\partial}\). It follows that \(\partial^2 = \partial\overline{\partial} + \overline{\partial\partial} = \overline{\partial}^2 = 0\). Elements of the kernel of \(\overline{\partial}\) in \(\Omega^{k,0}(M)\) are called extcolor\{blue\}\{holomorphic \(k\)-forms\}; a \(k\)-form is holomorphic if and only if the \(C^\infty(M)^{\mathbb{C}}\) coefficients of the decomposition into the \(dz^i\) basis are each holomorphic functions.
+
+\hypertarget{hermitian-and-kahler-geometry}{%
+\section{Hermitian and Kahler Geometry}\label{hermitian-and-kahler-geometry}}
+
+Let \(M\) also be a Riemannian \(2n\)-dimensional manifold with metric \(g\), which can be extended linearly to act on \(\Gamma(M)^{\mathbb{C}}\). Moreover, let \(M\) be a a extcolor\{blue\}\{Hermitian manifold\} with extcolor\{blue\}\{Hermitian metric\} \(g\), or let \(g\) be invariant under precomposition of both arguments with \(J\). We use normal and overlined greek indices to denote the evaluation of the metric's arguments on \(\frac{\partial}{\partial z^i}\) and \(\frac{\partial}{\partial \overline{z}^i}\) terms, respectively: in the Hermitian case, only mixed terms \(g_{\mu\overline{\nu}}\) are non-zero.
+
+Define the extcolor\{blue\}\{K''ahler form\} \(\Omega \in \Omega^2(M)\) by \((X, Y) \mapsto g(J(X), Y)\); this is also invariant under precomposition by \(J\), and extends linearly to an element of \(\Omega^{1,1}(M)\). In particular, \(\Omega = ig_{\mu\overline{\nu}} dz^\mu \wedge d\overline{z}^\nu\).
+
+A extcolor\{blue\}\{Hermitian connection\} is a connection \(\nabla\) on \(TM^{\mathbb{C}}\) such that, in the \(z,\overline{z}\) basis, we have m\(\nabla_\mu g = 0 = \nabla_{\overline{\mu}} g\) (metric compatibility) and the connection coefficients vanish when regular and overlined indices are mixed. Curvature and torsion tensors are formed as usual. Moreover, we have the extcolor\{blue\}\{Ricci form\} \(\mathcal{R} = i \partial \overline{\partial} \log(\det(g_{\mu\overline{\nu}}))\). The hermitian covariant derivative of the almost complex structure vanishes.
+
+A extcolor\{blue\}\{K''ahler manifold\} is a Hermitian manifold with closed K"ahler form, in which case the metric is called a extcolor\{blue\}\{K''ahler metric\}. This only happens if the Levi-Civita covariant derivative of the almost complex structure vanishes: or, in other words, the Hermitian and Levi-Civita connections are compatible. Indeed, the Ricci form of a K"ahler metric coincides with the Ricci curvature of the Levi-Civita connection (additionally, the Hermitian connection is torsion-free).
+
+\hypertarget{dolbeault-cohomology-and-hodge-theory}{%
+\section{Dolbeault Cohomology and Hodge Theory}\label{dolbeault-cohomology-and-hodge-theory}}
+
+Replacing \(d\) in de Rham cohomology with \(\overline{\partial}\) yields extcolor\{blue\}\{Dolbeault cohomology\} with extcolor\{blue\}\{\((r,s)\)-cocycles\}, extcolor\{blue\}\{\((r,s)\)-coboundaries\}, and extcolor\{blue\}\{\((r,s)\)th cohomology groups\} being defined as expected. Recalling the Hodge star \(\ast\), we have an inner product on \(\Omega^{r,s}(M)\) by
+\begin{equation} 
+    (\alpha, \beta) = \int_M \alpha \wedge \overline{\ast} \beta
+\end{equation}
+where \(\overline{\ast} \beta\) is defined to be \(\overline{\ast\beta} = \ast \overline{\beta}\).
+
+From here we define \(\partial^\dagger, \overline{\partial}^{\dagger}\) to be the extcolor\{magenta\}\{adjoints\} of the Dolbeault operators \(\partial, \overline{\partial}\), respectively.
+They decrement the degree of the forms they act on, square to zero, and obey the following formulas.
+\begin{equation}
+    \partial^\dagger = - \ast \overline{\partial} \ast, \;\; \overline{\partial}^\dagger = - \ast \partial \ast 
+\end{equation}
+We have Laplacians as follows.
+\begin{equation} 
+    \Delta = \{d, d^\dagger\}, \Delta_\partial = \{\partial, \partial^\dagger\}, \Delta_{\overline{\partial}} = \{\overline{\partial}, \overline{\partial}^\dagger\},  
+\end{equation}
+where \(\{ \, \}\) here is the anticommutator. A form is extcolor\{blue\}\{harmonic\} with respect to \(d, \partial, \overline{\partial}\) if it lies in the kernel of \(\Delta, \Delta_\partial, \Delta_{\overline{\partial}}\), respectively. Hodge's theorem shows that
+\begin{equation} 
+    \Omega^{r,s}(M) = \overline{\partial} \Omega^{r,s-1}(M) + \overline{\partial}^\dagger \Omega^{r,s+1}(M) + \text{Harm}_{\overline{\partial}}^{r,s}(M) 
+\end{equation}
+with this sum being orthogonal with respect to the aforementioned inner product and with \(\text{Harm}_{\overline{\partial}}^{r,s}(M)\) the set of \(\overline{\partial}\)-harmonic \((r,s)\) forms on \(M\). Note that Dolbeault cohomology classes contain a unique \(\overline{\partial}\)-harmonic form.
+In the special case that \(M\) is K"ahler, \(\Delta = 2\Delta_\partial = 2\Delta_{\overline{\partial}}\).
 
 \hypertarget{spin-geometry}{%
 \chapter{Spin Geometry}\label{spin-geometry}}
@@ -216,6 +319,8 @@ We have finished a nice book.
 \chapter*{References}\label{references}}
 \addcontentsline{toc}{chapter}{References}
 
+\cleardoublepage
+
 \hypertarget{appendix-appendix}{%
 \appendix}
 
@@ -223,8 +328,79 @@ We have finished a nice book.
 \hypertarget{tensors}{%
 \chapter{Tensors}\label{tensors}}
 
+\hypertarget{construction-3}{%
+\section{Construction}\label{construction-3}}
+
+Let \(V,W\) be \(n\)-dimensional vector spaces over \(\mathbb{R}\) and consider the extcolor\{magenta\}\{free\} vector space \(F(V \times W)\). We define \(R(V \times W)\) as follows.\\
+\begin{align*} 
+    R(V \times W) &= \Big\langle (av,bw) - ab(v,w),  (v + w, v' + w') - (v,v') - (v,w') \\  
+    &\qquad - (w,v') - (w,w') \; \Big| \; a,b \in \mathbb{R}; v,v' \in V; w,w' \in W \Big\rangle \subset F(V \times W) 
+\end{align*}
+We define the extcolor\{blue\}\{tensor product\} of \(V\) and \(W\) by \(V \otimes W = F(V \times W)/R(V \times W)\) and denote elements by \(v \otimes w\) (i.e., \((v,w)\) belongs to the extcolor\{magenta\}\{coset\} \(v \otimes w\)). Let \(T^k_\ell(V) = (\bigotimes_{i=1}^k V) \otimes (\bigotimes_{j=1}^\ell V^*)\), the space of extcolor\{blue\}\{\((k, \ell)\) tensors on \(V\)\}. This space has dimension \(n^{k + \ell}\), and we can identify \(T_k^\ell(V)\) with \(T_\ell^k(V)^*\)'\footnote{To see this, let \(v = v_1 \otimes \dots \otimes v_{k+\ell} \in T_k^\ell(V)\).
+  \begin{equation}
+  v \leftrightarrow (w_1 \otimes \dots \otimes w_{k+\ell} \mapsto v_1(w_1) \cdot \dotsc \cdot v_{k+\ell}(w_{k+\ell}))
+  \end{equation}
+  Linearity extends this to arbitrary elements of \(T_k^\ell(V)\). Here we are exploiting \(V \cong V^{**}\), enabling useful idea that vectors are linear functions on dual vectors and vice versa.}. Moreover, observe that elements of \(T^k_\ell(V)\) can be understood as a linear map \(T^{k-r}_{\ell-s}(V) \to T_r^s(V)\) through partial evaluation: indeed, \(T_k^\ell(V)\) is naturally isomorphic to the extcolor\{blue\}\{hom set\} \(Hom(T^{k-r}_{\ell-s}(V), T^r_s(V))\). This also entails the natural conclusion \(T_0^0(V) = \mathbb{R}\). Equivalently, \(w \in T^{k-r}_{\ell-s}(V)\) is a linear map \(T^k_\ell(V) \to T^r_s(V)\)\footnote{Here we see the functional and argumentative behavior of tensors are indistinguishable, much like we have the symmetry \(x(y) = y(x)\) for \(x \in V, y \in V^*\).}. Finally, we note in passing that because \(V^\ell \times (V^*)^k \subset F((V)^\ell \times (V^*)^k)\), we also have a multilinear action of \(T^k_\ell(V)\) on \(V^\ell \times (V^*)^k\) (indeed, one can define \(T^r_s(V)\) as the set of multilinear maps on this space).
+
+\hypertarget{notation}{%
+\section{Notation}\label{notation}}
+
+Let \(e_a\), \(\sigma^b\) constitute dual bases for \(V, V^*\): then \(v \in T^k_\ell(V)\) can be written in components as follows.
+\begin{equation} 
+    v = \sum_{\mu_1 = 1}^n \dots \sum_{\nu_k = 1}^n v^{\mu_1\dots \mu_k}_{\nu_1\dots \nu_\ell} e_{\mu_1} \otimes \dots \otimes e_{\mu_k} \otimes \sigma^{\nu_1} \otimes \dots \otimes \sigma^{\nu_\ell} \qquad (v^{\mu_1\dots \mu_k}_{\nu_1\dots \nu_\ell} \in \mathbb{R}) 
+\end{equation}
+For brevity we adopt extcolor\{blue\}\{Einstein summation notation\} wherein a doubly-appearing index (once a superscript, once a subscript) is always assumed to be summed over, rending each \(\Sigma\) obsolete; we also suppress the \(\otimes\) symbol. Thus, we rewrite \(v\) as follows\footnote{Our original tensor notation and the Einstein summation notation are related as follows.
+  \begin{align*}
+  v(\sigma^{\mu_1}, \dots, \sigma^{\mu_\ell}, e_{\nu_1}, \dots, e_{\nu_k}) 
+  &= v_{b_1\dots b_\ell}^{a_1\dots a_k}(\sigma^{\mu_1})_{a_1}\dots(\sigma^{\mu_k})_{a_k} (e_{\nu_1})^{b_1} \dots (e_{\nu_k})^{b_\ell}\\
+  &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} e_{\kappa_1}(\sigma^{\mu_1}) \dots e_{\kappa_k}(\sigma^{\mu_k}) \sigma^{\lambda_1}(e_{\nu_1}) \dots \sigma^{\lambda_\ell}(e_{\nu_k})\\
+  &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} \delta_{\kappa_1}^{\mu_1} \dots \delta_{\kappa_k}^{\mu_k}\delta^{\lambda_1}_{\nu_1} \dots \delta^{\lambda_\ell}_{\nu_k}
+  = v_{\nu_1\dots \nu_k}^{\mu_1\dots \mu_k} \in \mathbb{R}
+  \end{align*}}.
+\begin{equation} 
+    v = v_{\nu_1\dots \nu_\ell}^{\mu_1\dots \mu_k} e_{\mu_1} \dots e_{\mu_k} \sigma^{\nu_1} \dots \sigma^{\nu_\ell}
+\end{equation}
+Finally, we adopt Penrose's extcolor\{blue\}\{abstract index notation\} wherein we append indices to \(v\) labelling its arguments (or, by duality, the arguments of other tensors that \(v\) can satisfy). Subscripts denote vector arguments, superscripts denote dual vector arguments, and summation over an abstract index is evaluation. This results in \(v\) being expressed as follows.
+\begin{equation} 
+    v = v_{b_1\dots b_\ell}^{a_1\dots a_k} 
+\end{equation}
+To avoid confusion, henceforth unsummed roman indices are abstract while unsummed greek indices denote particular components (e.g., of a tensor, given a basis).
+
+\hypertarget{change-of-basis}{%
+\section{Change of Basis}\label{change-of-basis}}
+
+Note that \(T_1^1(V)\) coincides with the space of extcolor\{magenta\}\{endomorphisms\} on \(V\), so the extcolor\{magenta\}\{automorphisms\} are a subset. Suppose then that \(\Lambda_a^b \in T_1^1(V)\) is a change of basis: i.e., we let \(e_\mu \mapsto e_\mu^\prime = \Lambda(e_\mu, \cdot) = \Lambda_b^a (e_\mu)^b\). The dual basis \(\sigma^{\prime\nu}\) must satisfy \(\delta_\mu^\nu = (e^\prime_\mu)^a (\sigma^{\prime \nu})_a = \Lambda_b^a (e_\mu)^b (\sigma^{\prime \nu})_a = (e_\mu)^a(\sigma^{\nu})_a\), so we conclude \(\sigma^{\prime\nu} = \Lambda^{-1}(\cdot, \sigma^\nu) = (\Lambda^{-1})_a^b (\sigma^\nu)_b\), where \(\Lambda^{-1}\) is the inverse to \(\Lambda\) (i.e., \((\Lambda^{-1})^a_b \Lambda^b_c = \delta^a_c\)). The coefficients of \(v\) then transform as follows\footnote{We observe the following.
+  \begin{align*}
+  v_{\nu_1\dots \nu_\ell}^{\prime \mu_1\dots \mu_k} &= v_{b_1\dots b_\ell}^{a_1\dots a_k}(\sigma^{\prime\mu_1})_{a_1}\dots(\sigma^{\prime\mu_k})_{a_k} (e^\prime_{\nu_1})^{b_1} \dots (e^\prime_{\nu_\ell})^{b_\ell}\\
+  &= v_{b_1\dots b_\ell}^{a_1\dots a_k} (\Lambda^{-1})_{a_1}^{c_1}(\sigma^{\mu_1})_{c_1}\dots(\Lambda^{-1})_{a_k}^{c_k}(\sigma^{\mu_k})_{c_k} \Lambda_{d_1}^{b_1}(e_{\nu_1})^{d_1} \dots \Lambda_{d_\ell}^{b_\ell}(e_{\nu_\ell})^{d_\ell}\\
+  &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} e_{\kappa_1}((\Lambda^{-1})_{a_1}^{c_1}(\sigma^{\mu_1})_{c_1})\dots e_{\kappa_k}((\Lambda^{-1})_{a_k}^{c_k}(\sigma^{\mu_k})_{c_k}) \\
+  &\qquad\qquad\qquad\qquad\qquad\qquad \times \sigma^{\lambda_1}(\Lambda_{d_1}^{b_1}(e_{\nu_1})^{d_1}) \dots \sigma^{\lambda_\ell}(\Lambda_{d_\ell}^{b_\ell}(e_{\nu_\ell})^{d_\ell})\\
+  &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} (e_{\kappa_1})^{a_1}(\Lambda^{-1})_{a_1}^{c_1}(\sigma^{\mu_1})_{c_1}\dots (e_{\kappa_k})^{a_k}(\Lambda^{-1})_{a_k}^{c_k}(\sigma^{\mu_k})_{c_k} \\
+  &\qquad\qquad\qquad\qquad\qquad\qquad \times (\sigma^{\lambda_1})_{b_1}\Lambda_{d_1}^{b_1}(e_{\nu_1})^{d_1} \dots (\sigma^{\lambda_\ell})_{b_\ell}\Lambda_{d_\ell}^{b_\ell}(e_{\nu_\ell})^{d_\ell}\\
+  &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} (\Lambda^{-1})(\sigma^{\mu_1}, e_{\kappa_1}) \dots (\Lambda^{-1})(\sigma^{\mu_k}, e_{\kappa_k})\Lambda(\sigma^{\lambda_1}, e_{\nu_1}) \dots \Lambda(\sigma^{\lambda_\ell}, e_{\nu_\ell})\\
+  &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} (\Lambda^{-1})^{\mu_1}_{\kappa_1} \dots (\Lambda^{-1})^{\mu_k}_{\kappa_k}\Lambda^{\lambda_1}_{\nu_1} \dots \Lambda^{\lambda_\ell}_{\nu_\ell}\\
+  &= (\Lambda^{-1})^{\mu_1}_{\kappa_1} \dots (\Lambda^{-1})^{\mu_k}_{\kappa_k}v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} \Lambda^{\lambda_1}_{\nu_1} \dots \Lambda^{\lambda_\ell}_{\nu_\ell}
+  \end{align*}}.
+\begin{equation} 
+    v_{\nu_1\dots \nu_\ell}^{\prime \mu_1\dots \mu_k} = (\Lambda^{-1})^{\mu_1}_{\kappa_1} \dots (\Lambda^{-1})^{\mu_k}_{\kappa_k}v_{\lambda_1\dots \lambda_\ell}^{\kappa_1 \dots \kappa_k} \Lambda^{\lambda_1}_{\nu_1} \dots \Lambda^{\lambda_\ell}_{\nu_\ell} 
+\end{equation}
+This exhibits two distinct transformation rules, one for upper indices and one for lower: we say the upper indices transform extcolor\{blue\}\{contravariantly\} and the lower indices transform extcolor\{blue\}\{covariantly\}. A third definition of a tensor is an assignment of a multidimensional array of numbers to each pair of bases of \(V\) and \(V^*\) such that the various assignments are related by the above transformation rule.
+The tensor \(v\) must remain invariant under a change in coordinates, so because \(v = v_{\nu_1\dots \nu_\ell}^{\mu_1\dots \mu_k} e_{\mu_1} \dots e_{\mu_k} \sigma^{\nu_1} \dots \sigma^{\nu_\ell}\) we are assured that \(e_{\mu_1} \dots e_{\mu_k} \sigma^{\nu_1} \dots \sigma^{\nu_\ell}\) transforms inversely to \(v_{\nu_1\dots \nu_\ell}^{\mu_1\dots \mu_k}\), implying the following transformation law.
+\begin{equation}
+    e^\prime_{\mu_1} \dots e^\prime_{\mu_k} \sigma^{\prime\nu_1} \dots \sigma^{\prime\nu_\ell} = \Lambda_{\mu_1}^{\kappa_1} \dots \Lambda_{\mu_k}^{\kappa_k} e_{\kappa_1} \dots e_{\kappa_k} \sigma^{\lambda_1} \dots \sigma^{\lambda_\ell} (\Lambda^{-1})_{\lambda_1}^{\nu_1} \dots (\Lambda^{-1})_{\lambda_\ell}^{\nu_\ell}
+\end{equation}
+This (finally) motivates our choice of subscripts for vector bases and superscripts for dual vector bases: we are seeing that components of vectors and dual vector bases transform covariantly, while components of dual vectors and vector bases transform contravariantly (albeit by \(\Lambda\) and \(\Lambda^{-1}\), respectively, in each case).
+By functional-argumentative duality, any element of \(T_k^\ell(V)\) can yield an element of \(T_{k-1}^{\ell-1}(V)\) by evaluating one vector (dual vector) argument on a dual vector (vector) argument: we refer to this as extcolor\{blue\}\{contraction\} and denote it by repeating an abstract index appropriately (e.g., the trace of a linear transformation is a contraction of its two arguments).
+
+\hypertarget{tensor-algebra}{%
+\section{Tensor Algebra}\label{tensor-algebra}}
+
+We define the extcolor\{blue\}\{tensor algebra\} of \(V\), \(T(V) = \oplus_{k,\ell = 0}^\infty T_k^\ell(V)\), which is a extcolor\{magenta\}\{graded algebra\} with multiplication operation \(\otimes\). From we can also define the algebra ideal \(I(V) = \langle v \otimes v \; | \; v \in V\rangle\) and consider the quotient algebra \(\Lambda(V) = T(V) / I(V)\), denoted the extcolor\{blue\}\{exterior algebra\}. Defining \(I_k(V) = I(V) \cap T_k^0(V)\), we have the decomposition \(\Lambda(V) = \oplus_{k=0}^\infty T_k^0(V)/I_k(V) = \oplus_{k=0}^\infty \Lambda_k(V)\); we refer to elements of \(\Lambda_k(V)\) as extcolor\{blue\}\{\(k\)-forms\} on \(V\), and \(\dim \Lambda_k(V) = \binom{n}{k}\). Multiplication in \(\Lambda(V)\) is denoted by \(\wedge\) and referred to as the extcolor\{blue\}\{wedge product\}. The coset in \(\Lambda(V)\) containing \(v_1 \otimes \dots \otimes v_{m} \in T(V)\) is exactly \(v_1 \wedge \dots \wedge v_{k+\ell}\). We can identify \(\Lambda_k(V)\) with the set of extcolor\{magenta\}\{alternating\} \((k,0)\) tensors; in abstract index notation, these satisfy \(v_{a_1\dots a_i \dots a_j \dots a_k} = -v_{a_1\dots a_j \dots a_i \dots a_k}\). The tensor product coincides with the wedge product for such elements.
+
 \hypertarget{algebraic-topology}{%
 \chapter{Algebraic Topology}\label{algebraic-topology}}
+
+TODO: singular, simplical homology
 
   \bibliography{book.bib,packages.bib}
 

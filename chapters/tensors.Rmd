@@ -1,5 +1,80 @@
 \cleardoublepage 
 
-# (APPENDIX) Appendix
+# (APPENDIX) Appendix {-}
 
 # Tensors 
+
+## Construction
+
+Let $V,W$ be $n$-dimensional vector spaces over $\mathbb{R}$ and consider the `r preq("free")` vector space $F(V \times W)$. We define $R(V \times W)$ as follows.  
+\begin{align*} 
+    R(V \times W) &= \Big\langle (av,bw) - ab(v,w),  (v + w, v' + w') - (v,v') - (v,w') \\  
+    &\qquad - (w,v') - (w,w') \; \Big| \; a,b \in \mathbb{R}; v,v' \in V; w,w' \in W \Big\rangle \subset F(V \times W) 
+\end{align*} 
+We define the `r term("tensor product")` of $V$ and $W$ by $V \otimes W = F(V \times W)/R(V \times W)$ and denote elements by $v \otimes w$ (i.e., $(v,w)$ belongs to the `r preq("coset")` $v \otimes w$). Let $T^k_\ell(V) = (\bigotimes_{i=1}^k V) \otimes (\bigotimes_{j=1}^\ell V^*)$, the space of `r term("$(k, \\ell)$ tensors on $V$")`. This space has dimension $n^{k + \ell}$, and we can identify $T_k^\ell(V)$ with $T_\ell^k(V)^*$'[^com:tensor_space_duality]. Moreover, observe that elements of $T^k_\ell(V)$ can be understood as a linear map $T^{k-r}_{\ell-s}(V) \to T_r^s(V)$ through partial evaluation: indeed, $T_k^\ell(V)$ is naturally isomorphic to the `r term("hom set")` $Hom(T^{k-r}_{\ell-s}(V), T^r_s(V))$. This also entails the natural conclusion $T_0^0(V) = \mathbb{R}$. Equivalently, $w \in T^{k-r}_{\ell-s}(V)$ is a linear map $T^k_\ell(V) \to T^r_s(V)$[^com:tensor_duality]. Finally, we note in passing that because $V^\ell \times (V^*)^k \subset F((V)^\ell \times (V^*)^k)$, we also have a multilinear action of $T^k_\ell(V)$ on $V^\ell \times (V^*)^k$ (indeed, one can define $T^r_s(V)$ as the set of multilinear maps on this space).
+
+## Notation
+
+Let $e_a$, $\sigma^b$ constitute dual bases for $V, V^*$: then $v \in T^k_\ell(V)$ can be written in components as follows. 
+\begin{equation} 
+    v = \sum_{\mu_1 = 1}^n \dots \sum_{\nu_k = 1}^n v^{\mu_1\dots \mu_k}_{\nu_1\dots \nu_\ell} e_{\mu_1} \otimes \dots \otimes e_{\mu_k} \otimes \sigma^{\nu_1} \otimes \dots \otimes \sigma^{\nu_\ell} \qquad (v^{\mu_1\dots \mu_k}_{\nu_1\dots \nu_\ell} \in \mathbb{R}) 
+\end{equation} 
+For brevity we adopt `r term("Einstein summation notation")` wherein a doubly-appearing index (once a superscript, once a subscript) is always assumed to be summed over, rending each $\Sigma$ obsolete; we also suppress the $\otimes$ symbol. Thus, we rewrite $v$ as follows[^com:einstein_sum_relation]. 
+\begin{equation} 
+    v = v_{\nu_1\dots \nu_\ell}^{\mu_1\dots \mu_k} e_{\mu_1} \dots e_{\mu_k} \sigma^{\nu_1} \dots \sigma^{\nu_\ell}
+\end{equation}
+Finally, we adopt Penrose's `r term("abstract index notation")` wherein we append indices to $v$ labelling its arguments (or, by duality, the arguments of other tensors that $v$ can satisfy). Subscripts denote vector arguments, superscripts denote dual vector arguments, and summation over an abstract index is evaluation. This results in $v$ being expressed as follows. 
+\begin{equation} 
+    v = v_{b_1\dots b_\ell}^{a_1\dots a_k} 
+\end{equation} 
+To avoid confusion, henceforth unsummed roman indices are abstract while unsummed greek indices denote particular components (e.g., of a tensor, given a basis).
+
+## Change of Basis
+
+Note that $T_1^1(V)$ coincides with the space of `r preq("endomorphisms")` on $V$, so the `r preq("automorphisms")` are a subset. Suppose then that $\Lambda_a^b \in T_1^1(V)$ is a change of basis: i.e., we let $e_\mu \mapsto e_\mu^\prime = \Lambda(e_\mu, \cdot) = \Lambda_b^a (e_\mu)^b$. The dual basis $\sigma^{\prime\nu}$ must satisfy $\delta_\mu^\nu = (e^\prime_\mu)^a (\sigma^{\prime \nu})_a = \Lambda_b^a (e_\mu)^b (\sigma^{\prime \nu})_a = (e_\mu)^a(\sigma^{\nu})_a$, so we conclude $\sigma^{\prime\nu} = \Lambda^{-1}(\cdot, \sigma^\nu) = (\Lambda^{-1})_a^b (\sigma^\nu)_b$, where $\Lambda^{-1}$ is the inverse to $\Lambda$ (i.e., $(\Lambda^{-1})^a_b \Lambda^b_c = \delta^a_c$). The coefficients of $v$ then transform as follows[^com:tensor_change_of_basis]. 
+\begin{equation} 
+    v_{\nu_1\dots \nu_\ell}^{\prime \mu_1\dots \mu_k} = (\Lambda^{-1})^{\mu_1}_{\kappa_1} \dots (\Lambda^{-1})^{\mu_k}_{\kappa_k}v_{\lambda_1\dots \lambda_\ell}^{\kappa_1 \dots \kappa_k} \Lambda^{\lambda_1}_{\nu_1} \dots \Lambda^{\lambda_\ell}_{\nu_\ell} 
+\end{equation} 
+This exhibits two distinct transformation rules, one for upper indices and one for lower: we say the upper indices transform `r term("contravariantly")` and the lower indices transform `r term("covariantly")`. A third definition of a tensor is an assignment of a multidimensional array of numbers to each pair of bases of $V$ and $V^*$ such that the various assignments are related by the above transformation rule. 
+The tensor $v$ must remain invariant under a change in coordinates, so because $v = v_{\nu_1\dots \nu_\ell}^{\mu_1\dots \mu_k} e_{\mu_1} \dots e_{\mu_k} \sigma^{\nu_1} \dots \sigma^{\nu_\ell}$ we are assured that $e_{\mu_1} \dots e_{\mu_k} \sigma^{\nu_1} \dots \sigma^{\nu_\ell}$ transforms inversely to $v_{\nu_1\dots \nu_\ell}^{\mu_1\dots \mu_k}$, implying the following transformation law.
+\begin{equation}
+    e^\prime_{\mu_1} \dots e^\prime_{\mu_k} \sigma^{\prime\nu_1} \dots \sigma^{\prime\nu_\ell} = \Lambda_{\mu_1}^{\kappa_1} \dots \Lambda_{\mu_k}^{\kappa_k} e_{\kappa_1} \dots e_{\kappa_k} \sigma^{\lambda_1} \dots \sigma^{\lambda_\ell} (\Lambda^{-1})_{\lambda_1}^{\nu_1} \dots (\Lambda^{-1})_{\lambda_\ell}^{\nu_\ell}
+\end{equation}
+This (finally) motivates our choice of subscripts for vector bases and superscripts for dual vector bases: we are seeing that components of vectors and dual vector bases transform covariantly, while components of dual vectors and vector bases transform contravariantly (albeit by $\Lambda$ and $\Lambda^{-1}$, respectively, in each case).
+By functional-argumentative duality, any element of $T_k^\ell(V)$ can yield an element of $T_{k-1}^{\ell-1}(V)$ by evaluating one vector (dual vector) argument on a dual vector (vector) argument: we refer to this as `r term("contraction")` and denote it by repeating an abstract index appropriately (e.g., the trace of a linear transformation is a contraction of its two arguments).
+
+## Tensor Algebra
+
+We define the `r term("tensor algebra")` of $V$, $T(V) = \oplus_{k,\ell = 0}^\infty T_k^\ell(V)$, which is a `r preq("graded algebra")` with multiplication operation $\otimes$. From we can also define the algebra ideal $I(V) = \langle v \otimes v \; | \; v \in V\rangle$ and consider the quotient algebra $\Lambda(V) = T(V) / I(V)$, denoted the `r term("exterior algebra")`. Defining $I_k(V) = I(V) \cap T_k^0(V)$, we have the decomposition $\Lambda(V) = \oplus_{k=0}^\infty T_k^0(V)/I_k(V) = \oplus_{k=0}^\infty \Lambda_k(V)$; we refer to elements of $\Lambda_k(V)$ as `r term("$k$-forms")` on $V$, and $\dim \Lambda_k(V) = \binom{n}{k}$. Multiplication in $\Lambda(V)$ is denoted by $\wedge$ and referred to as the `r term("wedge product")`. The coset in $\Lambda(V)$ containing $v_1 \otimes \dots \otimes v_{m} \in T(V)$ is exactly $v_1 \wedge \dots \wedge v_{k+\ell}$. We can identify $\Lambda_k(V)$ with the set of `r preq("alternating")` $(k,0)$ tensors; in abstract index notation, these satisfy $v_{a_1\dots a_i \dots a_j \dots a_k} = -v_{a_1\dots a_j \dots a_i \dots a_k}$. The tensor product coincides with the wedge product for such elements. 
+
+[^com:tensor_space_duality]: To see this, let $v = v_1 \otimes \dots \otimes v_{k+\ell} \in T_k^\ell(V)$.
+\begin{equation}
+    v \leftrightarrow (w_1 \otimes \dots \otimes w_{k+\ell} \mapsto v_1(w_1) \cdot \dotsc \cdot v_{k+\ell}(w_{k+\ell}))
+\end{equation}
+Linearity extends this to arbitrary elements of $T_k^\ell(V)$. Here we are exploiting $V \cong
+V^{**}$, enabling useful idea that vectors are linear functions on dual vectors and vice versa.
+
+[^com:tensor_duality]: Here we see the functional and argumentative behavior of tensors are indistinguishable, much like we have the symmetry $x(y) = y(x)$ for $x \in V, y \in V^*$.
+
+[^com:einstein_sum_relation]:     
+Our original tensor notation and the Einstein summation notation are related as follows.
+\begin{align*}
+    v(\sigma^{\mu_1}, \dots, \sigma^{\mu_\ell}, e_{\nu_1}, \dots, e_{\nu_k}) 
+    &= v_{b_1\dots b_\ell}^{a_1\dots a_k}(\sigma^{\mu_1})_{a_1}\dots(\sigma^{\mu_k})_{a_k} (e_{\nu_1})^{b_1} \dots (e_{\nu_k})^{b_\ell}\\
+    &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} e_{\kappa_1}(\sigma^{\mu_1}) \dots e_{\kappa_k}(\sigma^{\mu_k}) \sigma^{\lambda_1}(e_{\nu_1}) \dots \sigma^{\lambda_\ell}(e_{\nu_k})\\
+    &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} \delta_{\kappa_1}^{\mu_1} \dots \delta_{\kappa_k}^{\mu_k}\delta^{\lambda_1}_{\nu_1} \dots \delta^{\lambda_\ell}_{\nu_k}
+    = v_{\nu_1\dots \nu_k}^{\mu_1\dots \mu_k} \in \mathbb{R}
+\end{align*}
+
+[^com:tensor_change_of_basis]: We observe the following.
+\begin{align*}
+    v_{\nu_1\dots \nu_\ell}^{\prime \mu_1\dots \mu_k} &= v_{b_1\dots b_\ell}^{a_1\dots a_k}(\sigma^{\prime\mu_1})_{a_1}\dots(\sigma^{\prime\mu_k})_{a_k} (e^\prime_{\nu_1})^{b_1} \dots (e^\prime_{\nu_\ell})^{b_\ell}\\
+    &= v_{b_1\dots b_\ell}^{a_1\dots a_k} (\Lambda^{-1})_{a_1}^{c_1}(\sigma^{\mu_1})_{c_1}\dots(\Lambda^{-1})_{a_k}^{c_k}(\sigma^{\mu_k})_{c_k} \Lambda_{d_1}^{b_1}(e_{\nu_1})^{d_1} \dots \Lambda_{d_\ell}^{b_\ell}(e_{\nu_\ell})^{d_\ell}\\
+    &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} e_{\kappa_1}((\Lambda^{-1})_{a_1}^{c_1}(\sigma^{\mu_1})_{c_1})\dots e_{\kappa_k}((\Lambda^{-1})_{a_k}^{c_k}(\sigma^{\mu_k})_{c_k}) \\
+    &\qquad\qquad\qquad\qquad\qquad\qquad \times \sigma^{\lambda_1}(\Lambda_{d_1}^{b_1}(e_{\nu_1})^{d_1}) \dots \sigma^{\lambda_\ell}(\Lambda_{d_\ell}^{b_\ell}(e_{\nu_\ell})^{d_\ell})\\
+    &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} (e_{\kappa_1})^{a_1}(\Lambda^{-1})_{a_1}^{c_1}(\sigma^{\mu_1})_{c_1}\dots (e_{\kappa_k})^{a_k}(\Lambda^{-1})_{a_k}^{c_k}(\sigma^{\mu_k})_{c_k} \\
+    &\qquad\qquad\qquad\qquad\qquad\qquad \times (\sigma^{\lambda_1})_{b_1}\Lambda_{d_1}^{b_1}(e_{\nu_1})^{d_1} \dots (\sigma^{\lambda_\ell})_{b_\ell}\Lambda_{d_\ell}^{b_\ell}(e_{\nu_\ell})^{d_\ell}\\
+    &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} (\Lambda^{-1})(\sigma^{\mu_1}, e_{\kappa_1}) \dots (\Lambda^{-1})(\sigma^{\mu_k}, e_{\kappa_k})\Lambda(\sigma^{\lambda_1}, e_{\nu_1}) \dots \Lambda(\sigma^{\lambda_\ell}, e_{\nu_\ell})\\
+    &= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} (\Lambda^{-1})^{\mu_1}_{\kappa_1} \dots (\Lambda^{-1})^{\mu_k}_{\kappa_k}\Lambda^{\lambda_1}_{\nu_1} \dots \Lambda^{\lambda_\ell}_{\nu_\ell}\\
+    &= (\Lambda^{-1})^{\mu_1}_{\kappa_1} \dots (\Lambda^{-1})^{\mu_k}_{\kappa_k}v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} \Lambda^{\lambda_1}_{\nu_1} \dots \Lambda^{\lambda_\ell}_{\nu_\ell}
+\end{align*}

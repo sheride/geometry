@@ -1,3 +1,55 @@
 # Complex Manifolds
 
-We have finished a nice book.
+## Construction
+
+A `r term("complex manifold")` is a manifold but with two substitutions in the definition: $\mathbb{C}^n$ for $\mathbb{R}^n$ and holomorphic for smooth. `r term("Holomorphic maps")` between complex manifolds are defined analogously to smooth maps, and invertible maps which are both ways holomorphic are `r term("biholomorphims")`.  
+
+Let $M$ be a complex manifold of dimension $n$: evidently this is a manifold of dimension $2n$, so in particular we can define the $2n$ dimensional vector spaces $T_p M$. We let $C^\infty (M)^{\mathbb{C}}$ denote the `r preq("complexification")` of $C^\infty(M)$: the complexification $T_p M^{\mathbb{C}}$ is a space of complex dimension $2n$ acts on $C^\infty(M)^{\mathbb{C}}$ through linear extension. $T_p^* M$ complexifies in the same way, thereby enabling the complexification of all tensor bundles and their sections (always denoted with superscript $\mathbb{C}$).
+
+If $(U,\phi)$ is a chart on $M$ with $\phi$ acting by $m \mapsto (x^1(m) + iy^1(m), \dots, x^n(m) + iy^n(m))$, $T_m M$ and $T_m^* M$ are spanned by the dual bases $\frac{\partial}{\partial x^i}, \frac{\partial}{\partial y^j}$ and $dx^i, dy^j$; we define new dual bases
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial}{\partial z^i} &= \frac{\partial}{\partial x^i} - i\frac{\partial}{\partial y^i}, \quad 
+        \frac{\partial}{\partial \overline{z}^i} = \frac{\partial}{\partial x^i} + i\frac{\partial}{\partial y^i} \\
+        dz^i &= dx^i + idy^i, \quad d\overline{z}^i = dx^i - idy^i
+    \end{aligned}
+\end{equation}
+Multiplying a vector in $T_p M^{\mathbb{C}}$ by $i$ amounts to the substitutions $\tfrac{\partial}{\partial x^i} \to \tfrac{\partial}{\partial y^i}$ and $\tfrac{\partial}{\partial y^i} \to -\tfrac{\partial}{\partial x^i}$: this map defines a basis-independent $(1,1)$ tensor $J_m$ on $T_m M$ which squares to $-1$ and globally forms a section $J \in \mathcal{T}^1_1(M)$ known as the `r term("almost complex structure")` on $M$. This extends linearly to $J \in \mathcal{T}^1_1(M)^{\mathbb{C}}$: in particular, $J$ is diagonal in the $\frac{\partial}{\partial z^i}, \frac{\partial}{\partial \overline{z}^i}$ basis with eigenvalue $i$ for the former and $-i$ for the latter. 
+I
+n particular, we have projection operators $\mathcal{P}^\pm$ onto the $\pm i$ eigenspaces of $J$ in $\Gamma(M)^{\mathbb{C}}$: elements of the image of $\mathcal{P}^+$ and $\mathcal{P}^-$ are `r term("holomorphic vectors")` and `r term("antiholomorphic vectors")`, respectively, with analogous terminology for vector fields. 
+
+Similarly, elements of $\Omega^k(M)^{\mathbb{C}}$ which decompose into tensor products of $r$ terms in $\{dz^i\}$ and $s$ terms in $\{d\overline{z}^i\}$ are said to have `r term("bidegree")` $(r,s$, the set of which is denoted $\Omega^{r,s}(M)$. It follows that $\Omega^k(M)^{\mathbb{C}} = \oplus_{r+s=k} \Omega^{r,s}(M)$. Moreover, linearly extending the exterior derivative gives a map $\Omega^{r,s}(M) \to \Omega^{r+1,s}(M) + \Omega^{r,s+1}(M)$, enabling the definition of the `r term("Dolbeault operators")` $\partial, \overline{\partial}$ which are the $\Omega^{r+1,s}(M)$ and $\Omega^{r,s+1}(M)$ parts of $d$, respectively (i.e., $d = \partial + \overline{\partial}$. It follows that $\partial^2 = \partial\overline{\partial} + \overline{\partial\partial} = \overline{\partial}^2 = 0$. Elements of the kernel of $\overline{\partial}$ in $\Omega^{k,0}(M)$ are called `r term("holomorphic $k$-forms")`; a $k$-form is holomorphic if and only if the $C^\infty(M)^{\mathbb{C}}$ coefficients of the decomposition into the $dz^i$ basis are each holomorphic functions. 
+
+## Hermitian and Kahler Geometry
+
+Let $M$ also be a Riemannian $2n$-dimensional manifold with metric $g$, which can be extended linearly to act on $\Gamma(M)^{\mathbb{C}}$. Moreover, let $M$ be a a `r term("Hermitian manifold")` with `r term("Hermitian metric")` $g$, or let $g$ be invariant under precomposition of both arguments with $J$. We use normal and overlined greek indices to denote the evaluation of the metric's arguments on $\frac{\partial}{\partial z^i}$ and $\frac{\partial}{\partial \overline{z}^i}$ terms, respectively: in the Hermitian case, only mixed terms $g_{\mu\overline{\nu}}$ are non-zero. 
+
+Define the `r term("K\"ahler form")` $\Omega \in \Omega^2(M)$ by $(X, Y) \mapsto g(J(X), Y)$; this is also invariant under precomposition by $J$, and extends linearly to an element of $\Omega^{1,1}(M)$. In particular, $\Omega = ig_{\mu\overline{\nu}} dz^\mu \wedge d\overline{z}^\nu$.  
+
+A `r term("Hermitian connection")` is a connection $\nabla$ on $TM^{\mathbb{C}}$ such that, in the $z,\overline{z}$ basis, we have m$\nabla_\mu g = 0 = \nabla_{\overline{\mu}} g$ (metric compatibility) and the connection coefficients vanish when regular and overlined indices are mixed. Curvature and torsion tensors are formed as usual. Moreover, we have the `r term("Ricci form")` $\mathcal{R} = i \partial \overline{\partial} \log(\det(g_{\mu\overline{\nu}}))$. The hermitian covariant derivative of the almost complex structure vanishes. 
+
+A `r term("K\"ahler manifold")` is a Hermitian manifold with closed K\"ahler form, in which case the metric is called a `r term("K\"ahler metric")`. This only happens if the Levi-Civita covariant derivative of the almost complex structure vanishes: or, in other words, the Hermitian and Levi-Civita connections are compatible. Indeed, the Ricci form of a K\"ahler metric coincides with the Ricci curvature of the Levi-Civita connection (additionally, the Hermitian connection is torsion-free).
+
+## Dolbeault Cohomology and Hodge Theory
+
+Replacing $d$ in de Rham cohomology with $\overline{\partial}$ yields `r term("Dolbeault cohomology")` with `r term("$(r,s)$-cocycles")`, `r term("$(r,s)$-coboundaries")`, and `r term("$(r,s)$th cohomology groups")` being defined as expected. Recalling the Hodge star $\ast$, we have an inner product on $\Omega^{r,s}(M)$ by
+\begin{equation} 
+    (\alpha, \beta) = \int_M \alpha \wedge \overline{\ast} \beta
+\end{equation}
+where $\overline{\ast} \beta$ is defined to be $\overline{\ast\beta} = \ast \overline{\beta}$. 
+
+From here we define $\partial^\dagger, \overline{\partial}^{\dagger}$ to be the `r preq("adjoints")` of the Dolbeault operators $\partial, \overline{\partial}$, respectively. 
+They decrement the degree of the forms they act on, square to zero, and obey the following formulas. 
+\begin{equation}
+    \partial^\dagger = - \ast \overline{\partial} \ast, \;\; \overline{\partial}^\dagger = - \ast \partial \ast 
+\end{equation} 
+We have Laplacians as follows. 
+\begin{equation} 
+    \Delta = \{d, d^\dagger\}, \Delta_\partial = \{\partial, \partial^\dagger\}, \Delta_{\overline{\partial}} = \{\overline{\partial}, \overline{\partial}^\dagger\},  
+\end{equation} 
+where $\{ \, \}$ here is the anticommutator. A form is `r term("harmonic")` with respect to $d, \partial, \overline{\partial}$ if it lies in the kernel of $\Delta, \Delta_\partial, \Delta_{\overline{\partial}}$, respectively. Hodge's theorem shows that 
+\begin{equation} 
+    \Omega^{r,s}(M) = \overline{\partial} \Omega^{r,s-1}(M) + \overline{\partial}^\dagger \Omega^{r,s+1}(M) + \text{Harm}_{\overline{\partial}}^{r,s}(M) 
+\end{equation} 
+with this sum being orthogonal with respect to the aforementioned inner product and with $\text{Harm}_{\overline{\partial}}^{r,s}(M)$ the set of $\overline{\partial}$-harmonic $(r,s)$ forms on $M$. Note that Dolbeault cohomology classes contain a unique $\overline{\partial}$-harmonic form. 
+In the special case that $M$ is K\"ahler, $\Delta = 2\Delta_\partial = 2\Delta_{\overline{\partial}}$.
