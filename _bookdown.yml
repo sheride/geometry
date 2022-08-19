@@ -7,4 +7,5 @@ rmd_files: ["index.Rmd", "./chapters/manifolds.Rmd",
     "./chapters/fibre-bundles.Rmd", "./chapters/lie-theory.Rmd",
     "./chapters/connections.Rmd", "./chapters/complex-manifolds.Rmd",
     "./chapters/spin-geometry.Rmd", "./chapters/references.Rmd",
-    "./chapters/tensors.Rmd", "./chapters/algebraic-topology.Rmd"]
+    "./chapters/tensors.Rmd", "./chapters/algebraic-topology.Rmd",
+    "./chapters/clifford-algebra.Rmd"]

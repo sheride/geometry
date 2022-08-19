@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Connections | Geometry</title>
+  <title>C Clifford Algebra | Geometry</title>
   <meta name="description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Connections | Geometry" />
+  <meta property="og:title" content="C Clifford Algebra | Geometry" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="github-repo" content="sheride/geometry" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Connections | Geometry" />
+  <meta name="twitter:title" content="C Clifford Algebra | Geometry" />
   
   <meta name="twitter:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lie-theory.html"/>
-<link rel="next" href="complex-manifolds.html"/>
+<link rel="prev" href="algebraic-topology.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -146,55 +146,77 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="connections" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Connections<a href="connections.html#connections" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="construction-2" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Construction<a href="connections.html#construction-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To each <span class="math inline">\(A \in \mathfrak{g}\)</span> we can naturally associate a <span style="color: blue;">fundamental vector field</span> <span class="math inline">\(A^*\)</span> on <span class="math inline">\(P\)</span> given by <span class="math inline">\((A^\#)(p) = (\sigma_p)_*(A)\)</span>, where <span class="math inline">\(\sigma_p : G \to P\)</span> is the map <span class="math inline">\(g \mapsto pg\)</span>.
-Equivalently, <span class="math inline">\((A^\#)(p)\)</span> is the tangent vector to the curve <span class="math inline">\((\sigma_p \circ \exp)(At)\)</span> at <span class="math inline">\(t = 0\)</span>.
-Define <span class="math inline">\(V_p = T_p \, \pi^{-1}(p) = \ker(\pi_*) \cap T_p P\)</span>, the <span style="color: blue;">vertical subspace</span> of <span class="math inline">\(T_p P\)</span>; <span class="math inline">\(A \mapsto (A^*)_p\)</span> is an isomorphism <span class="math inline">\(\mathfrak{g} \mapsto V_p\)</span>.
-Moreover, <span class="math inline">\(A \mapsto A^\#\)</span> is equivariant with respect to the adjoint and principal actions of <span class="math inline">\(G\)</span> and preserves the respective Lie brackets.
-The <span style="color: blue;">vertical bundle</span> <span class="math inline">\(VP = TP\)</span> is the vector subbundle of these vertical subspaces.</p>
-<p>To a principal bundle we can associate its <span style="color: blue;">Atiyah sequence</span>.</p>
-<p align="center">
-<img src="atiyah.png" alt="Atiyah sequence" width="500"/>
-<p/>
-<p>where <span class="math inline">\(\iota\)</span> is the natural inclusion and <span class="math inline">\(\overline{\pi}\)</span> is the map <span class="math inline">\(X \mapsto (\pi_{TP}(X), (\pi_P)_*(X))\)</span>.
-A <span style="color: blue;">connection</span> on <span class="math inline">\(P\)</span> is a choice of equivariant split for this sequence (direct sum, left, and right splits are equivalent).
-Explicitly, the <span class="math inline">\(G\)</span> actions are the diagonal action (identifying <span class="math inline">\(VP \cong P \times \mathfrak{g}\)</span>), the canonical action, and the induced action from <span class="math inline">\(P \times TM\)</span> leaving <span class="math inline">\(TM\)</span> invariant, respectively.</p>
-<p>In particular, a direct sum split <span class="math inline">\(\varphi\)</span> is frequently identified with the vector subbundle <span class="math inline">\(HP = \varphi^{-1}(0 \oplus \pi^* TM)\)</span>, which is complementary to <span class="math inline">\(VP\)</span> and invariant under <span class="math inline">\((R_g)_*\)</span> for <span class="math inline">\(g \in G\)</span> and referred to as an <span style="color: blue;">Ehresmann connection</span>.
-Left splits can be understood as <span class="math inline">\(G\)</span>-equivariant <span class="math inline">\(\mathfrak{g}\)</span>-valued one-forms on <span class="math inline">\(P\)</span>, commonly referred to as <span style="color: blue;">connection one-forms</span>.
-Right splits are interpreted as maps sending a vector in <span class="math inline">\(T_m M\)</span> to one in any <span class="math inline">\(T_p P\)</span> for <span class="math inline">\(p \in \pi^{-1}(m)\)</span> and are known as <span style="color: blue;">horizontal lifts</span>.</p>
-</div>
-<div id="properties" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Properties<a href="connections.html#properties" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>TODO</p>
-</div>
-<div id="exterior-covariant-derivative" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Exterior Covariant Derivative<a href="connections.html#exterior-covariant-derivative" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>TODO</p>
-</div>
-<div id="curvature" class="section level2 hasAnchor" number="4.4">
-<h2><span class="header-section-number">4.4</span> Curvature<a href="connections.html#curvature" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>TODO</p>
-</div>
-<div id="bundle-automorphisms" class="section level2 hasAnchor" number="4.5">
-<h2><span class="header-section-number">4.5</span> Bundle Automorphisms<a href="connections.html#bundle-automorphisms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>TODO</p>
-</div>
-<div id="on-associated-vector-bundles" class="section level2 hasAnchor" number="4.6">
-<h2><span class="header-section-number">4.6</span> On Associated Vector Bundles<a href="connections.html#on-associated-vector-bundles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="clifford-algebra" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">C</span> Clifford Algebra<a href="clifford-algebra.html#clifford-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>TODO</p>
 
 </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="lie-theory.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="complex-manifolds.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="algebraic-topology.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -225,7 +247,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sheride/geometry/edit/main/chapters/connections.Rmd",
+"link": "https://github.com/sheride/geometry/edit/main/chapters/clifford-algebra.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -77,7 +77,7 @@
 
 \title{Geometry}
 \author{Elijah Sheridan}
-\date{2022-08-16}
+\date{2022-08-18}
 
 \begin{document}
 \maketitle
@@ -102,15 +102,13 @@ Let \(M\) be a extcolor\{magenta\}\{second-countable\}\footnote{Arguably, the tr
   However, it is a result that Hausdorff, second countable, extcolor\{magenta\}\{locally compact\} space is paracompact (and we get local compactness follows from locally Euclidean).
   Second countability also contributes to the feasibility of Euclidean embeddings and other nice, preferable behavior.
 
-  References: \href{https://math.stackexchange.com/questions/2131530/why-is-important-for-a-manifold-to-have-countable-basis}{Second countability and manifolds}}, extcolor\{magenta\}\{Hausdorff\}\footnote{Hausdorff topological spaces feature points which are sufficiently disjoint: in particular, calculus depends upon limits, and Hausdorff \(\implies\) unique limits as desired (note, though, that the converse isn't true).}, extcolor\{magenta\}\{locally Euclidean topological space\} of dimension \(n\).
-We define an extcolor\{magenta\}\{equivalence relation\} on the set of homeomorphisms between extcolor\{magenta\}\{open\} subsets of \(M\) and \(\mathbb{R}^n\) given by \(\phi \sim \psi\) when \(\psi \circ \phi^{-1}\) is extcolor\{magenta\}\{smooth\}.
-We then choose a \(\mathcal{U} = \{(U_\alpha, \phi_\alpha)\}\) (i.e., \(\phi_\alpha : U_\alpha \to \mathbb{R}^n\)) such that the \(\{U_\alpha\}\) cover \(M\) and the \(\{\phi_\alpha\}\) are an equivalence class: this is denoted a extcolor\{blue\}\{maximal atlas\}\footnote{Definitions vary here (indeed, it is more conventional to merely require ``maximal'' atlases) but the general motivation is as follows: given a chart \(\phi\) on a manifold \(M\), there are likely uncountably many collections of charts covering \(M\) containing \(\phi\), but there is a \emph{unique} (i.e., canonical) choice of equivalence class of charts containing \(\phi\).
+  References: \href{https://math.stackexchange.com/questions/2131530/why-is-important-for-a-manifold-to-have-countable-basis}{Second countability and manifolds}}, extcolor\{magenta\}\{Hausdorff\}\footnote{Hausdorff topological spaces feature points which are sufficiently disjoint: in particular, calculus depends upon limits, and Hausdorff \(\implies\) unique limits as desired (note, though, that the converse isn't true).}, extcolor\{magenta\}\{locally Euclidean topological space\} of dimension \(n\). We define an extcolor\{magenta\}\{equivalence relation\} on the set of extcolor\{magenta\}\{homeomorphisms\} between extcolor\{magenta\}\{open\} subsets of \(M\) and \(\mathbb{R}^n\) given by \(\phi \sim \psi\) when \(\psi \circ \phi^{-1}\) is extcolor\{magenta\}\{smooth\}. Let \(\{\phi_\alpha\}\) then be an equivalence class such that the domains \(\{U_\alpha\}\) of the maps \(\phi_\alpha\) cover \(M\): the set \(\mathcal{U} = \{(U_\alpha, \phi_\alpha)\}\) (where \(\phi_\alpha : U_\alpha \to \mathbb{R}^n\)) is then a extcolor\{blue\}\{maximal atlas\}\footnote{Definitions vary here (indeed, it is more conventional to merely require ``maximal'' atlases) but the general motivation is as follows: given a chart \(\phi\) on a manifold \(M\), there are likely uncountably many collections of charts covering \(M\) containing \(\phi\), but there is a \emph{unique} (i.e., canonical) choice of equivalence class of charts containing \(\phi\).
 
-  References: \href{https://math.stackexchange.com/questions/66554/is-zorns-lemma-required-to-prove-the-existence-of-a-maximal-atlas-on-a-manifold}{Axiom of choice and maximal atlases}}.
-We then say that \(M\) is an \(n\)-dimensional extcolor\{blue\}\{smooth manifold\}\footnote{Our consideration of differential topology/geometry is motivated by physics, which interests itself in the dynamics (or change) of our universe. extcolor\{magenta\}\{Calculus\}, in a word, is the mathematics of change: hence, we are interested in studying the \emph{least structured} space that permits the calculus.
-  This is not Euclidean space itself but rather a smooth manifold, a space that need only resemble Euclidean space \emph{locally}.} (or manifold).
-Let \((\phi, U) \in \mathcal{U}\): \(\phi\) is a extcolor\{blue\}\{coordinate chart\} (or chart) and the components of \(\phi\), \(x^i\) (i.e., \(\phi_\alpha(m) = (x^1(m), \dots, x^n(m))\)), are extcolor\{blue\}\{coordinates\}.
-We say real-valued maps are extcolor\{blue\}\{functions\} (e.g., the \(x^i\) are functions).
+  References: \href{https://math.stackexchange.com/questions/66554/is-zorns-lemma-required-to-prove-the-existence-of-a-maximal-atlas-on-a-manifold}{Axiom of choice and maximal atlases}}. When endowed with \(\mathcal{U}\), we say \(M\) is an \(n\)-dimensional extcolor\{blue\}\{smooth manifold\}\footnote{Our consideration of differential topology/geometry is motivated by physics, which interests itself in the dynamics (or change) of our universe.
+  extcolor\{magenta\}\{Calculus\}, in a word, is the mathematics of change: hence, we are interested in studying the \emph{least structured} space that permits the calculus.
+  This is not Euclidean space itself but rather a smooth manifold, a space that need only resemble Euclidean space \emph{locally}.} (or manifol
+d). Let \((\phi, U) \in \mathcal{U}\): \(\phi\) is a extcolor\{blue\}\{coordinate chart\} (or chart) and the components of \(\phi\), \(x^i\) (i.e., \(\phi_\alpha(m) = (x^1(m), \dots, x^n(m))\)), are extcolor\{blue\}\{coordinates\}. We say real-valued maps are extcolor\{blue\}\{functions\} (e.g., the \(x^i\) are function
+s).
 
 \hypertarget{smooth-maps}{%
 \section{Smooth Maps}\label{smooth-maps}}
@@ -126,16 +124,12 @@ From this point forward, all maps are smooth unless otherwise specified.
 
 Let \(T_m M\) denote the extcolor\{magenta\}\{vector space\} of extcolor\{magenta\}\{linear derivations\} on the (vector) space of extcolor\{magenta\}\{germs\} of functions defined around \(m\), \(F_m\).
 Equivalently, let \(T_m M\) be the extcolor\{magenta\}\{quotient ring\} \((F_m/F_m^2)^*\), where \(*\) denotes the extcolor\{magenta\}\{dual space\}\footnote{TODO: prove equivalence of definitions.}.
-\(T_m M\) has dimension \(n\), and we call it the extcolor\{blue\}\{tangent space\} to \(M\) at \(m\) and elements of \(T_m M\) extcolor\{blue\}\{vectors\}.
-There is a natural map \(f \mapsto f_*\) from the set of smooth functions \(M \to N\), denoted \(C^\infty(M,N)\), to the set of extcolor\{magenta\}\{endomorphisms\} \(T_m M \to T_{f(m)} N\) given by \(f_* X(g) \mapsto X(g \circ f)\) (where \(X \in T_m M\) and \(g \in C^\infty(M)\), the extcolor\{magenta\}\{ring\} of smooth functions on \(M\)). W
-e call \(f_*\) the extcolor\{blue\}\{pushfoward\} of \(f\).
+\(T_m M\) has dimension \(n\), and we call it the extcolor\{blue\}\{tangent space\} to \(M\) at \(m\) and elements of \(T_m M\) extcolor\{blue\}\{vectors\}. There is a natural map \(f \mapsto f_*\) from the set of smooth functions \(M \to N\), denoted \(C^\infty(M,N)\), to the set of extcolor\{magenta\}\{endomorphisms\} \(T_m M \to T_{f(m)} N\) given by \(f_* X(g) \mapsto X(g \circ f)\) (where \(X \in T_m M\) and \(g \in C^\infty(M)\), the extcolor\{magenta\}\{ring\} of smooth functions on \(M\)).
+We call \(f_*\) the extcolor\{blue\}\{pushfoward\} of \(f\).
 We define \(T_m^* M\) to be the extcolor\{blue\}\{cotangent space\} to \(M\) at \(m\), and we have the dual map \(f \mapsto f^*\), the extcolor\{blue\}\{pullback\}, acting as \(T_{f(m)}^* N \to T_m^* M\) by \(f^* A(X) = A(f_* X)\).
-There is additionally a natural map \(d : C^\infty(M) \to T_m^* M\) given by \(f \mapsto df(m) = v \mapsto v(f)\), which we call the extcolor\{blue\}\{differential\}.
-Given a chart \(\phi\) around \(M\), a basis for \(T_m M\) is given by \(\frac{\partial}{\partial x^i}\) or \(\partial_{i}\), given by
-\begin{equation}     
+There is additionally a natural map \(d : C^\infty(M) \to T_m^* M\) given by \(f \mapsto df(m) = v \mapsto v(f)\), which we call the extcolor\{blue\}\{differential\}. Given a chart \(\phi\) around \(M\), a basis for \(T_m M\) is given by \(\frac{\partial}{\partial x^i}\) or \(\partial_{i}\), given by \begin{equation}     
     \partial_{i}f = \frac{\partial (f \circ \phi^{-1})}{\partial r^i}\Big|_m 
-\end{equation}
-where \(r^i\) is the \(i\)th Euclidean coordinate.
+\end{equation} where \(r^i\) is the \(i\)th Euclidean coordinate.
 A basis is also given for \(T^*_m M\) by the \(dx^i\).
 Finally, we define the extcolor\{blue\}\{tangent bundle\} \(TM = \cup_{m\in M} T_m M\) and the extcolor\{blue\}\{cotangent bundle\} \(T^*M = \cup_{m\in M} T_m^* M\); both are \(2n\)-dimensional smooth manifolds equipped with natural projection maps onto \(M\).
 
@@ -145,55 +139,87 @@ Finally, we define the extcolor\{blue\}\{tangent bundle\} \(TM = \cup_{m\in M} T
 \hypertarget{construction-1}{%
 \section{Construction}\label{construction-1}}
 
-Let \(M, F\) be manifolds and \(E\) be a extcolor\{blue\}\{fibre bundle\} with extcolor\{blue\}\{base\} \(M\) and extcolor\{blue\}\{fibre\} \(F\), or a manifold endowed with a surjective projection \(\pi : E \to M\) such that \(M\) admits an open covering \(\{U_\alpha\}\) for which each \(U_\alpha\) has a diffeomorphism \(\phi_\alpha : \pi^{-1}(U_\alpha) \to U_\alpha \times F\) acting by \(p \to (\pi(p), \xi_\alpha(p))\) for \(p \in P\) and some \(\xi_\alpha : U_\alpha \to \text{Diff}(F)\). This implies \(\pi^{-1}(m)\) is diffeomorphic to \(F\); we say \(E\) is locally a product of \(M\) and \(F\) and that the \((U_\alpha, \phi_\alpha)\) is a extcolor\{blue\}\{local trivialization\}. On \(U_\alpha \cap U_\beta\) we have functions \(\phi_{\alpha\beta} = \phi_\alpha \circ \phi_\beta^{-1} : (U_\alpha \cap U_\beta) \times F \to (U_\alpha \cap U_\beta) \times F\) given by \((m, x) \mapsto (m, \xi_{\alpha\beta}(m)(x))\) for some \(\xi_{\alpha\beta}(m) \in \text{Diff}(F)\) called extcolor\{blue\}\{transition functions\}. Sometimes we require \(\xi_{\alpha\beta}(m) \in G\), a extcolor\{blue\}\{topological group\} acting on \(F\) on the left by diffeomorphisms (i.e., a subgroup of \(\text{Diff}(F)\)). If a fibre bundle's local trivializations satisfy this maximally, we say \(E\) is a extcolor\{blue\}\{\(G\)-bundle\}, and that \(G\) is the extcolor\{blue\}\{structure group\}. We note that \(\xi_{\alpha\alpha} = 1\), \(\xi_{\alpha\beta} = \xi_{\beta\alpha}^{-1}\), and the extcolor\{blue\}\{cocycle condition\} \(\xi_{\alpha\beta} \circ \xi_{\beta\delta} \circ \xi_{\delta\alpha} = 1\) holds on triple overlaps. Fibre bundles are uniquely determined by the base manifold and the transition functions. Given a manifold \(N\) and a map \(g : N \to M\), the pullback bundle \(g^*E\) is the subset of \(N \times E\) such that \(g \circ \text{proj}_{1} = \pi \circ \text{proj}_{2}\) with projection \(\text{proj}_{1} : g^*E \to N\). A extcolor\{blue\}\{vector bundle\} is a fibre bundle whose fibres are vector spaces and whose local trivializations are fibre-wise linear isomorphisms.
+Let \(M, F\) be manifolds and \(E\) be a manifold endowed with a surjective projection \(\pi : E \to M\) such that \(M\) admits an open covering \(\{U_\alpha\}\) for which each \(U_\alpha\) has a diffeomorphism \(\phi_\alpha : \pi^{-1}(U_\alpha) \to U_\alpha \times F\) acting by \(p \to (\pi(p), \xi_\alpha(p))\) for \(p \in P\) for \(\xi_\alpha : U_\alpha \to \text{Diff}(F)\).
+We then say \((E, M, F, \pi)\) (or just \(E\), or \(E \to M\)) is extcolor\{blue\}\{fibre bundle\} with extcolor\{blue\}\{base\} \(M\) and extcolor\{blue\}\{fibre\} \(F\).
+Analogously to manifolds, we require that \(\mathcal{U} = \{(U_\alpha, \phi_\alpha)\}\) be maximal and refer to it as a extcolor\{blue\}\{local trivialization\}.
+\(E\) is locally a product of \(M\) and \(F\). Let \(\phi : \pi^{-1}(U) \to U \times F\) as described we say and, in particular, letting \(m \in M\), \(\pi^{-1}(m)\) is diffeomorphic to \(F\).
+Let \((U_\alpha, \phi_\alpha), (U_\beta, \phi_\beta), (U_\delta, \phi_\delta) \in \mathcal{U}\): On \(U_\alpha \cap U_\beta\) we have functions \(\phi_{\alpha\beta} = \phi_\alpha \circ \phi_\beta^{-1} : (U_\alpha \cap U_\beta) \times F \to (U_\alpha \cap U_\beta) \times F\) given by \((m, x) \mapsto (m, \xi_{\alpha\beta}(m)(x))\) for some \(\xi_{\alpha\beta}(m) \in \text{Diff}(F)\) called extcolor\{blue\}\{transition functions\}.
+Sometimes we require \(\xi_{\alpha\beta}(m) \in G\), a (topological) extcolor\{blue\}\{group\} acting on \(F\) on the left by diffeomorphisms (i.e., a subgroup of \(\text{Diff}(F)\)).
+If a fibre bundle's local trivializations satisfy this maximally, we say \(E\) is a extcolor\{blue\}\{\(G\)-bundle\}, and that \(G\) is the extcolor\{blue\}\{structure group\}.
+We note that \(\xi_{\alpha\alpha} = 1\), \(\xi_{\alpha\beta} = \xi_{\beta\alpha}^{-1}\), and the extcolor\{blue\}\{cocycle condition\} \(\xi_{\alpha\beta} \circ \xi_{\beta\delta} \circ \xi_{\delta\alpha} = 1\) holds on triple overlaps.
+Fibre bundles are uniquely determined by the base manifold and the transition functions. Given a manifold \(N\) and a map \(g : N \to M\), the pullback bundle \(g^*E\) is the subset of \(N \times E\) such that \(g \circ \text{proj}_{1} = \pi \circ \text{proj}_{2}\) with projection \(\text{proj}_{1} : g^*E \to N\).
+A extcolor\{blue\}\{vector bundle\} is a fibre bundle whose fibres are vector spaces and whose local trivializations are fibre-wise linear isomorphisms.
 
 \hypertarget{lie-groups}{%
 \section{Lie Groups}\label{lie-groups}}
 
-A extcolor\{blue\}\{Lie group\} \(G\) is a smooth manifold with group structure such that the binary operation is smooth.\footnote{Some authors require the inverse map \(g \mapsto g^{-1}\) to be smooth as well, but this follows from the smoothness of the binary operation.}
+Let \(G\) be a manifold with group structure such that \(G\) that its binary operation is smooth: we say \(G\) is a extcolor\{blue\}\{Lie group\}\footnote{Some authors require the inverse map \(g \mapsto g^{-1}\) to be smooth as well, but this follows from the smoothness of the binary operation.}.
 Elements \(g \in G\) induce \(R_g, L_g, A_g \in \text{Diff}(G)\) by \(R_g : h \mapsto hg\), \(L_g : h \mapsto gh\), and \(A_g = L_g \circ R_{g^{-1}} : h \mapsto ghg^{-1}\).
 
 \hypertarget{principal-bundles}{%
 \section{Principal Bundles}\label{principal-bundles}}
 
-Let \(G\) be a Lie group and \(P\) be a extcolor\{blue\}\{principle \(G\)-bundle\} with base \(M\), or a \(G\)-bundle over \(M\) with fibre \(G\) and transition functions given by left multiplication. Because left and right multiplication commute, we have an invariant right action of \(G\) on \(P\)\footnote{If \(p \in \pi^{-1}(U_\alpha)\) and \(\phi_\alpha(p) = (m,h)\), then \(pg = \phi_\alpha^{-1}(m,hg)\).}. Equivalently, a principle \(G\)-bundle \(P\) is a fibre bundle with a extcolor\{magenta\}\{regular\} smooth right action by a Lie group \(G\) that preserves fibres and the \(\xi_\alpha\) are \(G\)-equivariant. It follows that \(P/G = M\)\footnote{The second definition admits an exchange between fibre-preservation and \(P/G = M\)} and \(E\) admits a local trivialization with \(M \times G\).
+Let \(P\) be a a \(G\)-bundle over \(M\) with fibre \(G\) and transition functions given by left multiplication: we say \(P\) is a extcolor\{blue\}\{principle \(G\)-bundle\} with base \(M\). Equivalently, a principle \(G\)-bundle \(P\) is a fibre bundle with a extcolor\{magenta\}\{regular\} smooth right action by a Lie group \(G\) that preserves fibres and the \(\xi_\alpha\) are \(G\)-equivariant\footnote{The second definition admits an exchange between fibre-preservation and \(P/G = M\)}.
+Because left and right multiplication commute, we have an invariant right action of \(G\) on \(P\)\footnote{If \(p \in \pi^{-1}(U_\alpha)\) and \(\phi_\alpha(p) = (m,h)\), then \(pg = \phi_\alpha^{-1}(m,hg)\).}.
 
 \hypertarget{associated-bundles}{%
 \section{Associated Bundles}\label{associated-bundles}}
 
-Let \(N\) have a left \(G\) action; this induces a action of \(G\) on \(P \times N\) by \((p,n) \mapsto (pg, g^{-1}n)\) for \(g \in G\). The extcolor\{blue\}\{associated bundle\} to \(G\) with fibre \(N\) is the quotient \(E = (P \times N) / G\), which is characterized as a bundle by the base manifold \(M\), fibre \(N\), and transition functions given by the left action of the \(\xi_{\alpha\beta}(m)\) on \(N\). For \(p \in P\) such that \(\pi(p) = m\), the local trivialization is explicitly \([(p, n)] \mapsto (m, \xi_\alpha(m)n)\)\footnote{This is well-defined because under a local trivialization \(\phi_{\alpha}\), letting \(\xi_\alpha(\pi(p)) = g\), we have that \((p,n) \mapsto (\pi(p), gn)\) and \((ph, h^{-1}n) \mapsto (\pi(ph), (gh)h^{-1}n) = (\pi(p), gn)\).
+Let \(N\) be a manifold with a left \(G\) action \(\rho : G \to \text{Diff}(N)\); this induces an action of \(G\) on \(P \times N\) by \((p,n) \mapsto (pg, g^{-1}n)\) for \(g \in G\).
+The quotient \(E = (P \times N) / G\), which is characterized as a bundle by the base manifold \(M\), fibre \(N\), and transition functions given by the left action of the \(\xi_{\alpha\beta}(m)\) on \(N\), is denoted extcolor\{blue\}\{associated bundle\} to \(P\) by \(\rho\) with fibre \(N\).
+For \(p \in P\) such that \(\pi(p) = m\), the local trivialization is explicitly \([(p, n)] \mapsto (m, \xi_\alpha(m)n)\)\footnote{This is well-defined because under a local trivialization \(\phi_{\alpha}\), letting \(\xi_\alpha(\pi(p)) = g\), we have that \((p,n) \mapsto (\pi(p), gn)\) and \((ph, h^{-1}n) \mapsto (\pi(ph), (gh)h^{-1}n) = (\pi(p), gn)\).
 
-  References: \href{https://math.stackexchange.com/questions/2439177/how-to-prove-local-trivialization-of-fiber-bundle-associated-to-principal-bundle}{Discussion of local trivialization on associated bundles}}. In particular, the associated bundle \(E\) is also a \(G\)-bundle. Let \(m = \dim(M)\); to \(M\) we can associated the extcolor\{blue\}\{frame bundle\} \(F(M)\), the disjoint union of frames of each tangent space \(T_m M\) considered as a bundle over \(M\): this is a principal \(GL(m)\)-bundle. The extcolor\{blue\}\{tangent bundle\} \(TM\) is the bundle associated to \(F(M)\) via the fundamental representation on \(\mathbb{R}^m\), (or equivalently, the disjoint union of the tangent spaces \(T_m M\) as a vector bundle over \(M\)). Continuing, the extcolor\{blue\}\{cotangent bundle\} \(T^*M\) is the bundle associated to \(F(M)\) by the representation dual to the fundamental representation on \(\mathbb{R}^n\) (disjoint union of cotangent spaces), and the extcolor\{blue\}\{\((k, \ell)\) tensor bundle\} is the bundle \(T^k_\ell M\) associated to \(F(M)\) by the tensor product of \(k\) copies of the fundamental representation and \(\ell\) copies of its dual (disjoint union of \(k\) tensor products of tangent space and \(\ell\) tensor products of the cotangent space). In particular, the bundle \(\Lambda^k M\) is a subbundle of \(T^0_k M\) given by only the totally antisymmetric tensors.
+  References: \href{https://math.stackexchange.com/questions/2439177/how-to-prove-local-trivialization-of-fiber-bundle-associated-to-principal-bundle}{Discussion of local trivialization on associated bundles}}.
+In particular, the associated bundle \(E\) is also a \(G\)-bundle.
+Let \(m = \dim(M)\); to \(M\) we can associated the extcolor\{blue\}\{frame bundle\} \(F(M)\), the disjoint union of frames of each tangent space \(T_m M\) considered as a bundle over \(M\): this is a principal \(GL(m)\)-bundle.
+The extcolor\{blue\}\{tangent bundle\} \(TM\) is the bundle associated to \(F(M)\) via the fundamental representation on \(\mathbb{R}^m\), (or equivalently, the disjoint union of the tangent spaces \(T_m M\) as a vector bundle over \(M\)).
+Continuing, the extcolor\{blue\}\{cotangent bundle\} \(T^*M\) is the bundle associated to \(F(M)\) by the representation dual to the fundamental representation on \(\mathbb{R}^n\) (disjoint union of cotangent spaces), and the extcolor\{blue\}\{\((k, \ell)\) tensor bundle\} is the bundle \(T^k_\ell M\) associated to \(F(M)\) by the tensor product of \(k\) copies of the fundamental representation and \(\ell\) copies of its dual (disjoint union of \(k\) tensor products of tangent space and \(\ell\) tensor products of the cotangent space).
+In particular, the bundle \(\Lambda^k M\) is a subbundle of \(T^0_k M\) given by only the totally antisymmetric tensors.
 
 \hypertarget{sections}{%
 \section{Sections}\label{sections}}
 
-A extcolor\{blue\}\{section\} of \(E\) is a map \(\sigma : M \to E\) such that \(\pi \circ \sigma = 1\), or a family of maps \(\sigma_\alpha : U_\alpha \to F\) such that \(\sigma_\alpha(m) = \xi_{\alpha\beta}(m)\sigma_\beta(m)\). We denote the space of smooth sections of a fibre bundle \(E\) by \(\Gamma(E)\). In particular, we define the spaces of vector fields \(\Gamma(M) = \Gamma(TM)\), extcolor\{blue\}\{\((r,s)\) tensor fields\} \(\mathcal{T}^k_\ell(M) = \Gamma(T^k_\ell(M))\), and extcolor\{blue\}\{differential \(k\)-forms\} \(\Omega^k(M) = \Gamma(\Lambda^k(M))\).
+Let \(\sigma : M \to E\) such that \(\pi \circ \sigma = 1\), or a family of maps \(\sigma_\alpha : U_\alpha \to F\) such that \(\sigma_\alpha(m) = \xi_{\alpha\beta}(m)\sigma_\beta(m)\)\footnote{TODO: show equivalence}; we say \(\sigma\) is a extcolor\{blue\}\{section\} of \(E\)\footnote{The idea here is that a section (smoothly) picks out a particular element of each fibre over the base manifold. For instance, a vector field in \(\mathbb{R}^3\) is an example of a section of the trivial bundle \(\mathbb{R}^6 \to \mathbb{R}^3\).}.
+We denote the space of sections of a fibre bundle \(E\) by \(\Gamma(E)\).
+In particular, we define the spaces of extcolor\{blue\}\{vector fields\} \(\Gamma(M) = \Gamma(TM)\), extcolor\{blue\}\{\((r,s)\) tensor fields\} \(\mathcal{T}^k_\ell(M) = \Gamma(T^k_\ell(M))\), and extcolor\{blue\}\{differential \(k\)-forms\} \(\Omega^k(M) = \Gamma(\Lambda^k(M))\).
 
 \hypertarget{vector-fields}{%
 \subsection{Vector Fields}\label{vector-fields}}
 
-The \(\partial_i\) are naturally understood as vector fields on subsets of \(M\) and form a basis for vector fields on that subset. Given \(\psi \in \text{Diff}(M)\), we can define \(\psi_* X\) by \((\psi_* X)_m = \psi_* X_{\psi^{-1}(m)}\){[}\^{}com:vector\_field\_pushforward{]}. Let \(\Phi = I \times M \to M\) (\(I \ni 0\) an interval in \(\mathbb{R}\)) satisfy \(\phi_t \circ \phi_s = \phi_{t+s}\) for \(\phi_t : M \to M\) given by \(m \mapsto \Phi(t,m)\): we say \(\Phi\) is a extcolor\{blue\}\{one-parameter group of transformations\} or extcolor\{blue\}\{flow\} on \(M\)\footnote{``Flow'' is sometimes used to refer specifically to the action of a one-parameter group of transformations on its manifold: we adopt the term more generally for its brevity and convenience.}; \(\Phi\) induces a \(Y \in \mathcal{T}_0^1(M)\) by
+The basis \(\partial_i\) for tangent spaces on \(M\) induced by a chart are naturally understood as vector fields on subsets of \(M\) and form a basis for vector fields on that subset. Given \(\psi \in \text{Diff}(M)\), we can define \(\psi_* X\) by \((\psi_* X)_m = \psi_* X_{\psi^{-1}(m)}\) {[}\^{}com:vector\_field\_pushforward{]}.
+Let \(\Phi = I \times M \to M\) (\(I \ni 0\) an interval in \(\mathbb{R}\)) satisfy \(\phi_t \circ \phi_s = \phi_{t+s}\) for \(\phi_t : M \to M\) given by \(m \mapsto \Phi(t,m)\): we say \(\Phi\) is a extcolor\{blue\}\{one-parameter group of transformations\} or extcolor\{blue\}\{flow\} on \(M\)\footnote{``Flow'' is sometimes used to refer specifically to the action of a one-parameter group of transformations on its manifold: we adopt the term more generally for its brevity and convenience.}; \(\Phi\) induces a \(Y \in \mathcal{T}_0^1(M)\) by
 \begin{equation}     
     Y(f)(m) = \lim_{t \to 0}\frac{(f \circ \phi_t)(m) - f(m)}{t}. 
 \end{equation}
-This correspondence has a partial inverse. A extcolor\{blue\}\{curve\} is a map \(\gamma : (a,b) \subset \mathbb{R} \to M\). We say the tangent vector to \(\gamma\) at \(\gamma(t) \in M\) is \(\gamma_*(1)\) for \(1 \in T_t \mathbb{R}\): this defines a smooth vector field \(\dot{\gamma}\) on \(\gamma((a,b))\). We say \(\gamma\) is an extcolor\{blue\}\{integral curve\} to \(X\) if \(\dot{\gamma} = X_{|\gamma((a,b))}\). From the theory of extcolor\{magenta\}\{ODEs\}, we are assured that \(X\) induces integral curves \(\gamma_m\) at all \(m\) such that \(\phi_t : m \mapsto \gamma_m(t)\) is smooth. Then \(\Phi = \{\phi_t : M \to M\}_{t\in(-\varepsilon,\varepsilon)}\) is a (local) flow (for some \(\varepsilon > 0\)) induced by \(X\). In particular, the vector field \(\psi_* X\) and the flow \(\psi \circ \phi_t \circ \psi^{-1}\) induce each other\footnote{\begin{align*}
+This correspondence has a partial inverse.
+A extcolor\{blue\}\{curve\} is a map \(\gamma : (a,b) \subset \mathbb{R} \to M\).
+We say the tangent vector to \(\gamma\) at \(\gamma(t) \in M\) is \(\gamma_*(1)\) for \(1 \in T_t \mathbb{R}\): this defines a smooth vector field \(\dot{\gamma}\) on \(\gamma((a,b))\).
+We say \(\gamma\) is an extcolor\{blue\}\{integral curve\} to \(X\) if \(\dot{\gamma} = X_{|\gamma((a,b))}\).
+From the theory of extcolor\{magenta\}\{ODEs\}, we are assured that \(X\) induces integral curves \(\gamma_m\) at all \(m\) such that \(\phi_t : m \mapsto \gamma_m(t)\) is smooth.
+Then \(\Phi = \{\phi_t : M \to M\}_{t\in(-\varepsilon,\varepsilon)}\) is a (local) flow (for some \(\varepsilon > 0\)) induced by \(X\).
+In particular, the vector field \(\psi_* X\) and the flow \(\psi \circ \phi_t \circ \psi^{-1}\) induce each other\footnote{\begin{align*}
   (\psi_* X)(f)(m) &= X(f \circ \psi)(\psi^{-1}(m)) \\
   &= \lim_{t \to 0}\frac{(f \circ \psi \circ \phi_t)(\psi^{-1}(m)) - (f \circ \psi)(\psi^{-1}(m))}{t} \\
   &= \lim_{t \to 0}\frac{(f \circ \psi \circ \phi_t \circ \psi^{-1})(m) - (f \circ \psi \circ \psi^{-1})(m)}{t} \\
   &= \lim_{t \to 0}\frac{(f \circ [\psi \circ \phi_t \circ \psi^{-1}])(m) - f(m)}{t}
-  \end{align*}}. A extcolor\{magenta\}\{Lie algebra\} is a set endowed with an associative anticommuting binary operator satisfying the extcolor\{magenta\}\{Jacobi identity\}. The extcolor\{blue\}\{Lie bracket\} of vector fields, \([X,Y] \in \mathcal{T}_0^1(M)\), defined by \([X,Y](f) = (X \circ Y)(f) - (Y \circ X)(f)\), endows \(\mathcal{T}_0^1(M)\) with a Lie algebraic structure. The extcolor\{blue\}\{Lie derivative\}'\footnote{We are interested in differentiating tensor fields, but we're confronted by the difficulty of comparing tensors defined on distinct tangent spaces (i.e., in a limit) which certainly cannot be identified (i.e., \(T_m M\) and \(T_{m'} M\) for \(m \neq m'\)). This is a recurring theme in differential topology/geometry, and one with many different solutions. This is the first one we encounter: the specification of a vector field provides sufficient directional and ``connective'\,' information to enable this kind of comparison, and thus, a derivative operator. Note that, in particular, because our definition utilizes a limit, the Lie derivative evaluated at a point \(m\) depends upon the local behavior of \(X,T\), or the behavior in a neighborhood around \(m\) (i.e., not merely at the point \(m\)).} of a tensor field \(T \in \mathcal{T}_\ell^k\) in the direction \(X\), \(\mathcal{L}_X T \in \mathcal{T}_\ell^k\), is given in terms of the one parameter group \(\phi_t\) induced by \(X\) as
+  \end{align*}}.
+A extcolor\{magenta\}\{Lie algebra\} is a set endowed with an associative anticommuting binary operator satisfying the extcolor\{magenta\}\{Jacobi identity\}.
+The extcolor\{blue\}\{Lie bracket\} of vector fields, \([X,Y] \in \mathcal{T}_0^1(M)\), defined by \([X,Y](f) = (X \circ Y)(f) - (Y \circ X)(f)\), endows \(\mathcal{T}_0^1(M)\) with a Lie algebraic structure.
+The extcolor\{blue\}\{Lie derivative\}'\footnote{We want to take derivatives of tensor fields, but we cannot compare tensors defined on distinct tangent spaces (i.e., in a limit) which certainly cannot be identified (i.e., \(T_m M\) and \(T_{m'} M\) for \(m \neq m'\)). This is a recurring theme in differential topology/geometry, and one with many different solutions. This is the first solution we encounter: the specification of a vector field provides sufficient directional and ``connective'\,' information (via the pushforward) to enable this kind of comparison, and thus, a derivative operator. Note that, in particular, because our definition utilizes a limit, the Lie derivative evaluated at a point \(m\) depends upon the local behavior of \(X,T\), or the behavior in a neighborhood around \(m\) (i.e., not merely at the point \(m\)). This manifests itself algebraically in the fact that the Lie derivative is not \(C^\infty(M)\)-linear} of a tensor field \(T \in \mathcal{T}_\ell^k\) in the direction \(X\), \(\mathcal{L}_X T \in \mathcal{T}_\ell^k\), is given in terms of the one parameter group \(\phi_t\) induced by \(X\) as
 \begin{equation}     
     \mathcal{L}_X T = \lim_{t \to 0} \frac{T - (\phi_t)_* T}{t} 
 \end{equation}
-Alternatively, the Lie derivative is the unique operator \(\Gamma(M) \times \mathcal{T}_\ell^k \to \mathcal{T}_\ell^k\) which obeys the Leibniz rule on tensor products and contractions, acts on functions (\(k, \ell = 0\)) by merely applying the vector field argument, and commuting with the exterior derivative (to be defined shortly). In the special case that our argument is a vector field \(Y\), we have the simpler form \(\mathcal{L}_X Y = [X,Y]\).
+Alternatively, the Lie derivative is the unique operator \(\Gamma(M) \times \mathcal{T}_\ell^k \to \mathcal{T}_\ell^k\) which obeys the Leibniz rule on tensor products and contractions, acts on functions (\(k, \ell = 0\)) by merely applying the vector field argument, and commuting with the exterior derivative (to be defined shortly).
+In the special case that our argument is a vector field \(Y\), we have the simpler form \(\mathcal{L}_X Y = [X,Y]\).
 
 \hypertarget{tensor-fields}{%
 \subsection{Tensor Fields}\label{tensor-fields}}
 
-Note that \(\Gamma(T_k^\ell M)\) is identifiable with the \(C^\infty(M)\)-linear maps \(\Gamma(T_\ell^k M) \to C^\infty(M)\), as the \((k,\ell)\) tensors in a section can act pointwise on the \((\ell,k)\) tensors in another section, thereby smoothly assigning real numbers to points on \(M\), which constitutes an element of \(C^\infty(M)\). This idea suggests an alternative---and preferable---definition. In particular,
+Note that \(\Gamma(T_k^\ell M)\) is identifiable with the \(C^\infty(M)\)-linear maps \(\Gamma(T_\ell^k M) \to C^\infty(M)\), as the \((k,\ell)\) tensors in a section can act pointwise on the \((\ell,k)\) tensors in another section, thereby smoothly assigning real numbers to points on \(M\), which constitutes an element of \(C^\infty(M)\).
+This idea suggests an alternative---and preferable---definition. In particular,
 \begin{align*} 
-    \mathcal{T}_\ell^k(M) &= \left(\bigotimes_{i=1}^k \mathcal{T}_1^0(M)\right) \otimes     \left(\bigotimes_{j=1}^\ell \mathcal{T}_1^0(M)\right) \\ 
+    \mathcal{T}_\ell^k(M) 
+    &= \left(\bigotimes_{i=1}^k \mathcal{T}_1^0(M)\right) \otimes     \left(\bigotimes_{j=1}^\ell \mathcal{T}_1^0(M)\right) \\ 
     &= \left(\bigotimes_{i=1}^k \Gamma(T_1^0 M)\right) \otimes \left(\bigotimes_{j=1}^\ell \Gamma(T_0^1 M)\right) 
 \end{align*}
 except we construct these tensor products not from via free \(\mathbb{R}\)-vector spaces but from free \(C^\infty(M)\)- extcolor\{magenta\}\{modules\}.
@@ -201,14 +227,13 @@ except we construct these tensor products not from via free \(\mathbb{R}\)-vecto
 \hypertarget{differential-forms}{%
 \subsection{Differential Forms}\label{differential-forms}}
 
-\begin{verbatim}
-extcolor{blue}{Differential $k$-forms} are sections of $\mathcal{T}_k^0(M)$: these are $k$-forms at each $m \in M$; the space of these is denoted $\Omega^k(M)$. On such forms there is a natural differentiation operation, the    extcolor{blue}{exterior derivative} $d : \Omega^k(M) \to \Omega^{k+1}(M)$. Locally, the exterior derivative acts as 
-\end{verbatim}
-
+Upon differential forms there is a natural differentiation operation, the extcolor\{blue\}\{exterior derivative\} \(d : \Omega^k(M) \to \Omega^{k+1}(M)\). Locally, the exterior derivative acts as
 \begin{equation} 
     d(f \, dx^I) = \sum_{i=1}^n \frac{\partial f}{\partial x^i} \, dx^i \wedge dx^I 
 \end{equation}
-for \(dx^I\) some \(k\)-fold wedge product of the canonical basis elements \(dx^i\) and extends linearly. Axiomatically, the exterior derivative is the unique degree \(1\) extcolor\{magenta\}\{antiderivation\} \(d : \Omega^k(M) \to \Omega^{k+1}(M)\) which agrees with the differential on \(\Omega^0(M) = C^\infty(M)\) and squares to \(0\). More generally, we also have the following formula.
+for \(dx^I\) some \(k\)-fold wedge product of the canonical basis elements \(dx^i\) (i.e., \(I\) is a extcolor\{blue\}\{multiindex\}) and extends linearly.
+Equivalently, axiomatically the exterior derivative is the unique degree \(1\) extcolor\{magenta\}\{antiderivation\} \(d : \Omega^k(M) \to \Omega^{k+1}(M)\) which agrees with the differential on \(\Omega^0(M) = C^\infty(M)\) and squares to \(0\).
+We also have the following formula.
 \begin{equation} 
     \begin{aligned} 
         d\beta(X_0, \dots, X_k)  
@@ -216,9 +241,15 @@ for \(dx^I\) some \(k\)-fold wedge product of the canonical basis elements \(dx^
         &\qquad + \sum_{i=0}^{k-1} \sum_{j = i+1}^k (-1)^{i+j} \beta([X_i, X_j], v_0, \dots, \hat{X_i}, \dots, \hat{X_j}, \dots, X_k) 
     \end{aligned} 
 \end{equation}
-Because \(d^2 = 0\), we have a situation analogous to that of (co)homology: in particular, elements of the kernel of \(d\) are extcolor\{blue\}\{close d forms\}, elements in the image are extcolor\{blue\}\{exact forms\}, and the extcolor\{blue\}\{\(k\)th de Rham cohomology group\} \(H^k_{\text{dR}}(M)\) is the quotient group of closed forms modulo exact forms. The wedge product endows these groups with ring structure, and the map \(H^k_{\text{dR}}(M) \times H^k(M) \to \mathbb{R}\) given by \([\omega], [c] \mapsto \int_c \omega\) establishes an isomorphism between de Rham and singular cohomology (de Rham's theorem), which depends essentially on the identity \(\int_C d\omega = \int_{\partial C} \omega\) (Stokes' theorem).
+Because \(d^2 = 0\), we have a cohomological situation: elements of the kernel of \(d\) are extcolor\{blue\}\{close d forms\}, elements in the image are extcolor\{blue\}\{exact forms\}, and the extcolor\{blue\}\{\(k\)th de Rham cohomology group\} \(H^k_{\text{dR}}(M)\) is the quotient group of closed forms modulo exact forms.
+The wedge product endows these groups with ring structure, and the map \(H^k_{\text{dR}}(M) \times H^k(M) \to \mathbb{R}\) given by \([\omega], [c] \mapsto \int_c \omega\) establishes an isomorphism between de Rham and singular cohomology (de Rham's theorem), which depends essentially on the identity \(\int_C d\omega = \int_{\partial C} \omega\) (Stokes' theorem).
 
-TODO: integration on manifolds
+TODO: bundle-valued differential forms
+
+\hypertarget{integration-on-manifolds}{%
+\section{Integration on Manifolds}\label{integration-on-manifolds}}
+
+TODO
 
 \hypertarget{lie-theory}{%
 \chapter{Lie Theory}\label{lie-theory}}
@@ -231,36 +262,79 @@ A vector field \(X\) on \(G\) satisfying \((L_g)_* X = X \circ L_g\) is called e
 The extcolor\{blue\}\{Lie algebra\} to \(G\), \(\mathfrak{g}\), is the set of all left-invariant vector fields on \(G\); the name is natural as the Lie bracket induces a Lie algebraic structure on this set.
 Note that \(\mathfrak{g}\) is naturally isomorphic to \(T_e G\), where \(e\) is the identity element, as \(Y \in T_e G\) induces a vector field \(X\) given by \(X_g = (L_g)_* Y\); in particular, this means \(\dim \mathfrak{g} = \dim G\).
 Given a basis \(X_1, \dots, X_n\) of \(\mathfrak{g}\), we have that \([X_i, X_j] = c_{ij}^h X_h\) and we say the \(c_{ij}^h\) are the extcolor\{blue\}\{structure constants\} associated with the basis.
-Identifying \(\mathfrak{g} \cong T_e G\) there is a natural \(\mathfrak{g}\)-valued one-form \(\theta\) on \(G\) defined by \(v \mapsto (L_{g^{-1}})_*(v)\) for \(v \in T_g G\).
-We call this the extcolor\{blue\}\{Maurer-Cartan one-form\}.
+Identifying \(\mathfrak{g} \cong T_e G\)\footnote{TODO: clarify this identification} there is a natural \(\mathfrak{g}\)-valued one-form \(\theta\) on \(G\) defined by \(v \mapsto (L_{g^{-1}})_*(v)\) for \(v \in T_g G\).
+We call this the extcolor\{blue\}\{Maurer-Cartan one-form\} and it satisfies \(d\theta + \frac{1}{2}[\theta, \theta]\).
 Noting that, if \(G\) is a matrix Lie group, \((L_g)_*\) coincides with the natural matrix multiplication action of the matrix \(g\) on \(TG\), we have that \(\theta(v) = g^{-1}v\) where the right hand side is matrix multiplication\footnote{If we let \(G\) be embedded in a matrix Lie group by a map \(\phi\), then the Maurer-Carten form on \(\phi(G)\) is \(\theta = \phi(g^{-1})\phi_*\).}.
+
+\hypertarget{exponential-map}{%
+\section{Exponential Map}\label{exponential-map}}
 
 A extcolor\{blue\}\{one-parameter subgroup\} on \(G\) is a continuous group homomorphism \(\mathbb{R} \to G\). For \(X \in \mathfrak{g}\), let \(\phi_{X,t} : G \to G\) be the associated flow, and let \(g_X(t) = \phi_{X,t}(e) \in G\); then \(g_X\) is a one parameter subgroup on \(G\) (i.e., \(g_X(t)g_X(s) = g_S(t+s)\)).
 Moreover, we have the extcolor\{blue\}\{exponential map\} \(\exp : \mathfrak{g} \to G\) given by \(X \mapsto g_X(1)\).
 From this it follows that \(g_X(t) = \exp(tX)\); indeed, this is the most general form for a one parameter group.
 
-TODO: adjoint representation and Maurer-Cartan structure formula
+\hypertarget{adjoint-representation}{%
+\section{Adjoint Representation}\label{adjoint-representation}}
 
 \hypertarget{connections}{%
 \chapter{Connections}\label{connections}}
 
-To each \(A \in \mathfrak{g}\) we can naturally associate a extcolor\{blue\}\{fundamental vector field\} \(A^*\) on \(P\) given by \((A^\#)(p) = (\sigma_p)_*(A)\), where \(\sigma_p : G \to P\) is the map \(g \mapsto pg\). Equivalently, \((A^\#)(p)\) is the tangent vector to the curve \((\sigma_p \circ \exp)(At)\) at \(t = 0\). Define \(V_p = T_p \, \pi^{-1}(p) = \ker(\pi_*) \cap T_p P\), the extcolor\{blue\}\{vertical subspace\} of \(T_p P\); \(A \mapsto (A^*)_p\) is an isomorphism \(\mathfrak{g} \mapsto V_p\). Moreover, \(A \mapsto A^\#\) is equivariant with respect to the adjoint and principal actions of \(G\) and preserves the respective Lie brackets. The extcolor\{blue\}\{vertical bundle\} \(VP = TP\) is the vector subbundle of these vertical subspaces.
+\hypertarget{construction-2}{%
+\section{Construction}\label{construction-2}}
+
+To each \(A \in \mathfrak{g}\) we can naturally associate a extcolor\{blue\}\{fundamental vector field\} \(A^*\) on \(P\) given by \((A^\#)(p) = (\sigma_p)_*(A)\), where \(\sigma_p : G \to P\) is the map \(g \mapsto pg\).
+Equivalently, \((A^\#)(p)\) is the tangent vector to the curve \((\sigma_p \circ \exp)(At)\) at \(t = 0\).
+Define \(V_p = T_p \, \pi^{-1}(p) = \ker(\pi_*) \cap T_p P\), the extcolor\{blue\}\{vertical subspace\} of \(T_p P\); \(A \mapsto (A^*)_p\) is an isomorphism \(\mathfrak{g} \mapsto V_p\).
+Moreover, \(A \mapsto A^\#\) is equivariant with respect to the adjoint and principal actions of \(G\) and preserves the respective Lie brackets.
+The extcolor\{blue\}\{vertical bundle\} \(VP = TP\) is the vector subbundle of these vertical subspaces.
 
 To a principal bundle we can associate its extcolor\{blue\}\{Atiyah sequence\}.
 
-where \(\iota\) is the natural inclusion and \(\overline{\pi}\) is the map \(X \mapsto (\pi_{TP}(X), (\pi_P)_*(X))\). A extcolor\{blue\}\{connection\} on \(P\) is a choice of equivariant split for this sequence (direct sum, left, and right splits are equivalent). Explicitly, the \(G\) actions are the diagonal action (identifying \(VP \cong P \times \mathfrak{g}\)), the canonical action, and the induced action from \(P \times TM\) leaving \(TM\) invariant, respectively.
+where \(\iota\) is the natural inclusion and \(\overline{\pi}\) is the map \(X \mapsto (\pi_{TP}(X), (\pi_P)_*(X))\).
+A extcolor\{blue\}\{connection\} on \(P\) is a choice of equivariant split for this sequence (direct sum, left, and right splits are equivalent).
+Explicitly, the \(G\) actions are the diagonal action (identifying \(VP \cong P \times \mathfrak{g}\)), the canonical action, and the induced action from \(P \times TM\) leaving \(TM\) invariant, respectively.
 
-In particular, a direct sum split \(\varphi\) is frequently identified with the vector subbundle \(HP = \varphi^{-1}(0 \oplus \pi^* TM)\), which is complementary to \(VP\) and invariant under \((R_g)_*\) for \(g \in G\) and referred to as an extcolor\{blue\}\{Ehresmann connection\}. Left splits can be understood as \(G\)-equivariant \(\mathfrak{g}\)-valued one-forms on \(P\), commonly referred to as extcolor\{blue\}\{connection one-forms\}. Right splits are interpreted as maps sending a vector in \(T_m M\) to one in any \(T_p P\) for \(p \in \pi^{-1}(m)\) and are known as extcolor\{blue\}\{horizontal lifts\}.
+In particular, a direct sum split \(\varphi\) is frequently identified with the vector subbundle \(HP = \varphi^{-1}(0 \oplus \pi^* TM)\), which is complementary to \(VP\) and invariant under \((R_g)_*\) for \(g \in G\) and referred to as an extcolor\{blue\}\{Ehresmann connection\}.
+Left splits can be understood as \(G\)-equivariant \(\mathfrak{g}\)-valued one-forms on \(P\), commonly referred to as extcolor\{blue\}\{connection one-forms\}.
+Right splits are interpreted as maps sending a vector in \(T_m M\) to one in any \(T_p P\) for \(p \in \pi^{-1}(m)\) and are known as extcolor\{blue\}\{horizontal lifts\}.
+
+\hypertarget{properties}{%
+\section{Properties}\label{properties}}
+
+TODO
+
+\hypertarget{exterior-covariant-derivative}{%
+\section{Exterior Covariant Derivative}\label{exterior-covariant-derivative}}
+
+TODO
+
+\hypertarget{curvature}{%
+\section{Curvature}\label{curvature}}
+
+TODO
+
+\hypertarget{bundle-automorphisms}{%
+\section{Bundle Automorphisms}\label{bundle-automorphisms}}
+
+TODO
+
+\hypertarget{on-associated-vector-bundles}{%
+\section{On Associated Vector Bundles}\label{on-associated-vector-bundles}}
+
+TODO
 
 \hypertarget{complex-manifolds}{%
 \chapter{Complex Manifolds}\label{complex-manifolds}}
 
-\hypertarget{construction-2}{%
-\section{Construction}\label{construction-2}}
+\hypertarget{construction-3}{%
+\section{Construction}\label{construction-3}}
 
-A extcolor\{blue\}\{complex manifold\} is a manifold but with two substitutions in the definition: \(\mathbb{C}^n\) for \(\mathbb{R}^n\) and holomorphic for smooth. extcolor\{blue\}\{Holomorphic maps\} between complex manifolds are defined analogously to smooth maps, and invertible maps which are both ways holomorphic are extcolor\{blue\}\{biholomorphims\}.
+A extcolor\{blue\}\{complex manifold\} is a manifold but with two definitional substitutions: \(\mathbb{R}^n \leftrightarrow \mathbb{C}^n\) and holomorphic \(\leftrightarrow\) smooth.
+extcolor\{blue\}\{Holomorphic maps\} between complex manifolds are defined analogously to smooth maps, and invertible maps which are both ways holomorphic are extcolor\{blue\}\{biholomorphims\}.
 
-Let \(M\) be a complex manifold of dimension \(n\): evidently this is a manifold of dimension \(2n\), so in particular we can define the \(2n\) dimensional vector spaces \(T_p M\). We let \(C^\infty (M)^{\mathbb{C}}\) denote the extcolor\{magenta\}\{complexification\} of \(C^\infty(M)\): the complexification \(T_p M^{\mathbb{C}}\) is a space of complex dimension \(2n\) acts on \(C^\infty(M)^{\mathbb{C}}\) through linear extension. \(T_p^* M\) complexifies in the same way, thereby enabling the complexification of all tensor bundles and their sections (always denoted with superscript \(\mathbb{C}\)).
+Let \(M\) be a complex manifold of dimension \(n\): evidently this is a manifold of dimension \(2n\), so in particular we can define the \(2n\) dimensional vector spaces \(T_p M\).
+We let \(C^\infty (M)^{\mathbb{C}}\) denote the extcolor\{magenta\}\{complexification\} of \(C^\infty(M)\): the complexification \(T_p M^{\mathbb{C}}\) is a space of complex dimension \(2n\) acts on \(C^\infty(M)^{\mathbb{C}}\) through linear extension.
+\(T_p^* M\) complexifies in the same way, thereby enabling the complexification of all tensor bundles and their sections (also denoted with superscript \(\mathbb{C}\)).
 
 If \((U,\phi)\) is a chart on \(M\) with \(\phi\) acting by \(m \mapsto (x^1(m) + iy^1(m), \dots, x^n(m) + iy^n(m))\), \(T_m M\) and \(T_m^* M\) are spanned by the dual bases \(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial y^j}\) and \(dx^i, dy^j\); we define new dual bases
 \begin{equation}
@@ -270,27 +344,40 @@ If \((U,\phi)\) is a chart on \(M\) with \(\phi\) acting by \(m \mapsto (x^1(m) 
         dz^i &= dx^i + idy^i, \quad d\overline{z}^i = dx^i - idy^i
     \end{aligned}
 \end{equation}
-Multiplying a vector in \(T_p M^{\mathbb{C}}\) by \(i\) amounts to the substitutions \(\tfrac{\partial}{\partial x^i} \to \tfrac{\partial}{\partial y^i}\) and \(\tfrac{\partial}{\partial y^i} \to -\tfrac{\partial}{\partial x^i}\): this map defines a basis-independent \((1,1)\) tensor \(J_m\) on \(T_m M\) which squares to \(-1\) and globally forms a section \(J \in \mathcal{T}^1_1(M)\) known as the extcolor\{blue\}\{almost complex structure\} on \(M\). This extends linearly to \(J \in \mathcal{T}^1_1(M)^{\mathbb{C}}\): in particular, \(J\) is diagonal in the \(\frac{\partial}{\partial z^i}, \frac{\partial}{\partial \overline{z}^i}\) basis with eigenvalue \(i\) for the former and \(-i\) for the latter.
-I
-n particular, we have projection operators \(\mathcal{P}^\pm\) onto the \(\pm i\) eigenspaces of \(J\) in \(\Gamma(M)^{\mathbb{C}}\): elements of the image of \(\mathcal{P}^+\) and \(\mathcal{P}^-\) are extcolor\{blue\}\{holomorphic vectors\} and extcolor\{blue\}\{antiholomorphic vectors\}, respectively, with analogous terminology for vector fields.
+Multiplying a vector in \(T_p M^{\mathbb{C}}\) by \(i\) amounts to the substitutions \(\tfrac{\partial}{\partial x^i} \to \tfrac{\partial}{\partial y^i}\) and \(\tfrac{\partial}{\partial y^i} \to -\tfrac{\partial}{\partial x^i}\): this map defines a basis-independent \((1,1)\) tensor \(J_m\) on \(T_m M\) which squares to \(-1\) and globally forms a section \(J \in \mathcal{T}^1_1(M)\) known as the extcolor\{blue\}\{almost complex structure\} on \(M\).
+This extends linearly to \(J \in \mathcal{T}^1_1(M)^{\mathbb{C}}\): in particular, \(J\) is diagonal in the \(\frac{\partial}{\partial z^i}, \frac{\partial}{\partial \overline{z}^i}\) basis with eigenvalue \(i\) for the former and \(-i\) for the latter.
+In particular, we have projection operators \(\mathcal{P}^\pm\) onto the \(\pm i\) eigenspaces of \(J\) in \(\Gamma(M)^{\mathbb{C}}\): elements of the image of \(\mathcal{P}^+\) and \(\mathcal{P}^-\) are extcolor\{blue\}\{holomorphic vectors\} and extcolor\{blue\}\{antiholomorphic vectors\}, respectively, with analogous terminology for vector fields.
 
-Similarly, elements of \(\Omega^k(M)^{\mathbb{C}}\) which decompose into tensor products of \(r\) terms in \(\{dz^i\}\) and \(s\) terms in \(\{d\overline{z}^i\}\) are said to have extcolor\{blue\}\{bidegree\} \((r,s\), the set of which is denoted \(\Omega^{r,s}(M)\). It follows that \(\Omega^k(M)^{\mathbb{C}} = \oplus_{r+s=k} \Omega^{r,s}(M)\). Moreover, linearly extending the exterior derivative gives a map \(\Omega^{r,s}(M) \to \Omega^{r+1,s}(M) + \Omega^{r,s+1}(M)\), enabling the definition of the extcolor\{blue\}\{Dolbeault operators\} \(\partial, \overline{\partial}\) which are the \(\Omega^{r+1,s}(M)\) and \(\Omega^{r,s+1}(M)\) parts of \(d\), respectively (i.e., \(d = \partial + \overline{\partial}\). It follows that \(\partial^2 = \partial\overline{\partial} + \overline{\partial\partial} = \overline{\partial}^2 = 0\). Elements of the kernel of \(\overline{\partial}\) in \(\Omega^{k,0}(M)\) are called extcolor\{blue\}\{holomorphic \(k\)-forms\}; a \(k\)-form is holomorphic if and only if the \(C^\infty(M)^{\mathbb{C}}\) coefficients of the decomposition into the \(dz^i\) basis are each holomorphic functions.
+Similarly, elements of \(\Omega^k(M)^{\mathbb{C}}\) which decompose into tensor products of \(r\) terms in \(\{dz^i\}\) and \(s\) terms in \(\{d\overline{z}^i\}\) are said to have extcolor\{blue\}\{bidegree\} \((r,s\), the set of which is denoted \(\Omega^{r,s}(M)\).
+It follows that \(\Omega^k(M)^{\mathbb{C}} = \oplus_{r+s=k} \Omega^{r,s}(M)\).
+Moreover, linearly extending the exterior derivative gives a map \(\Omega^{r,s}(M) \to \Omega^{r+1,s}(M) + \Omega^{r,s+1}(M)\), enabling the definition of the extcolor\{blue\}\{Dolbeault operators\} \(\partial, \overline{\partial}\) which are the \(\Omega^{r+1,s}(M)\) and \(\Omega^{r,s+1}(M)\) parts of \(d\), respectively (i.e., \(d = \partial + \overline{\partial}\).
+It follows that \(\partial^2 = \partial\overline{\partial} + \overline{\partial\partial} = \overline{\partial}^2 = 0\).
+Elements of the kernel of \(\overline{\partial}\) in \(\Omega^{k,0}(M)\) are called extcolor\{blue\}\{holomorphic \(k\)-forms\}; a \(k\)-form is holomorphic if and only if the \(C^\infty(M)^{\mathbb{C}}\) coefficients of the decomposition into the \(dz^i\) basis are each holomorphic functions.
 
 \hypertarget{hermitian-and-kahler-geometry}{%
 \section{Hermitian and Kahler Geometry}\label{hermitian-and-kahler-geometry}}
 
-Let \(M\) also be a Riemannian \(2n\)-dimensional manifold with metric \(g\), which can be extended linearly to act on \(\Gamma(M)^{\mathbb{C}}\). Moreover, let \(M\) be a a extcolor\{blue\}\{Hermitian manifold\} with extcolor\{blue\}\{Hermitian metric\} \(g\), or let \(g\) be invariant under precomposition of both arguments with \(J\). We use normal and overlined greek indices to denote the evaluation of the metric's arguments on \(\frac{\partial}{\partial z^i}\) and \(\frac{\partial}{\partial \overline{z}^i}\) terms, respectively: in the Hermitian case, only mixed terms \(g_{\mu\overline{\nu}}\) are non-zero.
+Let \(M\) also be a Riemannian \(2n\)-dimensional manifold with metric \(g\), which can be extended linearly to act on \(\Gamma(M)^{\mathbb{C}}\).
+Moreover, let \(M\) have a metric \(g\) that is invariant under precomposition of both arguments with \(J\): we say \(M\) is a extcolor\{blue\}\{Hermitian manifold\} and \(g\) a extcolor\{blue\}\{Hermitian metric\}.
+We use normal and overlined greek indices to denote the evaluation of the metric's arguments on \(\frac{\partial}{\partial z^i}\) and \(\frac{\partial}{\partial \overline{z}^i}\) terms, respectively: in the Hermitian case, only mixed terms \(g_{\mu\overline{\nu}}\) are non-zero.
 
-Define the extcolor\{blue\}\{K''ahler form\} \(\Omega \in \Omega^2(M)\) by \((X, Y) \mapsto g(J(X), Y)\); this is also invariant under precomposition by \(J\), and extends linearly to an element of \(\Omega^{1,1}(M)\). In particular, \(\Omega = ig_{\mu\overline{\nu}} dz^\mu \wedge d\overline{z}^\nu\).
+Define the extcolor\{blue\}\{K''ahler form\} \(\Omega \in \Omega^2(M)\) by \((X, Y) \mapsto g(J(X), Y)\); this is also invariant under precomposition by \(J\), and extends linearly to an element of \(\Omega^{1,1}(M)\).
+In particular, \(\Omega = ig_{\mu\overline{\nu}} dz^\mu \wedge d\overline{z}^\nu\).
 
-A extcolor\{blue\}\{Hermitian connection\} is a connection \(\nabla\) on \(TM^{\mathbb{C}}\) such that, in the \(z,\overline{z}\) basis, we have m\(\nabla_\mu g = 0 = \nabla_{\overline{\mu}} g\) (metric compatibility) and the connection coefficients vanish when regular and overlined indices are mixed. Curvature and torsion tensors are formed as usual. Moreover, we have the extcolor\{blue\}\{Ricci form\} \(\mathcal{R} = i \partial \overline{\partial} \log(\det(g_{\mu\overline{\nu}}))\). The hermitian covariant derivative of the almost complex structure vanishes.
+A extcolor\{blue\}\{Hermitian connection\} is a connection \(\nabla\) on \(TM^{\mathbb{C}}\) such that, in the \(z,\overline{z}\) basis, we have m\(\nabla_\mu g = 0 = \nabla_{\overline{\mu}} g\) (metric compatibility) and the connection coefficients vanish when regular and overlined indices are mixed.
+Curvature and torsion tensors are formed as usual.
+Moreover, we have the extcolor\{blue\}\{Ricci form\} \(\mathcal{R} = i \partial \overline{\partial} \log(\det(g_{\mu\overline{\nu}}))\).
+The hermitian covariant derivative of the almost complex structure vanishes.
 
-A extcolor\{blue\}\{K''ahler manifold\} is a Hermitian manifold with closed K"ahler form, in which case the metric is called a extcolor\{blue\}\{K''ahler metric\}. This only happens if the Levi-Civita covariant derivative of the almost complex structure vanishes: or, in other words, the Hermitian and Levi-Civita connections are compatible. Indeed, the Ricci form of a K"ahler metric coincides with the Ricci curvature of the Levi-Civita connection (additionally, the Hermitian connection is torsion-free).
+A extcolor\{blue\}\{K''ahler manifold\} is a Hermitian manifold with closed K"ahler form, in which case the metric is called a extcolor\{blue\}\{K''ahler metric\}.
+This only happens if the Levi-Civita covariant derivative of the almost complex structure vanishes: or, in other words, the Hermitian and Levi-Civita connections are compatible.
+Indeed, the Ricci form of a K"ahler metric coincides with the Ricci curvature of the Levi-Civita connection (additionally, the Hermitian connection is torsion-free).
 
 \hypertarget{dolbeault-cohomology-and-hodge-theory}{%
 \section{Dolbeault Cohomology and Hodge Theory}\label{dolbeault-cohomology-and-hodge-theory}}
 
-Replacing \(d\) in de Rham cohomology with \(\overline{\partial}\) yields extcolor\{blue\}\{Dolbeault cohomology\} with extcolor\{blue\}\{\((r,s)\)-cocycles\}, extcolor\{blue\}\{\((r,s)\)-coboundaries\}, and extcolor\{blue\}\{\((r,s)\)th cohomology groups\} being defined as expected. Recalling the Hodge star \(\ast\), we have an inner product on \(\Omega^{r,s}(M)\) by
+Replacing \(d\) in de Rham cohomology with \(\overline{\partial}\) yields extcolor\{blue\}\{Dolbeault cohomology\} with extcolor\{blue\}\{\((r,s)\)-cocycles\}, extcolor\{blue\}\{\((r,s)\)-coboundaries\}, and extcolor\{blue\}\{\((r,s)\)th cohomology groups\} being defined as expected.
+Recalling the Hodge star \(\ast\), we have an inner product on \(\Omega^{r,s}(M)\) by
 \begin{equation} 
     (\alpha, \beta) = \int_M \alpha \wedge \overline{\ast} \beta
 \end{equation}
@@ -305,11 +392,14 @@ We have Laplacians as follows.
 \begin{equation} 
     \Delta = \{d, d^\dagger\}, \Delta_\partial = \{\partial, \partial^\dagger\}, \Delta_{\overline{\partial}} = \{\overline{\partial}, \overline{\partial}^\dagger\},  
 \end{equation}
-where \(\{ \, \}\) here is the anticommutator. A form is extcolor\{blue\}\{harmonic\} with respect to \(d, \partial, \overline{\partial}\) if it lies in the kernel of \(\Delta, \Delta_\partial, \Delta_{\overline{\partial}}\), respectively. Hodge's theorem shows that
+where \(\{ \, \}\) here is the anticommutator.
+A form is extcolor\{blue\}\{harmonic\} with respect to \(d, \partial, \overline{\partial}\) if it lies in the kernel of \(\Delta, \Delta_\partial, \Delta_{\overline{\partial}}\), respectively.
+Hodge's exhibits shows that
 \begin{equation} 
-    \Omega^{r,s}(M) = \overline{\partial} \Omega^{r,s-1}(M) + \overline{\partial}^\dagger \Omega^{r,s+1}(M) + \text{Harm}_{\overline{\partial}}^{r,s}(M) 
+    \Omega^{r,s}(M) = \overline{\partial} \Omega^{r,s-1}(M) + \overline{\partial}^\dagger         \Omega^{r,s+1}(M) + \text{Harm}_{\overline{\partial}}^{r,s}(M) 
 \end{equation}
-with this sum being orthogonal with respect to the aforementioned inner product and with \(\text{Harm}_{\overline{\partial}}^{r,s}(M)\) the set of \(\overline{\partial}\)-harmonic \((r,s)\) forms on \(M\). Note that Dolbeault cohomology classes contain a unique \(\overline{\partial}\)-harmonic form.
+with this sum being orthogonal with respect to the aforementioned inner product and with \(\text{Harm}_{\overline{\partial}}^{r,s}(M)\) the set of \(\overline{\partial}\)-harmonic \((r,s)\) forms on \(M\).
+Note that Dolbeault cohomology classes contain a unique \(\overline{\partial}\)-harmonic form.
 In the special case that \(M\) is K"ahler, \(\Delta = 2\Delta_\partial = 2\Delta_{\overline{\partial}}\).
 
 \hypertarget{spin-geometry}{%
@@ -328,8 +418,8 @@ In the special case that \(M\) is K"ahler, \(\Delta = 2\Delta_\partial = 2\Delta
 \hypertarget{tensors}{%
 \chapter{Tensors}\label{tensors}}
 
-\hypertarget{construction-3}{%
-\section{Construction}\label{construction-3}}
+\hypertarget{construction-4}{%
+\section{Construction}\label{construction-4}}
 
 Let \(V,W\) be \(n\)-dimensional vector spaces over \(\mathbb{R}\) and consider the extcolor\{magenta\}\{free\} vector space \(F(V \times W)\). We define \(R(V \times W)\) as follows.\\
 \begin{align*} 
@@ -401,6 +491,11 @@ We define the extcolor\{blue\}\{tensor algebra\} of \(V\), \(T(V) = \oplus_{k,\e
 \chapter{Algebraic Topology}\label{algebraic-topology}}
 
 TODO: singular, simplical homology
+
+\hypertarget{clifford-algebra}{%
+\chapter{Clifford Algebra}\label{clifford-algebra}}
+
+TODO
 
   \bibliography{book.bib,packages.bib}
 

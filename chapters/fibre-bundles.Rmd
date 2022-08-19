@@ -1,76 +1,88 @@
-```{r, echo=FALSE}
-term <- function(x) {
-  if (knitr::is_latex_output()) {
-    sprintf("\textcolor{%s}{%s}", "blue", x)
-  } else if (knitr::is_html_output()) {
-    sprintf("<span style='color: %s;'>%s</span>", "blue",
-      x)
-  } else x
-}
-```
-
-```{r, echo=FALSE}
-preq <- function(x) {
-  if (knitr::is_latex_output()) {
-    sprintf("\textcolor{%s}{%s}", "magenta", x)
-  } else if (knitr::is_html_output()) {
-    sprintf("<span style='color: %s;'>%s</span>", "fuchsia",
-      x)
-  } else x
-}
-```
-
 # Fibre Bundles {#fibre-bundles}
 
 ## Construction
 
-Let $M, F$ be manifolds and $E$ be a `r term("fibre bundle")` with `r term("base")` $M$ and `r term("fibre")` $F$, or a manifold endowed with a surjective projection $\pi : E \to M$ such that $M$ admits an open covering $\{U_\alpha\}$ for which each $U_\alpha$ has a diffeomorphism $\phi_\alpha : \pi^{-1}(U_\alpha) \to U_\alpha \times F$ acting by $p \to (\pi(p), \xi_\alpha(p))$ for $p \in P$ and some $\xi_\alpha : U_\alpha \to \diff(F)$. This implies $\pi^{-1}(m)$ is diffeomorphic to $F$; we say $E$ is locally a product of $M$ and $F$ and that the $(U_\alpha, \phi_\alpha)$ is a `r term("local trivialization")`. On $U_\alpha \cap U_\beta$ we have functions $\phi_{\alpha\beta} = \phi_\alpha \circ \phi_\beta^{-1} : (U_\alpha \cap U_\beta) \times F \to (U_\alpha \cap U_\beta) \times F$ given by $(m, x) \mapsto (m, \xi_{\alpha\beta}(m)(x))$ for some $\xi_{\alpha\beta}(m) \in \diff(F)$ called `r term("transition functions")`. Sometimes we require $\xi_{\alpha\beta}(m) \in G$, a `r term("topological group")` acting on $F$ on the left by diffeomorphisms (i.e., a subgroup of $\diff(F)$). If a fibre bundle's local trivializations satisfy this maximally, we say $E$ is a `r term("$G$-bundle")`, and that $G$ is the `r term("structure group")`. We note that $\xi_{\alpha\alpha} = 1$, $\xi_{\alpha\beta} = \xi_{\beta\alpha}^{-1}$, and the `r term("cocycle condition")` $\xi_{\alpha\beta} \circ \xi_{\beta\delta} \circ \xi_{\delta\alpha} = 1$ holds on triple overlaps. Fibre bundles are uniquely determined by the base manifold and the transition functions. Given a manifold $N$ and a map $g : N \to M$, the pullback bundle $g^*E$ is the subset of $N \times E$ such that $g \circ \proj{1} = \pi \circ \proj{2}$ with projection $\proj{1} : g^*E \to N$. A `r term("vector bundle")` is a fibre bundle whose fibres are vector spaces and whose local trivializations are fibre-wise linear isomorphisms.
+Let $M, F$ be manifolds and $E$ be a manifold endowed with a surjective projection $\pi : E \to M$ such that $M$ admits an open covering $\{U_\alpha\}$ for which each $U_\alpha$ has a diffeomorphism $\phi_\alpha : \pi^{-1}(U_\alpha) \to U_\alpha \times F$ acting by $p \to (\pi(p), \xi_\alpha(p))$ for $p \in P$ for $\xi_\alpha : U_\alpha \to \diff(F)$. 
+We then say $(E, M, F, \pi)$ (or just $E$, or $E \to M$) is `r term("fibre bundle")` with `r term("base")` $M$ and `r term("fibre")` $F$. 
+Analogously to manifolds, we require that $\mathcal{U} = \{(U_\alpha, \phi_\alpha)\}$ be maximal and refer to it as a `r term("local trivialization")`.
+$E$ is locally a product of $M$ and $F$. Let $\phi : \pi^{-1}(U) \to U \times F$ as described we say and, in particular, letting $m \in M$, $\pi^{-1}(m)$ is diffeomorphic to $F$.
+Let $(U_\alpha, \phi_\alpha), (U_\beta, \phi_\beta), (U_\delta, \phi_\delta)  \in \mathcal{U}$: On $U_\alpha \cap U_\beta$ we have functions $\phi_{\alpha\beta} = \phi_\alpha \circ \phi_\beta^{-1} : (U_\alpha \cap U_\beta) \times F \to (U_\alpha \cap U_\beta) \times F$ given by $(m, x) \mapsto (m, \xi_{\alpha\beta}(m)(x))$ for some $\xi_{\alpha\beta}(m) \in \diff(F)$ called `r term("transition functions")`.
+Sometimes we require $\xi_{\alpha\beta}(m) \in G$, a (topological) `r term("group")` acting on $F$ on the left by diffeomorphisms (i.e., a subgroup of $\diff(F)$). 
+If a fibre bundle's local trivializations satisfy this maximally, we say $E$ is a `r term("$G$-bundle")`, and that $G$ is the `r term("structure group")`. 
+We note that $\xi_{\alpha\alpha} = 1$, $\xi_{\alpha\beta} = \xi_{\beta\alpha}^{-1}$, and the `r term("cocycle condition")` $\xi_{\alpha\beta} \circ \xi_{\beta\delta} \circ \xi_{\delta\alpha} = 1$ holds on triple overlaps.
+Fibre bundles are uniquely determined by the base manifold and the transition functions. Given a manifold $N$ and a map $g : N \to M$, the pullback bundle $g^*E$ is the subset of $N \times E$ such that $g \circ \proj{1} = \pi \circ \proj{2}$ with projection $\proj{1} : g^*E \to N$. 
+A `r term("vector bundle")` is a fibre bundle whose fibres are vector spaces and whose local trivializations are fibre-wise linear isomorphisms.
 
 ## Lie Groups
 
-A `r term("Lie group")` $G$ is a smooth manifold with group structure such that the binary operation is smooth.[^com:smooth_inverse] 
+Let $G$ be a manifold with group structure such that $G$ that its binary operation is smooth: we say $G$ is a `r term("Lie group")`[^com:smooth_inverse]. 
 Elements $g \in G$ induce $R_g, L_g, A_g \in \diff(G)$ by $R_g : h \mapsto hg$, $L_g : h \mapsto gh$, and $A_g = L_g \circ R_{g^{-1}} : h \mapsto ghg^{-1}$. 
 
 ## Principal Bundles
 
-Let $G$ be a Lie group and $P$ be a `r term("principle $G$-bundle")` with base $M$, or a $G$-bundle over $M$ with fibre $G$ and transition functions given by left multiplication. Because left and right multiplication commute, we have an invariant right action of $G$ on $P$[^com:pb_invariant_right_action]. Equivalently, a principle $G$-bundle $P$ is a fibre bundle with a `r preq("regular")` smooth right action by a Lie group $G$ that preserves fibres and the $\xi_\alpha$ are $G$-equivariant. It follows that $P/G = M$[^com:pb_def] and $E$ admits a local trivialization with $M \times G$.
+Let $P$ be a a $G$-bundle over $M$ with fibre $G$ and transition functions given by left multiplication: we say $P$ is a `r term("principle $G$-bundle")` with base $M$. Equivalently, a principle $G$-bundle $P$ is a fibre bundle with a `r preq("regular")` smooth right action by a Lie group $G$ that preserves fibres and the $\xi_\alpha$ are $G$-equivariant[^com:pb_def]. 
+Because left and right multiplication commute, we have an invariant right action of $G$ on $P$[^com:pb_invariant_right_action].
 
 ## Associated Bundles
 
-Let $N$ have a left $G$ action; this induces a action of $G$ on $P \times N$ by $(p,n) \mapsto (pg, g^{-1}n)$ for $g \in G$. The `r term("associated bundle")` to $G$ with fibre $N$ is the quotient $E = (P \times N) / G$, which is characterized as a bundle by the base manifold $M$, fibre $N$, and transition functions given by the left action of the $\xi_{\alpha\beta}(m)$ on $N$. For $p \in P$ such that $\pi(p) = m$, the local trivialization is explicitly $[(p, n)] \mapsto (m, \xi_\alpha(m)n)$[^com:ab_local_triv]. In particular, the associated bundle $E$ is also a $G$-bundle. Let $m = \dim(M)$; to $M$ we can associated the `r term("frame bundle")` $F(M)$, the disjoint union of frames of each tangent space $T_m M$ considered as a bundle over $M$: this is a principal $GL(m)$-bundle. The `r term("tangent bundle")` $TM$ is the bundle associated to $F(M)$ via the fundamental representation on $\mathbb{R}^m$, (or equivalently, the disjoint union of the tangent spaces $T_m M$ as a vector bundle over $M$). Continuing, the `r term("cotangent bundle")` $T^*M$ is the bundle associated to $F(M)$ by the representation dual to the fundamental representation on $\mathbb{R}^n$ (disjoint union of cotangent spaces), and the `r term("$(k, \\ell)$ tensor bundle")` is the bundle $T^k_\ell M$ associated to $F(M)$ by the tensor product of $k$ copies of the fundamental representation and $\ell$ copies of its dual (disjoint union of $k$ tensor products of tangent space and $\ell$ tensor products of the cotangent space). In particular, the bundle $\Lambda^k M$ is a subbundle of $T^0_k M$ given by only the totally antisymmetric tensors.
+Let $N$ be a manifold with a left $G$ action $\rho : G \to \diff(N)$; this induces an action of $G$ on $P \times N$ by $(p,n) \mapsto (pg, g^{-1}n)$ for $g \in G$. 
+The quotient $E = (P \times N) / G$, which is characterized as a bundle by the base manifold $M$, fibre $N$, and transition functions given by the left action of the $\xi_{\alpha\beta}(m)$ on $N$, is denoted `r term("associated bundle")` to $P$ by $\rho$ with fibre $N$. 
+For $p \in P$ such that $\pi(p) = m$, the local trivialization is explicitly $[(p, n)] \mapsto (m, \xi_\alpha(m)n)$[^com:ab_local_triv]. 
+In particular, the associated bundle $E$ is also a $G$-bundle. 
+Let $m = \dim(M)$; to $M$ we can associated the `r term("frame bundle")` $F(M)$, the disjoint union of frames of each tangent space $T_m M$ considered as a bundle over $M$: this is a principal $GL(m)$-bundle. 
+The `r term("tangent bundle")` $TM$ is the bundle associated to $F(M)$ via the fundamental representation on $\mathbb{R}^m$, (or equivalently, the disjoint union of the tangent spaces $T_m M$ as a vector bundle over $M$). 
+Continuing, the `r term("cotangent bundle")` $T^*M$ is the bundle associated to $F(M)$ by the representation dual to the fundamental representation on $\mathbb{R}^n$ (disjoint union of cotangent spaces), and the `r term("$(k, \\ell)$ tensor bundle")` is the bundle $T^k_\ell M$ associated to $F(M)$ by the tensor product of $k$ copies of the fundamental representation and $\ell$ copies of its dual (disjoint union of $k$ tensor products of tangent space and $\ell$ tensor products of the cotangent space). 
+In particular, the bundle $\Lambda^k M$ is a subbundle of $T^0_k M$ given by only the totally antisymmetric tensors.
 
 ## Sections
 
-A `r term("section")` of $E$ is a map $\sigma : M \to E$ such that $\pi \circ \sigma = 1$, or a family of maps $\sigma_\alpha : U_\alpha \to F$ such that $\sigma_\alpha(m) = \xi_{\alpha\beta}(m)\sigma_\beta(m)$. We denote the space of smooth sections of a fibre bundle $E$ by $\Gamma(E)$. In particular, we define the spaces of vector fields $\Gamma(M) = \Gamma(TM)$, `r term("$(r,s)$ tensor fields")` $\mathcal{T}^k_\ell(M) = \Gamma(T^k_\ell(M))$, and `r term("differential $k$-forms")` $\Omega^k(M) = \Gamma(\Lambda^k(M))$.
+Let $\sigma : M \to E$ such that $\pi \circ \sigma = 1$, or a family of maps $\sigma_\alpha : U_\alpha \to F$ such that $\sigma_\alpha(m) = \xi_{\alpha\beta}(m)\sigma_\beta(m)$[^proof:equivalence_of_section_def]; we say $\sigma$ is a `r term("section")` of $E$[^com:section_intuition]. 
+We denote the space of sections of a fibre bundle $E$ by $\Gamma(E)$. 
+In particular, we define the spaces of `r term("vector fields")` $\Gamma(M) = \Gamma(TM)$, `r term("$(r,s)$ tensor fields")` $\mathcal{T}^k_\ell(M) = \Gamma(T^k_\ell(M))$, and `r term("differential $k$-forms")` $\Omega^k(M) = \Gamma(\Lambda^k(M))$.
 
 ### Vector Fields
 
-The $\partial_i$ are naturally understood as vector fields on subsets of $M$ and form a basis for vector fields on that subset. Given $\psi \in \diff(M)$, we can define $\psi_* X$ by $(\psi_* X)_m = \psi_* X_{\psi^{-1}(m)}$[^com:vector_field_pushforward]. Let $\Phi = I \times M \to M$ ($I \ni 0$ an interval in $\mathbb{R}$) satisfy $\phi_t \circ \phi_s = \phi_{t+s}$ for $\phi_t : M \to M$ given by $m \mapsto \Phi(t,m)$: we say $\Phi$ is a `r term("one-parameter group of transformations")` or `r term("flow")` on $M$[^com:flow]; $\Phi$ induces a $Y \in \mathcal{T}_0^1(M)$ by 
+The basis $\partial_i$ for tangent spaces on $M$ induced by a chart are naturally understood as vector fields on subsets of $M$ and form a basis for vector fields on that subset. Given $\psi \in \diff(M)$, we can define $\psi_* X$ by $(\psi_* X)_m = \psi_* X_{\psi^{-1}(m)}$ [^com:vector_field_pushforward]. 
+Let $\Phi = I \times M \to M$ ($I \ni 0$ an interval in $\mathbb{R}$) satisfy $\phi_t \circ \phi_s = \phi_{t+s}$ for $\phi_t : M \to M$ given by $m \mapsto \Phi(t,m)$: we say $\Phi$ is a `r term("one-parameter group of transformations")` or `r term("flow")` on $M$[^com:flow]; $\Phi$ induces a $Y \in \mathcal{T}_0^1(M)$ by 
 \begin{equation}     
     Y(f)(m) = \lim_{t \to 0}\frac{(f \circ \phi_t)(m) - f(m)}{t}. 
 \end{equation} 
-This correspondence has a partial inverse. A `r term("curve")` is a map $\gamma : (a,b) \subset \mathbb{R} \to M$. We say the tangent vector to $\gamma$ at $\gamma(t) \in M$ is $\gamma_*(1)$ for $1 \in T_t \mathbb{R}$: this defines a smooth vector field $\dot{\gamma}$ on $\gamma((a,b))$. We say $\gamma$ is an `r term("integral curve")` to $X$ if $\dot{\gamma} = X_{|\gamma((a,b))}$. From the theory of `r preq("ODEs")`, we are assured that $X$ induces integral curves $\gamma_m$ at all $m$ such that $\phi_t : m \mapsto \gamma_m(t)$ is smooth. Then $\Phi = \{\phi_t : M \to M\}_{t\in(-\varepsilon,\varepsilon)}$ is a (local) flow (for some $\varepsilon > 0$) induced by $X$. In particular, the vector field $\psi_* X$ and the flow $\psi \circ \phi_t \circ \psi^{-1}$ induce each other[^com:vector_field_pushforward_flow]. A `r preq("Lie algebra")` is a set endowed with an associative anticommuting binary operator satisfying the `r preq("Jacobi identity")`. The `r term("Lie bracket")` of vector fields, $[X,Y] \in \mathcal{T}_0^1(M)$, defined by $[X,Y](f) = (X \circ Y)(f) - (Y \circ X)(f)$, endows $\mathcal{T}_0^1(M)$ with a Lie algebraic structure. The `r term("Lie derivative")`'[^com:lie_derivative] of a tensor field $T \in \mathcal{T}_\ell^k$ in the direction $X$, $\mathcal{L}_X T \in \mathcal{T}_\ell^k$, is given in terms of the one parameter group $\phi_t$ induced by $X$ as 
+This correspondence has a partial inverse. 
+A `r term("curve")` is a map $\gamma : (a,b) \subset \mathbb{R} \to M$. 
+We say the tangent vector to $\gamma$ at $\gamma(t) \in M$ is $\gamma_*(1)$ for $1 \in T_t \mathbb{R}$: this defines a smooth vector field $\dot{\gamma}$ on $\gamma((a,b))$. 
+We say $\gamma$ is an `r term("integral curve")` to $X$ if $\dot{\gamma} = X_{|\gamma((a,b))}$. 
+From the theory of `r preq("ODEs")`, we are assured that $X$ induces integral curves $\gamma_m$ at all $m$ such that $\phi_t : m \mapsto \gamma_m(t)$ is smooth.
+Then $\Phi = \{\phi_t : M \to M\}_{t\in(-\varepsilon,\varepsilon)}$ is a (local) flow (for some $\varepsilon > 0$) induced by $X$. 
+In particular, the vector field $\psi_* X$ and the flow $\psi \circ \phi_t \circ \psi^{-1}$ induce each other[^com:vector_field_pushforward_flow]. 
+A `r preq("Lie algebra")` is a set endowed with an associative anticommuting binary operator satisfying the `r preq("Jacobi identity")`. 
+The `r term("Lie bracket")` of vector fields, $[X,Y] \in \mathcal{T}_0^1(M)$, defined by $[X,Y](f) = (X \circ Y)(f) - (Y \circ X)(f)$, endows $\mathcal{T}_0^1(M)$ with a Lie algebraic structure. 
+The `r term("Lie derivative")`'[^com:lie_derivative] of a tensor field $T \in \mathcal{T}_\ell^k$ in the direction $X$, $\mathcal{L}_X T \in \mathcal{T}_\ell^k$, is given in terms of the one parameter group $\phi_t$ induced by $X$ as 
 \begin{equation}     
     \mathcal{L}_X T = \lim_{t \to 0} \frac{T - (\phi_t)_* T}{t} 
 \end{equation} 
-Alternatively, the Lie derivative is the unique operator $\Gamma(M) \times \mathcal{T}_\ell^k \to \mathcal{T}_\ell^k$ which obeys the Leibniz rule on tensor products and contractions, acts on functions ($k, \ell = 0$) by merely applying the vector field argument, and commuting with the exterior derivative (to be defined shortly). In the special case that our argument is a vector field $Y$, we have the simpler form $\mathcal{L}_X Y = [X,Y]$.
+Alternatively, the Lie derivative is the unique operator $\Gamma(M) \times \mathcal{T}_\ell^k \to \mathcal{T}_\ell^k$ which obeys the Leibniz rule on tensor products and contractions, acts on functions ($k, \ell = 0$) by merely applying the vector field argument, and commuting with the exterior derivative (to be defined shortly). 
+In the special case that our argument is a vector field $Y$, we have the simpler form $\mathcal{L}_X Y = [X,Y]$.
 
 ### Tensor Fields
 
-Note that $\Gamma(T_k^\ell M)$ is identifiable with the $C^\infty(M)$-linear maps $\Gamma(T_\ell^k M) \to C^\infty(M)$, as the $(k,\ell)$ tensors in a section can act pointwise on the $(\ell,k)$ tensors in another section, thereby smoothly assigning real numbers to points on $M$, which constitutes an element of $C^\infty(M)$. This idea suggests an alternative---and preferable---definition. In particular, 
+Note that $\Gamma(T_k^\ell M)$ is identifiable with the $C^\infty(M)$-linear maps $\Gamma(T_\ell^k M) \to C^\infty(M)$, as the $(k,\ell)$ tensors in a section can act pointwise on the $(\ell,k)$ tensors in another section, thereby smoothly assigning real numbers to points on $M$, which constitutes an element of $C^\infty(M)$. 
+This idea suggests an alternative---and preferable---definition. In particular, 
 \begin{align*} 
-    \mathcal{T}_\ell^k(M) &= \left(\bigotimes_{i=1}^k \mathcal{T}_1^0(M)\right) \otimes     \left(\bigotimes_{j=1}^\ell \mathcal{T}_1^0(M)\right) \\ 
+    \mathcal{T}_\ell^k(M) 
+    &= \left(\bigotimes_{i=1}^k \mathcal{T}_1^0(M)\right) \otimes     \left(\bigotimes_{j=1}^\ell \mathcal{T}_1^0(M)\right) \\ 
     &= \left(\bigotimes_{i=1}^k \Gamma(T_1^0 M)\right) \otimes \left(\bigotimes_{j=1}^\ell \Gamma(T_0^1 M)\right) 
 \end{align*} 
 except we construct these tensor products not from via free $\mathbb{R}$-vector spaces but from free $C^\infty(M)$-`r preq("modules")`.
 
 ### Differential Forms
 
-`r term("Differential $k$-forms")` are sections of $\mathcal{T}_k^0(M)$: these are $k$-forms at each $m \in M$; the space of these is denoted $\Omega^k(M)$. On such forms there is a natural differentiation operation, the `r term("exterior derivative")` $d : \Omega^k(M) \to \Omega^{k+1}(M)$. Locally, the exterior derivative acts as 
+Upon differential forms there is a natural differentiation operation, the `r term("exterior derivative")` $d : \Omega^k(M) \to \Omega^{k+1}(M)$. Locally, the exterior derivative acts as 
 \begin{equation} 
     d(f \, dx^I) = \sum_{i=1}^n \frac{\partial f}{\partial x^i} \, dx^i \wedge dx^I 
 \end{equation} 
-for $dx^I$ some $k$-fold wedge product of the canonical basis elements $dx^i$ and extends linearly. Axiomatically, the exterior derivative is the unique degree $1$ `r preq("antiderivation")` $d : \Omega^k(M) \to \Omega^{k+1}(M)$ which agrees with the differential on $\Omega^0(M) = C^\infty(M)$ and squares to $0$. More generally, we also have the following formula. 
+for $dx^I$ some $k$-fold wedge product of the canonical basis elements $dx^i$ (i.e., $I$ is a `r term("multiindex")`) and extends linearly.
+Equivalently, axiomatically the exterior derivative is the unique degree $1$ `r preq("antiderivation")` $d : \Omega^k(M) \to \Omega^{k+1}(M)$ which agrees with the differential on $\Omega^0(M) = C^\infty(M)$ and squares to $0$. 
+We also have the following formula. 
 \begin{equation} 
     \begin{aligned} 
         d\beta(X_0, \dots, X_k)  
@@ -78,9 +90,14 @@ for $dx^I$ some $k$-fold wedge product of the canonical basis elements $dx^i$ an
         &\qquad + \sum_{i=0}^{k-1} \sum_{j = i+1}^k (-1)^{i+j} \beta([X_i, X_j], v_0, \dots, \hat{X_i}, \dots, \hat{X_j}, \dots, X_k) 
     \end{aligned} 
 \end{equation} 
-Because $d^2 = 0$, we have a situation analogous to that of (co)homology: in particular, elements of the kernel of $d$ are `r term("close d forms")`, elements in the image are `r term("exact forms")`, and the `r term("$k$th de Rham cohomology group")` $H^k_{\text{dR}}(M)$ is the quotient group of closed forms modulo exact forms. The wedge product endows these groups with ring structure, and the map $H^k_{\text{dR}}(M) \times H^k(M) \to \mathbb{R}$ given by $[\omega], [c] \mapsto \int_c \omega$ establishes an isomorphism between de Rham and singular cohomology (de Rham's theorem), which depends essentially on the identity $\int_C d\omega = \int_{\partial C} \omega$ (Stokes' theorem).
+Because $d^2 = 0$, we have a cohomological situation: elements of the kernel of $d$ are `r term("close d forms")`, elements in the image are `r term("exact forms")`, and the `r term("$k$th de Rham cohomology group")` $H^k_{\text{dR}}(M)$ is the quotient group of closed forms modulo exact forms.
+The wedge product endows these groups with ring structure, and the map $H^k_{\text{dR}}(M) \times H^k(M) \to \mathbb{R}$ given by $[\omega], [c] \mapsto \int_c \omega$ establishes an isomorphism between de Rham and singular cohomology (de Rham's theorem), which depends essentially on the identity $\int_C d\omega = \int_{\partial C} \omega$ (Stokes' theorem).
 
-TODO: integration on manifolds
+TODO: bundle-valued differential forms
+
+## Integration on Manifolds
+
+TODO
 
 [^com:smooth_inverse]: Some authors require the inverse map $g \mapsto g^{-1}$ to be smooth as well, but this follows from the smoothness of the binary operation.
 
@@ -92,6 +109,10 @@ TODO: integration on manifolds
     
     References: [Discussion of local trivialization on associated bundles](https://math.stackexchange.com/questions/2439177/how-to-prove-local-trivialization-of-fiber-bundle-associated-to-principal-bundle)
     
+[^proof:equivalence_of_section_def]: TODO: show equivalence
+
+[^com:section_intuition]: The idea here is that a section (smoothly) picks out a particular element of each fibre over the base manifold. For instance, a vector field in $\mathbb{R}^3$ is an example of a section of the trivial bundle $\mathbb{R}^6 \to \mathbb{R}^3$.
+    
 [^com:flow]: "Flow" is sometimes used to refer specifically to the action of a one-parameter group of transformations on its manifold: we adopt the term more generally for its brevity and convenience.
     
 [^com:vector_field_pushforward_flow]:     
@@ -102,4 +123,4 @@ TODO: integration on manifolds
     &= \lim_{t \to 0}\frac{(f \circ [\psi \circ \phi_t \circ \psi^{-1}])(m) - f(m)}{t}
 \end{align*}
 
-[^com:lie_derivative]: We are interested in differentiating tensor fields, but we're confronted by the difficulty of comparing tensors defined on distinct tangent spaces (i.e., in a limit) which certainly cannot be identified (i.e., $T_m M$ and $T_{m'} M$ for $m \neq m'$). This is a recurring theme in differential topology/geometry, and one with many different solutions. This is the first one we encounter: the specification of a vector field provides sufficient directional and ``connective'' information to enable this kind of comparison, and thus, a derivative operator. Note that, in particular, because our definition utilizes a limit, the Lie derivative evaluated at a point $m$ depends upon the local behavior of $X,T$, or the behavior in a neighborhood around $m$ (i.e., not merely at the point $m$).
+[^com:lie_derivative]: We want to take derivatives of tensor fields, but we cannot compare tensors defined on distinct tangent spaces (i.e., in a limit) which certainly cannot be identified (i.e., $T_m M$ and $T_{m'} M$ for $m \neq m'$). This is a recurring theme in differential topology/geometry, and one with many different solutions. This is the first solution we encounter: the specification of a vector field provides sufficient directional and ``connective'' information (via the pushforward) to enable this kind of comparison, and thus, a derivative operator. Note that, in particular, because our definition utilizes a limit, the Lie derivative evaluated at a point $m$ depends upon the local behavior of $X,T$, or the behavior in a neighborhood around $m$ (i.e., not merely at the point $m$). This manifests itself algebraically in the fact that the Lie derivative is not $C^\infty(M)$-linear 
