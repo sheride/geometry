@@ -23,7 +23,7 @@
 <meta name="author" content="Elijah Sheridan" />
 
 
-<meta name="date" content="2022-08-18" />
+<meta name="date" content="2022-09-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -114,18 +114,32 @@
 <li class="chapter" data-level="5.2" data-path="complex-manifolds.html"><a href="complex-manifolds.html#hermitian-and-kahler-geometry"><i class="fa fa-check"></i><b>5.2</b> Hermitian and Kahler Geometry</a></li>
 <li class="chapter" data-level="5.3" data-path="complex-manifolds.html"><a href="complex-manifolds.html#dolbeault-cohomology-and-hodge-theory"><i class="fa fa-check"></i><b>5.3</b> Dolbeault Cohomology and Hodge Theory</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="spin-geometry.html"><a href="spin-geometry.html"><i class="fa fa-check"></i><b>6</b> Spin Geometry</a></li>
+<li class="chapter" data-level="6" data-path="characteristic-classes.html"><a href="characteristic-classes.html"><i class="fa fa-check"></i><b>6</b> Characteristic Classes</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="characteristic-classes.html"><a href="characteristic-classes.html#chern-weil-theory"><i class="fa fa-check"></i><b>6.1</b> Chern-Weil Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="spin-geometry.html"><a href="spin-geometry.html"><i class="fa fa-check"></i><b>7</b> Spin Geometry</a></li>
+<li class="chapter" data-level="8" data-path="algebraic-geometry.html"><a href="algebraic-geometry.html"><i class="fa fa-check"></i><b>8</b> Algebraic Geometry</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="algebraic-geometry.html"><a href="algebraic-geometry.html#construction-4"><i class="fa fa-check"></i><b>8.1</b> Construction</a></li>
+<li class="chapter" data-level="8.2" data-path="algebraic-geometry.html"><a href="algebraic-geometry.html#commutative-ring-theory-interlude"><i class="fa fa-check"></i><b>8.2</b> Commutative Ring Theory Interlude</a></li>
+<li class="chapter" data-level="8.3" data-path="algebraic-geometry.html"><a href="algebraic-geometry.html#algebra-geometry-correspondence"><i class="fa fa-check"></i><b>8.3</b> Algebra-Geometry Correspondence</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="tensors.html"><a href="tensors.html"><i class="fa fa-check"></i><b>A</b> Tensors</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="tensors.html"><a href="tensors.html#construction-4"><i class="fa fa-check"></i><b>A.1</b> Construction</a></li>
+<li class="chapter" data-level="A.1" data-path="tensors.html"><a href="tensors.html#construction-5"><i class="fa fa-check"></i><b>A.1</b> Construction</a></li>
 <li class="chapter" data-level="A.2" data-path="tensors.html"><a href="tensors.html#notation"><i class="fa fa-check"></i><b>A.2</b> Notation</a></li>
 <li class="chapter" data-level="A.3" data-path="tensors.html"><a href="tensors.html#change-of-basis"><i class="fa fa-check"></i><b>A.3</b> Change of Basis</a></li>
 <li class="chapter" data-level="A.4" data-path="tensors.html"><a href="tensors.html#tensor-algebra"><i class="fa fa-check"></i><b>A.4</b> Tensor Algebra</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="algebraic-topology.html"><a href="algebraic-topology.html"><i class="fa fa-check"></i><b>B</b> Algebraic Topology</a></li>
+<li class="chapter" data-level="B" data-path="algebraic-topology.html"><a href="algebraic-topology.html"><i class="fa fa-check"></i><b>B</b> Algebraic Topology</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="algebraic-topology.html"><a href="algebraic-topology.html#simplicial-homology"><i class="fa fa-check"></i><b>B.1</b> Simplicial Homology</a></li>
+</ul></li>
 <li class="chapter" data-level="C" data-path="clifford-algebra.html"><a href="clifford-algebra.html"><i class="fa fa-check"></i><b>C</b> Clifford Algebra</a></li>
+<li class="chapter" data-level="D" data-path="category-theory.html"><a href="category-theory.html"><i class="fa fa-check"></i><b>D</b> Category Theory</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -146,24 +160,24 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tensors" class="section level1 hasAnchor" number="7">
+<div id="tensors" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">A</span> Tensors<a href="tensors.html#tensors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="construction-4" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">A.1</span> Construction<a href="tensors.html#construction-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="construction-5" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">A.1</span> Construction<a href="tensors.html#construction-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let <span class="math inline">\(V,W\)</span> be <span class="math inline">\(n\)</span>-dimensional vector spaces over <span class="math inline">\(\mathbb{R}\)</span> and consider the <span style="color: fuchsia;">free</span> vector space <span class="math inline">\(F(V \times W)\)</span>. We define <span class="math inline">\(R(V \times W)\)</span> as follows.<br />
 <span class="math display">\[\begin{align*}
     R(V \times W) &amp;= \Big\langle (av,bw) - ab(v,w),  (v + w, v&#39; + w&#39;) - (v,v&#39;) - (v,w&#39;) \\  
     &amp;\qquad - (w,v&#39;) - (w,w&#39;) \; \Big| \; a,b \in \mathbb{R}; v,v&#39; \in V; w,w&#39; \in W \Big\rangle \subset F(V \times W)
 \end{align*}\]</span>
-We define the <span style="color: blue;">tensor product</span> of <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> by <span class="math inline">\(V \otimes W = F(V \times W)/R(V \times W)\)</span> and denote elements by <span class="math inline">\(v \otimes w\)</span> (i.e., <span class="math inline">\((v,w)\)</span> belongs to the <span style="color: fuchsia;">coset</span> <span class="math inline">\(v \otimes w\)</span>). Let <span class="math inline">\(T^k_\ell(V) = (\bigotimes_{i=1}^k V) \otimes (\bigotimes_{j=1}^\ell V^*)\)</span>, the space of <span style="color: blue;"><span class="math inline">\((k, \ell)\)</span> tensors on <span class="math inline">\(V\)</span></span>. This space has dimension <span class="math inline">\(n^{k + \ell}\)</span>, and we can identify <span class="math inline">\(T_k^\ell(V)\)</span> with <span class="math inline">\(T_\ell^k(V)^*\)</span>’<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>. Moreover, observe that elements of <span class="math inline">\(T^k_\ell(V)\)</span> can be understood as a linear map <span class="math inline">\(T^{k-r}_{\ell-s}(V) \to T_r^s(V)\)</span> through partial evaluation: indeed, <span class="math inline">\(T_k^\ell(V)\)</span> is naturally isomorphic to the <span style="color: blue;">hom set</span> <span class="math inline">\(Hom(T^{k-r}_{\ell-s}(V), T^r_s(V))\)</span>. This also entails the natural conclusion <span class="math inline">\(T_0^0(V) = \mathbb{R}\)</span>. Equivalently, <span class="math inline">\(w \in T^{k-r}_{\ell-s}(V)\)</span> is a linear map <span class="math inline">\(T^k_\ell(V) \to T^r_s(V)\)</span><a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>. Finally, we note in passing that because <span class="math inline">\(V^\ell \times (V^*)^k \subset F((V)^\ell \times (V^*)^k)\)</span>, we also have a multilinear action of <span class="math inline">\(T^k_\ell(V)\)</span> on <span class="math inline">\(V^\ell \times (V^*)^k\)</span> (indeed, one can define <span class="math inline">\(T^r_s(V)\)</span> as the set of multilinear maps on this space).</p>
+We define the <span style="color: blue;">tensor product</span> of <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> by <span class="math inline">\(V \otimes W = F(V \times W)/R(V \times W)\)</span> and denote elements by <span class="math inline">\(v \otimes w\)</span> (i.e., <span class="math inline">\((v,w)\)</span> belongs to the <span style="color: fuchsia;">coset</span> <span class="math inline">\(v \otimes w\)</span>). Let <span class="math inline">\(T^k_\ell(V) = (\bigotimes_{i=1}^k V) \otimes (\bigotimes_{j=1}^\ell V^*)\)</span>, the space of <span style="color: blue;"><span class="math inline">\((k, \ell)\)</span> tensors on <span class="math inline">\(V\)</span></span>. This space has dimension <span class="math inline">\(n^{k + \ell}\)</span>, and we can identify <span class="math inline">\(T_k^\ell(V)\)</span> with <span class="math inline">\(T_\ell^k(V)^*\)</span>’<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>. Moreover, observe that elements of <span class="math inline">\(T^k_\ell(V)\)</span> can be understood as a linear map <span class="math inline">\(T^{k-r}_{\ell-s}(V) \to T_r^s(V)\)</span> through partial evaluation: indeed, <span class="math inline">\(T_k^\ell(V)\)</span> is naturally isomorphic to the <span style="color: blue;">hom set</span> <span class="math inline">\(Hom(T^{k-r}_{\ell-s}(V), T^r_s(V))\)</span>. This also entails the natural conclusion <span class="math inline">\(T_0^0(V) = \mathbb{R}\)</span>. Equivalently, <span class="math inline">\(w \in T^{k-r}_{\ell-s}(V)\)</span> is a linear map <span class="math inline">\(T^k_\ell(V) \to T^r_s(V)\)</span><a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>. Finally, we note in passing that because <span class="math inline">\(V^\ell \times (V^*)^k \subset F((V)^\ell \times (V^*)^k)\)</span>, we also have a multilinear action of <span class="math inline">\(T^k_\ell(V)\)</span> on <span class="math inline">\(V^\ell \times (V^*)^k\)</span> (indeed, one can define <span class="math inline">\(T^r_s(V)\)</span> as the set of multilinear maps on this space).</p>
 </div>
-<div id="notation" class="section level2 hasAnchor" number="7.2">
+<div id="notation" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">A.2</span> Notation<a href="tensors.html#notation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let <span class="math inline">\(e_a\)</span>, <span class="math inline">\(\sigma^b\)</span> constitute dual bases for <span class="math inline">\(V, V^*\)</span>: then <span class="math inline">\(v \in T^k_\ell(V)\)</span> can be written in components as follows.
 <span class="math display">\[\begin{equation}
     v = \sum_{\mu_1 = 1}^n \dots \sum_{\nu_k = 1}^n v^{\mu_1\dots \mu_k}_{\nu_1\dots \nu_\ell} e_{\mu_1} \otimes \dots \otimes e_{\mu_k} \otimes \sigma^{\nu_1} \otimes \dots \otimes \sigma^{\nu_\ell} \qquad (v^{\mu_1\dots \mu_k}_{\nu_1\dots \nu_\ell} \in \mathbb{R})
 \end{equation}\]</span>
-For brevity we adopt <span style="color: blue;">Einstein summation notation</span> wherein a doubly-appearing index (once a superscript, once a subscript) is always assumed to be summed over, rending each <span class="math inline">\(\Sigma\)</span> obsolete; we also suppress the <span class="math inline">\(\otimes\)</span> symbol. Thus, we rewrite <span class="math inline">\(v\)</span> as follows<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>.
+For brevity we adopt <span style="color: blue;">Einstein summation notation</span> wherein a doubly-appearing index (once a superscript, once a subscript) is always assumed to be summed over, rending each <span class="math inline">\(\Sigma\)</span> obsolete; we also suppress the <span class="math inline">\(\otimes\)</span> symbol. Thus, we rewrite <span class="math inline">\(v\)</span> as follows<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
 <span class="math display">\[\begin{equation}
     v = v_{\nu_1\dots \nu_\ell}^{\mu_1\dots \mu_k} e_{\mu_1} \dots e_{\mu_k} \sigma^{\nu_1} \dots \sigma^{\nu_\ell}
 \end{equation}\]</span>
@@ -173,9 +187,9 @@ Finally, we adopt Penrose’s <span style="color: blue;">abstract index notation
 \end{equation}\]</span>
 To avoid confusion, henceforth unsummed roman indices are abstract while unsummed greek indices denote particular components (e.g., of a tensor, given a basis).</p>
 </div>
-<div id="change-of-basis" class="section level2 hasAnchor" number="7.3">
+<div id="change-of-basis" class="section level2 hasAnchor" number="9.3">
 <h2><span class="header-section-number">A.3</span> Change of Basis<a href="tensors.html#change-of-basis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Note that <span class="math inline">\(T_1^1(V)\)</span> coincides with the space of <span style="color: fuchsia;">endomorphisms</span> on <span class="math inline">\(V\)</span>, so the <span style="color: fuchsia;">automorphisms</span> are a subset. Suppose then that <span class="math inline">\(\Lambda_a^b \in T_1^1(V)\)</span> is a change of basis: i.e., we let <span class="math inline">\(e_\mu \mapsto e_\mu^\prime = \Lambda(e_\mu, \cdot) = \Lambda_b^a (e_\mu)^b\)</span>. The dual basis <span class="math inline">\(\sigma^{\prime\nu}\)</span> must satisfy <span class="math inline">\(\delta_\mu^\nu = (e^\prime_\mu)^a (\sigma^{\prime \nu})_a = \Lambda_b^a (e_\mu)^b (\sigma^{\prime \nu})_a = (e_\mu)^a(\sigma^{\nu})_a\)</span>, so we conclude <span class="math inline">\(\sigma^{\prime\nu} = \Lambda^{-1}(\cdot, \sigma^\nu) = (\Lambda^{-1})_a^b (\sigma^\nu)_b\)</span>, where <span class="math inline">\(\Lambda^{-1}\)</span> is the inverse to <span class="math inline">\(\Lambda\)</span> (i.e., <span class="math inline">\((\Lambda^{-1})^a_b \Lambda^b_c = \delta^a_c\)</span>). The coefficients of <span class="math inline">\(v\)</span> then transform as follows<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
+<p>Note that <span class="math inline">\(T_1^1(V)\)</span> coincides with the space of <span style="color: fuchsia;">endomorphisms</span> on <span class="math inline">\(V\)</span>, so the <span style="color: fuchsia;">automorphisms</span> are a subset. Suppose then that <span class="math inline">\(\Lambda_a^b \in T_1^1(V)\)</span> is a change of basis: i.e., we let <span class="math inline">\(e_\mu \mapsto e_\mu^\prime = \Lambda(e_\mu, \cdot) = \Lambda_b^a (e_\mu)^b\)</span>. The dual basis <span class="math inline">\(\sigma^{\prime\nu}\)</span> must satisfy <span class="math inline">\(\delta_\mu^\nu = (e^\prime_\mu)^a (\sigma^{\prime \nu})_a = \Lambda_b^a (e_\mu)^b (\sigma^{\prime \nu})_a = (e_\mu)^a(\sigma^{\nu})_a\)</span>, so we conclude <span class="math inline">\(\sigma^{\prime\nu} = \Lambda^{-1}(\cdot, \sigma^\nu) = (\Lambda^{-1})_a^b (\sigma^\nu)_b\)</span>, where <span class="math inline">\(\Lambda^{-1}\)</span> is the inverse to <span class="math inline">\(\Lambda\)</span> (i.e., <span class="math inline">\((\Lambda^{-1})^a_b \Lambda^b_c = \delta^a_c\)</span>). The coefficients of <span class="math inline">\(v\)</span> then transform as follows<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.
 <span class="math display">\[\begin{equation}
     v_{\nu_1\dots \nu_\ell}^{\prime \mu_1\dots \mu_k} = (\Lambda^{-1})^{\mu_1}_{\kappa_1} \dots (\Lambda^{-1})^{\mu_k}_{\kappa_k}v_{\lambda_1\dots \lambda_\ell}^{\kappa_1 \dots \kappa_k} \Lambda^{\lambda_1}_{\nu_1} \dots \Lambda^{\lambda_\ell}_{\nu_\ell}
 \end{equation}\]</span>
@@ -187,30 +201,31 @@ The tensor <span class="math inline">\(v\)</span> must remain invariant under a 
 This (finally) motivates our choice of subscripts for vector bases and superscripts for dual vector bases: we are seeing that components of vectors and dual vector bases transform covariantly, while components of dual vectors and vector bases transform contravariantly (albeit by <span class="math inline">\(\Lambda\)</span> and <span class="math inline">\(\Lambda^{-1}\)</span>, respectively, in each case).
 By functional-argumentative duality, any element of <span class="math inline">\(T_k^\ell(V)\)</span> can yield an element of <span class="math inline">\(T_{k-1}^{\ell-1}(V)\)</span> by evaluating one vector (dual vector) argument on a dual vector (vector) argument: we refer to this as <span style="color: blue;">contraction</span> and denote it by repeating an abstract index appropriately (e.g., the trace of a linear transformation is a contraction of its two arguments).</p>
 </div>
-<div id="tensor-algebra" class="section level2 hasAnchor" number="7.4">
+<div id="tensor-algebra" class="section level2 hasAnchor" number="9.4">
 <h2><span class="header-section-number">A.4</span> Tensor Algebra<a href="tensors.html#tensor-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We define the <span style="color: blue;">tensor algebra</span> of <span class="math inline">\(V\)</span>, <span class="math inline">\(T(V) = \oplus_{k,\ell = 0}^\infty T_k^\ell(V)\)</span>, which is a <span style="color: fuchsia;">graded algebra</span> with multiplication operation <span class="math inline">\(\otimes\)</span>. From we can also define the algebra ideal <span class="math inline">\(I(V) = \langle v \otimes v \; | \; v \in V\rangle\)</span> and consider the quotient algebra <span class="math inline">\(\Lambda(V) = T(V) / I(V)\)</span>, denoted the <span style="color: blue;">exterior algebra</span>. Defining <span class="math inline">\(I_k(V) = I(V) \cap T_k^0(V)\)</span>, we have the decomposition <span class="math inline">\(\Lambda(V) = \oplus_{k=0}^\infty T_k^0(V)/I_k(V) = \oplus_{k=0}^\infty \Lambda_k(V)\)</span>; we refer to elements of <span class="math inline">\(\Lambda_k(V)\)</span> as <span style="color: blue;"><span class="math inline">\(k\)</span>-forms</span> on <span class="math inline">\(V\)</span>, and <span class="math inline">\(\dim \Lambda_k(V) = \binom{n}{k}\)</span>. Multiplication in <span class="math inline">\(\Lambda(V)\)</span> is denoted by <span class="math inline">\(\wedge\)</span> and referred to as the <span style="color: blue;">wedge product</span>. The coset in <span class="math inline">\(\Lambda(V)\)</span> containing <span class="math inline">\(v_1 \otimes \dots \otimes v_{m} \in T(V)\)</span> is exactly <span class="math inline">\(v_1 \wedge \dots \wedge v_{k+\ell}\)</span>. We can identify <span class="math inline">\(\Lambda_k(V)\)</span> with the set of <span style="color: fuchsia;">alternating</span> <span class="math inline">\((k,0)\)</span> tensors; in abstract index notation, these satisfy <span class="math inline">\(v_{a_1\dots a_i \dots a_j \dots a_k} = -v_{a_1\dots a_j \dots a_i \dots a_k}\)</span>. The tensor product coincides with the wedge product for such elements.</p>
+<p>TODO: (anti)symmetric matrices</p>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="17">
-<li id="fn17"><p>To see this, let <span class="math inline">\(v = v_1 \otimes \dots \otimes v_{k+\ell} \in T_k^\ell(V)\)</span>.
+<ol start="18">
+<li id="fn18"><p>To see this, let <span class="math inline">\(v = v_1 \otimes \dots \otimes v_{k+\ell} \in T_k^\ell(V)\)</span>.
 <span class="math display">\[\begin{equation}
 v \leftrightarrow (w_1 \otimes \dots \otimes w_{k+\ell} \mapsto v_1(w_1) \cdot \dotsc \cdot v_{k+\ell}(w_{k+\ell}))
 \end{equation}\]</span>
-Linearity extends this to arbitrary elements of <span class="math inline">\(T_k^\ell(V)\)</span>. Here we are exploiting <span class="math inline">\(V \cong V^{**}\)</span>, enabling useful idea that vectors are linear functions on dual vectors and vice versa.<a href="tensors.html#fnref17" class="footnote-back">↩︎</a></p></li>
-<li id="fn18"><p>Here we see the functional and argumentative behavior of tensors are indistinguishable, much like we have the symmetry <span class="math inline">\(x(y) = y(x)\)</span> for <span class="math inline">\(x \in V, y \in V^*\)</span>.<a href="tensors.html#fnref18" class="footnote-back">↩︎</a></p></li>
-<li id="fn19"><p>Our original tensor notation and the Einstein summation notation are related as follows.
+Linearity extends this to arbitrary elements of <span class="math inline">\(T_k^\ell(V)\)</span>. Here we are exploiting <span class="math inline">\(V \cong V^{**}\)</span>, enabling useful idea that vectors are linear functions on dual vectors and vice versa.<a href="tensors.html#fnref18" class="footnote-back">↩︎</a></p></li>
+<li id="fn19"><p>Here we see the functional and argumentative behavior of tensors are indistinguishable, much like we have the symmetry <span class="math inline">\(x(y) = y(x)\)</span> for <span class="math inline">\(x \in V, y \in V^*\)</span>.<a href="tensors.html#fnref19" class="footnote-back">↩︎</a></p></li>
+<li id="fn20"><p>Our original tensor notation and the Einstein summation notation are related as follows.
 <span class="math display">\[\begin{align*}
 v(\sigma^{\mu_1}, \dots, \sigma^{\mu_\ell}, e_{\nu_1}, \dots, e_{\nu_k})
 &amp;= v_{b_1\dots b_\ell}^{a_1\dots a_k}(\sigma^{\mu_1})_{a_1}\dots(\sigma^{\mu_k})_{a_k} (e_{\nu_1})^{b_1} \dots (e_{\nu_k})^{b_\ell}\\
 &amp;= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} e_{\kappa_1}(\sigma^{\mu_1}) \dots e_{\kappa_k}(\sigma^{\mu_k}) \sigma^{\lambda_1}(e_{\nu_1}) \dots \sigma^{\lambda_\ell}(e_{\nu_k})\\
 &amp;= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} \delta_{\kappa_1}^{\mu_1} \dots \delta_{\kappa_k}^{\mu_k}\delta^{\lambda_1}_{\nu_1} \dots \delta^{\lambda_\ell}_{\nu_k}
 = v_{\nu_1\dots \nu_k}^{\mu_1\dots \mu_k} \in \mathbb{R}
-\end{align*}\]</span><a href="tensors.html#fnref19" class="footnote-back">↩︎</a></p></li>
-<li id="fn20"><p>We observe the following.
+\end{align*}\]</span><a href="tensors.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>We observe the following.
 <span class="math display">\[\begin{align*}
 v_{\nu_1\dots \nu_\ell}^{\prime \mu_1\dots \mu_k} &amp;= v_{b_1\dots b_\ell}^{a_1\dots a_k}(\sigma^{\prime\mu_1})_{a_1}\dots(\sigma^{\prime\mu_k})_{a_k} (e^\prime_{\nu_1})^{b_1} \dots (e^\prime_{\nu_\ell})^{b_\ell}\\
 &amp;= v_{b_1\dots b_\ell}^{a_1\dots a_k} (\Lambda^{-1})_{a_1}^{c_1}(\sigma^{\mu_1})_{c_1}\dots(\Lambda^{-1})_{a_k}^{c_k}(\sigma^{\mu_k})_{c_k} \Lambda_{d_1}^{b_1}(e_{\nu_1})^{d_1} \dots \Lambda_{d_\ell}^{b_\ell}(e_{\nu_\ell})^{d_\ell}\\
@@ -221,7 +236,7 @@ v_{\nu_1\dots \nu_\ell}^{\prime \mu_1\dots \mu_k} &amp;= v_{b_1\dots b_\ell}^{a_
 &amp;= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} (\Lambda^{-1})(\sigma^{\mu_1}, e_{\kappa_1}) \dots (\Lambda^{-1})(\sigma^{\mu_k}, e_{\kappa_k})\Lambda(\sigma^{\lambda_1}, e_{\nu_1}) \dots \Lambda(\sigma^{\lambda_\ell}, e_{\nu_\ell})\\
 &amp;= v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} (\Lambda^{-1})^{\mu_1}_{\kappa_1} \dots (\Lambda^{-1})^{\mu_k}_{\kappa_k}\Lambda^{\lambda_1}_{\nu_1} \dots \Lambda^{\lambda_\ell}_{\nu_\ell}\\
 &amp;= (\Lambda^{-1})^{\mu_1}_{\kappa_1} \dots (\Lambda^{-1})^{\mu_k}_{\kappa_k}v_{\lambda_1\dots \lambda_\ell}^{\kappa_1\dots \kappa_k} \Lambda^{\lambda_1}_{\nu_1} \dots \Lambda^{\lambda_\ell}_{\nu_\ell}
-\end{align*}\]</span><a href="tensors.html#fnref20" class="footnote-back">↩︎</a></p></li>
+\end{align*}\]</span><a href="tensors.html#fnref21" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

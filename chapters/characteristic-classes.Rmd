@@ -1,0 +1,13 @@
+# Characteristic Classes
+
+## Chern-Weil Theory
+
+Consider $S_k(\mathbb{M}_n(\mathbb{C}))$ and $S(\mathbb{M}_n(\mathbb{C})) = \oplus_{i \in \mathbb{N}} S_k(\mathbb{M}_n(\mathbb{C}))$ (formal sums of tensors): in particular, we can define a product $S_p(\mathbb{M}_n(\mathbb{C})) \times S_q(\mathbb{M}_n(\mathbb{C})) \to S_{p+q}(\mathbb{M}_n(\mathbb{C}))$ by symmetrizing the tensor product of elements in these respective algebras. 
+
+Let $\rho$ be an $n$-dimensional representation of a group $G$: then $\rho(G) \subset \mathbb{M}_n(\mathbb{C})$. Let $\overline{Q} \in S_k(\mathbb{M}_n(\mathbb{C}))$ be unchanged under precomposition by the $n$-fold product of the map $\rho(g) : \mathbb{M}_n(\mathbb{C}) \to \mathbb{M}_n(\mathbb{C})$ for each $g \in G$. We say $\overline{Q}$ is `r term("invariant")`, and the space of invariant $(0,r)$ tensors is denoted $I_r(G,\rho)$, and $I(G,\rho)$ is defined analogously.
+
+$\overline{Q}$ induces a map $Q : \mathbb{M}_n(\mathbb{C}) \to \mathbb{C}$ by precomposing with the appropriate diagonal map: we say $P$ is an `r term("invariant polynomial")`. Conversely, invariant polynomials $Q'$ induce invariant tensors by taking the mapping from $A_1 \otimes \dots \otimes A_k$ to the coefficient of $t^1 \dots t^k$ in the expansion of $Q'(A_it^i)$ (where the $t^i$ are merely variables).
+
+Let $P \to M$ be a principal $G$-bundle. $\overline{Q} \in I_k(G, \text{Ad})$ induces a map $\otimes_{i=1}^k \Omega^k(M,\mathfrak{g}) \to \Omega^k(M)$ by $(A_1 \otimes \eta_1) \otimes \dots \otimes (A_k \otimes \eta_k) \mapsto \eta_1 \wedge \dots \wedge \eta_k \, Q(A_1, \dots, A_k)$ for $A_i \in \rho(\text{Ad}) = \mathfrak{g} \subset \mathbb{M}_n(\mathbb{C})$ and $\eta_i \in \Omega^k(M)$. Now let $\overline{Q}$ be invariant: an analogous action for the invariant polynomial $Q$ is induced.
+
+Consider the action of $Q$ on a curvature $\Omega$ on $P$: the Chern-Weil theorem states that the resulting differential form is closed and that its (de Rham) cohomology class is independent of the particular curvature. This curvature class $\chi_P(\Omega)$ is the `r term("characteristic class")` of $P$ given by $Q$. Moreover, $\chi_P(\Omega) \in \Omega^k(P)$ descends uniquely to an element of $\Omega^k(M)$, the map $\chi_P : I(G,\rho) \to H_{\text{dR}}^*(M)$ is a morphism of algebras and is natural in the sense that $\chi_{f^*P} = f^*\chi_P$.

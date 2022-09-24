@@ -47,6 +47,8 @@ By functional-argumentative duality, any element of $T_k^\ell(V)$ can yield an e
 
 We define the `r term("tensor algebra")` of $V$, $T(V) = \oplus_{k,\ell = 0}^\infty T_k^\ell(V)$, which is a `r preq("graded algebra")` with multiplication operation $\otimes$. From we can also define the algebra ideal $I(V) = \langle v \otimes v \; | \; v \in V\rangle$ and consider the quotient algebra $\Lambda(V) = T(V) / I(V)$, denoted the `r term("exterior algebra")`. Defining $I_k(V) = I(V) \cap T_k^0(V)$, we have the decomposition $\Lambda(V) = \oplus_{k=0}^\infty T_k^0(V)/I_k(V) = \oplus_{k=0}^\infty \Lambda_k(V)$; we refer to elements of $\Lambda_k(V)$ as `r term("$k$-forms")` on $V$, and $\dim \Lambda_k(V) = \binom{n}{k}$. Multiplication in $\Lambda(V)$ is denoted by $\wedge$ and referred to as the `r term("wedge product")`. The coset in $\Lambda(V)$ containing $v_1 \otimes \dots \otimes v_{m} \in T(V)$ is exactly $v_1 \wedge \dots \wedge v_{k+\ell}$. We can identify $\Lambda_k(V)$ with the set of `r preq("alternating")` $(k,0)$ tensors; in abstract index notation, these satisfy $v_{a_1\dots a_i \dots a_j \dots a_k} = -v_{a_1\dots a_j \dots a_i \dots a_k}$. The tensor product coincides with the wedge product for such elements. 
 
+TODO: (anti)symmetric matrices
+
 [^com:tensor_space_duality]: To see this, let $v = v_1 \otimes \dots \otimes v_{k+\ell} \in T_k^\ell(V)$.
 \begin{equation}
     v \leftrightarrow (w_1 \otimes \dots \otimes w_{k+\ell} \mapsto v_1(w_1) \cdot \dotsc \cdot v_{k+\ell}(w_{k+\ell}))

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Geometry</title>
+  <title>D Category Theory | Geometry</title>
   <meta name="description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Geometry" />
+  <meta property="og:title" content="D Category Theory | Geometry" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="github-repo" content="sheride/geometry" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Geometry" />
+  <meta name="twitter:title" content="D Category Theory | Geometry" />
   
   <meta name="twitter:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="clifford-algebra.html"/>
 
-<link rel="next" href="manifolds.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -160,23 +160,79 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Geometry</h1>
-<p class="author"><em>Elijah Sheridan</em></p>
-<p class="date"><em>2022-09-24</em></p>
-</div>
-<div id="introduction" class="section level1 unnumbered hasAnchor">
-<h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>What follows endeavors to encapsulate the author’s knowledge of geometry (and the notions upon which it depends, which decidedly extend well beyond the boundaries of geometry itself) as he studies theoretical particle physics and string theory.</p>
+<div id="category-theory" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">D</span> Category Theory<a href="category-theory.html#category-theory" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A <span style="color: blue;">category</span> <span class="math inline">\(C\)</span> is a class <span class="math inline">\(\text{ob}(C)\)</span> of <span style="color: blue;">objects</span>; a class <span class="math inline">\(\text{hom}(C)\)</span> <span style="color: blue;">morphisms</span> (or maps, or arrows), each of which has a source object <span class="math inline">\(a \in \text{ob}(C)\)</span> and a target object <span class="math inline">\(b \in \text{ob}(C)\)</span> (written <span class="math inline">\(a \to b\)</span>): in particular, <span class="math inline">\(\text{hom}(a,b)\)</span> is the <span style="color: blue;">hom-class</span> of morphisms <span class="math inline">\(a \to b\)</span> for <span class="math inline">\(a,b \in \text{ob}(C)\)</span>; and an associative binary operation with identity on <span class="math inline">\(\text{hom}(C)\)</span> acting by <span class="math inline">\(\text{hom}(a,b) \times \text{hom}(b,c) \to \text{hom}(a,c)\)</span>.
+Given another category <span class="math inline">\(D\)</span>, a <span style="color: blue;">covariant functor</span> (or just functor) is a map <span class="math inline">\(F : C \to D\)</span> (i.e., <span class="math inline">\(\text{ob}(C) \to \text{ob}(D)\)</span> and <span class="math inline">\(\text{hom}(a,b) \to \text{hom}(F(a), F(b))\)</span>) such that the binary operations and identity morphisms are preserved. A <span style="color: blue;">covariant functor</span> is the same but sending <span class="math inline">\(\text{hom}(a,b) \to \text{hom}(F(b), F(a))\)</span> (“flipping the arrows”).</p>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
+<a href="clifford-algebra.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="manifolds.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -207,7 +263,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sheride/geometry/edit/main/index.Rmd",
+"link": "https://github.com/sheride/geometry/edit/main/chapters/category-theory.Rmd",
 "text": "Edit"
 },
 "history": {

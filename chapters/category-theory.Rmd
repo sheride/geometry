@@ -1,0 +1,4 @@
+# Category Theory
+
+A `r term("category")` $C$ is a class $\text{ob}(C)$ of `r term("objects")`; a class $\text{hom}(C)$ `r term("morphisms")` (or maps, or arrows), each of which has a source object $a \in \text{ob}(C)$ and a target object $b \in \text{ob}(C)$ (written $a \to b$): in particular, $\text{hom}(a,b)$ is the `r term("hom-class")` of morphisms $a \to b$ for $a,b \in \text{ob}(C)$; and an associative binary operation with identity on $\text{hom}(C)$ acting by $\text{hom}(a,b) \times \text{hom}(b,c) \to \text{hom}(a,c)$.
+Given another category $D$, a `r term("covariant functor")` (or just functor) is a map $F : C \to D$ (i.e., $\text{ob}(C) \to \text{ob}(D)$ and $\text{hom}(a,b) \to \text{hom}(F(a), F(b))$) such that the binary operations and identity morphisms are preserved. A `r term("covariant functor")` is the same but sending $\text{hom}(a,b) \to \text{hom}(F(b), F(a))$ ("flipping the arrows").

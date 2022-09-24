@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Geometry</title>
+  <title>Chapter 6 Characteristic Classes | Geometry</title>
   <meta name="description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Geometry" />
+  <meta property="og:title" content="Chapter 6 Characteristic Classes | Geometry" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   <meta name="github-repo" content="sheride/geometry" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Geometry" />
+  <meta name="twitter:title" content="Chapter 6 Characteristic Classes | Geometry" />
   
   <meta name="twitter:description" content="Notes on geometry and related notions motivated by studies in particle physics and string theory" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="manifolds.html"/>
+<link rel="prev" href="complex-manifolds.html"/>
+<link rel="next" href="spin-geometry.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -160,23 +160,25 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Geometry</h1>
-<p class="author"><em>Elijah Sheridan</em></p>
-<p class="date"><em>2022-09-24</em></p>
-</div>
-<div id="introduction" class="section level1 unnumbered hasAnchor">
-<h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>What follows endeavors to encapsulate the author’s knowledge of geometry (and the notions upon which it depends, which decidedly extend well beyond the boundaries of geometry itself) as he studies theoretical particle physics and string theory.</p>
+<div id="characteristic-classes" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Characteristic Classes<a href="characteristic-classes.html#characteristic-classes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="chern-weil-theory" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Chern-Weil Theory<a href="characteristic-classes.html#chern-weil-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider <span class="math inline">\(S_k(\mathbb{M}_n(\mathbb{C}))\)</span> and <span class="math inline">\(S(\mathbb{M}_n(\mathbb{C})) = \oplus_{i \in \mathbb{N}} S_k(\mathbb{M}_n(\mathbb{C}))\)</span> (formal sums of tensors): in particular, we can define a product <span class="math inline">\(S_p(\mathbb{M}_n(\mathbb{C})) \times S_q(\mathbb{M}_n(\mathbb{C})) \to S_{p+q}(\mathbb{M}_n(\mathbb{C}))\)</span> by symmetrizing the tensor product of elements in these respective algebras.</p>
+<p>Let <span class="math inline">\(\rho\)</span> be an <span class="math inline">\(n\)</span>-dimensional representation of a group <span class="math inline">\(G\)</span>: then <span class="math inline">\(\rho(G) \subset \mathbb{M}_n(\mathbb{C})\)</span>. Let <span class="math inline">\(\overline{Q} \in S_k(\mathbb{M}_n(\mathbb{C}))\)</span> be unchanged under precomposition by the <span class="math inline">\(n\)</span>-fold product of the map <span class="math inline">\(\rho(g) : \mathbb{M}_n(\mathbb{C}) \to \mathbb{M}_n(\mathbb{C})\)</span> for each <span class="math inline">\(g \in G\)</span>. We say <span class="math inline">\(\overline{Q}\)</span> is <span style="color: blue;">invariant</span>, and the space of invariant <span class="math inline">\((0,r)\)</span> tensors is denoted <span class="math inline">\(I_r(G,\rho)\)</span>, and <span class="math inline">\(I(G,\rho)\)</span> is defined analogously.</p>
+<p><span class="math inline">\(\overline{Q}\)</span> induces a map <span class="math inline">\(Q : \mathbb{M}_n(\mathbb{C}) \to \mathbb{C}\)</span> by precomposing with the appropriate diagonal map: we say <span class="math inline">\(P\)</span> is an <span style="color: blue;">invariant polynomial</span>. Conversely, invariant polynomials <span class="math inline">\(Q&#39;\)</span> induce invariant tensors by taking the mapping from <span class="math inline">\(A_1 \otimes \dots \otimes A_k\)</span> to the coefficient of <span class="math inline">\(t^1 \dots t^k\)</span> in the expansion of <span class="math inline">\(Q&#39;(A_it^i)\)</span> (where the <span class="math inline">\(t^i\)</span> are merely variables).</p>
+<p>Let <span class="math inline">\(P \to M\)</span> be a principal <span class="math inline">\(G\)</span>-bundle. <span class="math inline">\(\overline{Q} \in I_k(G, \text{Ad})\)</span> induces a map <span class="math inline">\(\otimes_{i=1}^k \Omega^k(M,\mathfrak{g}) \to \Omega^k(M)\)</span> by <span class="math inline">\((A_1 \otimes \eta_1) \otimes \dots \otimes (A_k \otimes \eta_k) \mapsto \eta_1 \wedge \dots \wedge \eta_k \, Q(A_1, \dots, A_k)\)</span> for <span class="math inline">\(A_i \in \rho(\text{Ad}) = \mathfrak{g} \subset \mathbb{M}_n(\mathbb{C})\)</span> and <span class="math inline">\(\eta_i \in \Omega^k(M)\)</span>. Now let <span class="math inline">\(\overline{Q}\)</span> be invariant: an analogous action for the invariant polynomial <span class="math inline">\(Q\)</span> is induced.</p>
+<p>Consider the action of <span class="math inline">\(Q\)</span> on a curvature <span class="math inline">\(\Omega\)</span> on <span class="math inline">\(P\)</span>: the Chern-Weil theorem states that the resulting differential form is closed and that its (de Rham) cohomology class is independent of the particular curvature. This curvature class <span class="math inline">\(\chi_P(\Omega)\)</span> is the <span style="color: blue;">characteristic class</span> of <span class="math inline">\(P\)</span> given by <span class="math inline">\(Q\)</span>. Moreover, <span class="math inline">\(\chi_P(\Omega) \in \Omega^k(P)\)</span> descends uniquely to an element of <span class="math inline">\(\Omega^k(M)\)</span>, the map <span class="math inline">\(\chi_P : I(G,\rho) \to H_{\text{dR}}^*(M)\)</span> is a morphism of algebras and is natural in the sense that <span class="math inline">\(\chi_{f^*P} = f^*\chi_P\)</span>.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="manifolds.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="complex-manifolds.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="spin-geometry.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -207,7 +209,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sheride/geometry/edit/main/index.Rmd",
+"link": "https://github.com/sheride/geometry/edit/main/chapters/characteristic-classes.Rmd",
 "text": "Edit"
 },
 "history": {
